@@ -1,0 +1,1998 @@
+2023-10-19T00:39:58.4584086+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5,456"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE DATABASE [DB_WeddingRestaurant];"
+2023-10-19T00:39:58.6412962+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("146"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [DB_WeddingRestaurant] SET READ_COMMITTED_SNAPSHOT ON;
+END;"
+2023-10-19T00:40:03.3206138+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T00:40:03.4263205+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("32"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);"
+2023-10-19T00:40:03.4282677+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T00:40:03.4480223+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T00:40:03.4528851+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T00:40:03.4674187+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) Applying migration '"20231018173925_Update"'.
+2023-10-19T00:40:03.5919328+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("54"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [DichVu] (
+    [MaDichVu] nvarchar(450) NOT NULL,
+    [TenDichVu] nvarchar(max) NOT NULL,
+    [DonGiaDichVu] float NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_DichVu] PRIMARY KEY ([MaDichVu])
+);"
+2023-10-19T00:40:03.6091016+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [KhachHang] (
+    [MaKhachHang] nvarchar(450) NOT NULL,
+    [TenKhachHang] nvarchar(max) NOT NULL,
+    [SoDienThoai] nvarchar(max) NOT NULL,
+    [NgaySinh] nvarchar(max) NOT NULL,
+    [CCCD] nvarchar(max) NOT NULL,
+    [Gmail] nvarchar(max) NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_KhachHang] PRIMARY KEY ([MaKhachHang])
+);"
+2023-10-19T00:40:03.6571192+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("48"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [KhuyenMai] (
+    [MaKM] nvarchar(450) NOT NULL,
+    [DieuKien] nvarchar(max) NOT NULL,
+    [GiaTri] float NOT NULL,
+    [MoTa] nvarchar(max) NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_KhuyenMai] PRIMARY KEY ([MaKM])
+);"
+2023-10-19T00:40:03.6588489+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [LoaiMonAn] (
+    [MaLoaiMon] nvarchar(450) NOT NULL,
+    [TenLoaiMon] nvarchar(max) NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_LoaiMonAn] PRIMARY KEY ([MaLoaiMon])
+);"
+2023-10-19T00:40:03.6619047+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [LoaiNuoc] (
+    [MaLoaiNuoc] nvarchar(450) NOT NULL,
+    [TenLoaiNuoc] nvarchar(max) NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_LoaiNuoc] PRIMARY KEY ([MaLoaiNuoc])
+);"
+2023-10-19T00:40:03.7194833+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("57"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [Menu] (
+    [MaMenu] nvarchar(450) NOT NULL,
+    [DonGiaMenu] float NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_Menu] PRIMARY KEY ([MaMenu])
+);"
+2023-10-19T00:40:03.7225674+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [NguoiDung] (
+    [userName] nvarchar(450) NOT NULL,
+    [password] nvarchar(max) NOT NULL,
+    [hoTen] nvarchar(max) NOT NULL,
+    [sdt] nvarchar(max) NOT NULL,
+    [email] nvarchar(max) NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_NguoiDung] PRIMARY KEY ([userName])
+);"
+2023-10-19T00:40:08.9686772+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5,059"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [Sanh] (
+    [MaSanh] nvarchar(450) NOT NULL,
+    [TenSanh] nvarchar(max) NOT NULL,
+    [SucChucToiThieu] int NOT NULL,
+    [SucChucToiDa] int NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_Sanh] PRIMARY KEY ([MaSanh])
+);"
+2023-10-19T00:40:08.9840776+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [Token] (
+    [Id] nvarchar(450) NOT NULL,
+    [AccessToken] nvarchar(max) NOT NULL,
+    [RefreshToken] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_Token] PRIMARY KEY ([Id])
+);"
+2023-10-19T00:40:12.5099497+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3,526"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [DatTiec] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [TenTiec] nvarchar(max) NOT NULL,
+    [SoBan] int NOT NULL,
+    [PhiDichVu] float NOT NULL,
+    [NgayDatTiec] datetimeoffset NOT NULL,
+    [NgayToChuc] datetimeoffset NOT NULL,
+    [TrangThai] nvarchar(max) NOT NULL,
+    [MaKhachHang] nvarchar(max) NOT NULL,
+    [KhachHangsMaKhachHang] nvarchar(450) NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_DatTiec] PRIMARY KEY ([MaTiec]),
+    CONSTRAINT [FK_DatTiec_KhachHang_KhachHangsMaKhachHang] FOREIGN KEY ([KhachHangsMaKhachHang]) REFERENCES [KhachHang] ([MaKhachHang]) ON DELETE CASCADE
+);"
+2023-10-19T00:40:12.5224918+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [MonAn] (
+    [MaMonAn] nvarchar(450) NOT NULL,
+    [TenMonAn] nvarchar(max) NOT NULL,
+    [DonGia] float NOT NULL,
+    [DVT] nvarchar(max) NOT NULL,
+    [MaLoaiMon] nvarchar(max) NOT NULL,
+    [LoaiMonAnsMaLoaiMon] nvarchar(450) NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_MonAn] PRIMARY KEY ([MaMonAn]),
+    CONSTRAINT [FK_MonAn_LoaiMonAn_LoaiMonAnsMaLoaiMon] FOREIGN KEY ([LoaiMonAnsMaLoaiMon]) REFERENCES [LoaiMonAn] ([MaLoaiMon])
+);"
+2023-10-19T00:40:12.5860798+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("63"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [Nuoc] (
+    [MaNuoc] nvarchar(450) NOT NULL,
+    [TenNuoc] nvarchar(max) NOT NULL,
+    [DonGia] float NOT NULL,
+    [DVT] nvarchar(max) NOT NULL,
+    [MaLoaiNuoc] nvarchar(max) NOT NULL,
+    [LoaiNuocsMaLoaiNuoc] nvarchar(450) NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_Nuoc] PRIMARY KEY ([MaNuoc]),
+    CONSTRAINT [FK_Nuoc_LoaiNuoc_LoaiNuocsMaLoaiNuoc] FOREIGN KEY ([LoaiNuocsMaLoaiNuoc]) REFERENCES [LoaiNuoc] ([MaLoaiNuoc])
+);"
+2023-10-19T00:40:12.5904587+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [AccessToken] (
+    [Id] nvarchar(450) NOT NULL,
+    [Token] nvarchar(max) NOT NULL,
+    [StrTokenId] nvarchar(450) NULL,
+    [userName] nvarchar(450) NOT NULL,
+    [IsUsed] bit NOT NULL,
+    [IsRevoked] bit NOT NULL,
+    [ExpireAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_AccessToken] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AccessToken_NguoiDung_userName] FOREIGN KEY ([userName]) REFERENCES [NguoiDung] ([userName]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AccessToken_Token_StrTokenId] FOREIGN KEY ([StrTokenId]) REFERENCES [Token] ([Id])
+);"
+2023-10-19T00:40:12.6041593+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [RefreshToken] (
+    [Id] nvarchar(450) NOT NULL,
+    [Token] nvarchar(max) NOT NULL,
+    [StrTokenId] nvarchar(450) NULL,
+    [userName] nvarchar(450) NOT NULL,
+    [JwtID] nvarchar(max) NOT NULL,
+    [IsUsed] bit NOT NULL,
+    [IsRevoked] bit NOT NULL,
+    [ExpireAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_RefreshToken] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_RefreshToken_NguoiDung_userName] FOREIGN KEY ([userName]) REFERENCES [NguoiDung] ([userName]) ON DELETE CASCADE,
+    CONSTRAINT [FK_RefreshToken_Token_StrTokenId] FOREIGN KEY ([StrTokenId]) REFERENCES [Token] ([Id])
+);"
+2023-10-19T00:40:12.7450371+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("94"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [ChiTietDichVu] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaDichVu] nvarchar(450) NOT NULL,
+    [TongTien] float NOT NULL,
+    [Id] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_ChiTietDichVu] PRIMARY KEY ([MaTiec], [MaDichVu]),
+    CONSTRAINT [FK_ChiTietDichVu_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ChiTietDichVu_DichVu_MaDichVu] FOREIGN KEY ([MaDichVu]) REFERENCES [DichVu] ([MaDichVu]) ON DELETE CASCADE
+);"
+2023-10-19T00:40:13.0854238+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("340"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [ChiTietMenu] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaMenu] nvarchar(450) NOT NULL,
+    [SoLuongMenuBan] int NOT NULL,
+    [TongTien] float NOT NULL,
+    [Id] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_ChiTietMenu] PRIMARY KEY ([MaTiec], [MaMenu]),
+    CONSTRAINT [FK_ChiTietMenu_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ChiTietMenu_Menu_MaMenu] FOREIGN KEY ([MaMenu]) REFERENCES [Menu] ([MaMenu]) ON DELETE CASCADE
+);"
+2023-10-19T00:40:13.1611414+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("75"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [LichSanhTiec] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaSanh] nvarchar(450) NOT NULL,
+    [NgayToChuc] datetimeoffset NOT NULL,
+    [Ca] nvarchar(max) NOT NULL,
+    [TrangThai] nvarchar(max) NOT NULL,
+    [Id] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_LichSanhTiec] PRIMARY KEY ([MaTiec], [MaSanh]),
+    CONSTRAINT [FK_LichSanhTiec_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_LichSanhTiec_Sanh_MaSanh] FOREIGN KEY ([MaSanh]) REFERENCES [Sanh] ([MaSanh]) ON DELETE CASCADE
+);"
+2023-10-19T00:40:13.1782041+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [SuDungKhuyenMai] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaKM] nvarchar(450) NOT NULL,
+    [Id] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_SuDungKhuyenMai] PRIMARY KEY ([MaTiec], [MaKM]),
+    CONSTRAINT [FK_SuDungKhuyenMai_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_SuDungKhuyenMai_KhuyenMai_MaKM] FOREIGN KEY ([MaKM]) REFERENCES [KhuyenMai] ([MaKM]) ON DELETE CASCADE
+);"
+2023-10-19T00:40:13.2089762+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("31"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [MonAnTrongMenu] (
+    [MaMenu] nvarchar(450) NOT NULL,
+    [MaMonAn] nvarchar(450) NOT NULL,
+    [SoLuongMon] int NOT NULL,
+    [DonGia] float NOT NULL,
+    [Id] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_MonAnTrongMenu] PRIMARY KEY ([MaMenu], [MaMonAn]),
+    CONSTRAINT [FK_MonAnTrongMenu_Menu_MaMenu] FOREIGN KEY ([MaMenu]) REFERENCES [Menu] ([MaMenu]) ON DELETE CASCADE,
+    CONSTRAINT [FK_MonAnTrongMenu_MonAn_MaMonAn] FOREIGN KEY ([MaMonAn]) REFERENCES [MonAn] ([MaMonAn]) ON DELETE CASCADE
+);"
+2023-10-19T00:40:17.1360436+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("870"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [ChiTietNuocUong] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaNuoc] nvarchar(450) NOT NULL,
+    [SoLuong] int NOT NULL,
+    [TongTien] float NOT NULL,
+    [Id] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_ChiTietNuocUong] PRIMARY KEY ([MaTiec], [MaNuoc]),
+    CONSTRAINT [FK_ChiTietNuocUong_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ChiTietNuocUong_Nuoc_MaNuoc] FOREIGN KEY ([MaNuoc]) REFERENCES [Nuoc] ([MaNuoc]) ON DELETE CASCADE
+);"
+2023-10-19T00:40:17.1516812+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_AccessToken_StrTokenId] ON [AccessToken] ([StrTokenId]);"
+2023-10-19T00:40:17.1526913+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_AccessToken_userName] ON [AccessToken] ([userName]);"
+2023-10-19T00:40:17.1535516+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_ChiTietDichVu_MaDichVu] ON [ChiTietDichVu] ([MaDichVu]);"
+2023-10-19T00:40:17.1671966+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_ChiTietMenu_MaMenu] ON [ChiTietMenu] ([MaMenu]);"
+2023-10-19T00:40:17.1681515+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_ChiTietNuocUong_MaNuoc] ON [ChiTietNuocUong] ([MaNuoc]);"
+2023-10-19T00:40:17.1691557+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_DatTiec_KhachHangsMaKhachHang] ON [DatTiec] ([KhachHangsMaKhachHang]);"
+2023-10-19T00:40:17.1698967+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_LichSanhTiec_MaSanh] ON [LichSanhTiec] ([MaSanh]);"
+2023-10-19T00:40:28.9399755+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("11,770"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_MonAn_LoaiMonAnsMaLoaiMon] ON [MonAn] ([LoaiMonAnsMaLoaiMon]);"
+2023-10-19T00:40:28.9555189+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_MonAnTrongMenu_MaMonAn] ON [MonAnTrongMenu] ([MaMonAn]);"
+2023-10-19T00:40:28.9718202+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_Nuoc_LoaiNuocsMaLoaiNuoc] ON [Nuoc] ([LoaiNuocsMaLoaiNuoc]);"
+2023-10-19T00:40:28.9734504+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_RefreshToken_StrTokenId] ON [RefreshToken] ([StrTokenId]);"
+2023-10-19T00:40:28.9749206+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_RefreshToken_userName] ON [RefreshToken] ([userName]);"
+2023-10-19T00:40:28.9765525+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_SuDungKhuyenMai_MaKM] ON [SuDungKhuyenMai] ([MaKM]);"
+2023-10-19T00:40:29.0185404+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("42"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20231018173925_Update', N'7.0.9');"
+2023-10-19T01:11:32.8028963+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("52"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T01:11:32.9422462+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("54"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T01:11:32.9527475+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T01:11:32.9634101+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T01:11:33.0493730+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T01:11:33.0907817+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T01:11:34.4346569+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T01:11:34.4368640+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T01:11:34.4424727+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T01:11:34.4444756+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T01:11:34.4457698+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T01:12:19.2842328+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/nguoi-dung/add" responded 401 in 53.1136 ms
+2023-10-19T01:15:32.0779417+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("48"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T01:15:32.2188838+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("55"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T01:15:32.2268063+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T01:15:32.2353710+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T01:15:32.2694328+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T01:15:32.3012410+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T01:15:32.6555534+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T01:15:32.6572805+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T01:15:32.6622096+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T01:15:32.6636649+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T01:15:32.6648184+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T01:16:06.3268503+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("185"ms) [Parameters=["@__model_UserName_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [NguoiDung] AS [n]
+        WHERE [n].[userName] = @__model_UserName_0 AND ([n].[DeletedTime] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-10-19T01:16:06.7817012+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("25"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (DbType = DateTimeOffset), @p3='?' (Size = 4000), @p4='?' (DbType = DateTimeOffset), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [NguoiDung] ([userName], [CreatedBy], [CreatedTime], [DeletedBy], [DeletedTime], [Id], [LastUpdatedBy], [LastUpdatedTime], [email], [hoTen], [password], [sdt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2023-10-19T01:16:06.8255028+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/nguoi-dung/add" responded 200 in 2216.4623 ms
+2023-10-19T01:19:06.0643048+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("195"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE DATABASE [DB_WeddingRestaurant];"
+2023-10-19T01:19:06.1322607+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("38"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [DB_WeddingRestaurant] SET READ_COMMITTED_SNAPSHOT ON;
+END;"
+2023-10-19T01:19:06.1491381+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T01:19:06.2390152+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);"
+2023-10-19T01:19:06.2405570+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T01:19:06.2630839+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T01:19:06.2692000+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T01:19:06.2888166+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) Applying migration '"20231018173925_Update"'.
+2023-10-19T01:19:06.3773847+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [DichVu] (
+    [MaDichVu] nvarchar(450) NOT NULL,
+    [TenDichVu] nvarchar(max) NOT NULL,
+    [DonGiaDichVu] float NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_DichVu] PRIMARY KEY ([MaDichVu])
+);"
+2023-10-19T01:19:06.3795968+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [KhachHang] (
+    [MaKhachHang] nvarchar(450) NOT NULL,
+    [TenKhachHang] nvarchar(max) NOT NULL,
+    [SoDienThoai] nvarchar(max) NOT NULL,
+    [NgaySinh] nvarchar(max) NOT NULL,
+    [CCCD] nvarchar(max) NOT NULL,
+    [Gmail] nvarchar(max) NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_KhachHang] PRIMARY KEY ([MaKhachHang])
+);"
+2023-10-19T01:19:06.3811864+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [KhuyenMai] (
+    [MaKM] nvarchar(450) NOT NULL,
+    [DieuKien] nvarchar(max) NOT NULL,
+    [GiaTri] float NOT NULL,
+    [MoTa] nvarchar(max) NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_KhuyenMai] PRIMARY KEY ([MaKM])
+);"
+2023-10-19T01:19:06.3823793+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [LoaiMonAn] (
+    [MaLoaiMon] nvarchar(450) NOT NULL,
+    [TenLoaiMon] nvarchar(max) NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_LoaiMonAn] PRIMARY KEY ([MaLoaiMon])
+);"
+2023-10-19T01:19:06.3842398+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [LoaiNuoc] (
+    [MaLoaiNuoc] nvarchar(450) NOT NULL,
+    [TenLoaiNuoc] nvarchar(max) NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_LoaiNuoc] PRIMARY KEY ([MaLoaiNuoc])
+);"
+2023-10-19T01:19:06.3903221+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [Menu] (
+    [MaMenu] nvarchar(450) NOT NULL,
+    [DonGiaMenu] float NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_Menu] PRIMARY KEY ([MaMenu])
+);"
+2023-10-19T01:19:06.4283231+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [NguoiDung] (
+    [userName] nvarchar(450) NOT NULL,
+    [password] nvarchar(max) NOT NULL,
+    [hoTen] nvarchar(max) NOT NULL,
+    [sdt] nvarchar(max) NOT NULL,
+    [email] nvarchar(max) NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_NguoiDung] PRIMARY KEY ([userName])
+);"
+2023-10-19T01:19:06.4329773+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [Sanh] (
+    [MaSanh] nvarchar(450) NOT NULL,
+    [TenSanh] nvarchar(max) NOT NULL,
+    [SucChucToiThieu] int NOT NULL,
+    [SucChucToiDa] int NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_Sanh] PRIMARY KEY ([MaSanh])
+);"
+2023-10-19T01:19:06.4356001+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [Token] (
+    [Id] nvarchar(450) NOT NULL,
+    [AccessToken] nvarchar(max) NOT NULL,
+    [RefreshToken] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_Token] PRIMARY KEY ([Id])
+);"
+2023-10-19T01:19:06.4458846+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [DatTiec] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [TenTiec] nvarchar(max) NOT NULL,
+    [SoBan] int NOT NULL,
+    [PhiDichVu] float NOT NULL,
+    [NgayDatTiec] datetimeoffset NOT NULL,
+    [NgayToChuc] datetimeoffset NOT NULL,
+    [TrangThai] nvarchar(max) NOT NULL,
+    [MaKhachHang] nvarchar(max) NOT NULL,
+    [KhachHangsMaKhachHang] nvarchar(450) NOT NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_DatTiec] PRIMARY KEY ([MaTiec]),
+    CONSTRAINT [FK_DatTiec_KhachHang_KhachHangsMaKhachHang] FOREIGN KEY ([KhachHangsMaKhachHang]) REFERENCES [KhachHang] ([MaKhachHang]) ON DELETE CASCADE
+);"
+2023-10-19T01:19:06.4487031+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [MonAn] (
+    [MaMonAn] nvarchar(450) NOT NULL,
+    [TenMonAn] nvarchar(max) NOT NULL,
+    [DonGia] float NOT NULL,
+    [DVT] nvarchar(max) NOT NULL,
+    [MaLoaiMon] nvarchar(max) NOT NULL,
+    [LoaiMonAnsMaLoaiMon] nvarchar(450) NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_MonAn] PRIMARY KEY ([MaMonAn]),
+    CONSTRAINT [FK_MonAn_LoaiMonAn_LoaiMonAnsMaLoaiMon] FOREIGN KEY ([LoaiMonAnsMaLoaiMon]) REFERENCES [LoaiMonAn] ([MaLoaiMon])
+);"
+2023-10-19T01:19:06.4525400+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [Nuoc] (
+    [MaNuoc] nvarchar(450) NOT NULL,
+    [TenNuoc] nvarchar(max) NOT NULL,
+    [DonGia] float NOT NULL,
+    [DVT] nvarchar(max) NOT NULL,
+    [MaLoaiNuoc] nvarchar(max) NOT NULL,
+    [LoaiNuocsMaLoaiNuoc] nvarchar(450) NULL,
+    [Id] nvarchar(max) NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_Nuoc] PRIMARY KEY ([MaNuoc]),
+    CONSTRAINT [FK_Nuoc_LoaiNuoc_LoaiNuocsMaLoaiNuoc] FOREIGN KEY ([LoaiNuocsMaLoaiNuoc]) REFERENCES [LoaiNuoc] ([MaLoaiNuoc])
+);"
+2023-10-19T01:19:09.4552580+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [AccessToken] (
+    [Id] nvarchar(450) NOT NULL,
+    [Token] nvarchar(max) NOT NULL,
+    [StrTokenId] nvarchar(450) NULL,
+    [userName] nvarchar(450) NOT NULL,
+    [IsUsed] bit NOT NULL,
+    [IsRevoked] bit NOT NULL,
+    [ExpireAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_AccessToken] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AccessToken_NguoiDung_userName] FOREIGN KEY ([userName]) REFERENCES [NguoiDung] ([userName]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AccessToken_Token_StrTokenId] FOREIGN KEY ([StrTokenId]) REFERENCES [Token] ([Id])
+);"
+2023-10-19T01:19:09.4590393+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [RefreshToken] (
+    [Id] nvarchar(450) NOT NULL,
+    [Token] nvarchar(max) NOT NULL,
+    [StrTokenId] nvarchar(450) NULL,
+    [userName] nvarchar(450) NOT NULL,
+    [JwtID] nvarchar(max) NOT NULL,
+    [IsUsed] bit NOT NULL,
+    [IsRevoked] bit NOT NULL,
+    [ExpireAt] datetime2 NOT NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_RefreshToken] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_RefreshToken_NguoiDung_userName] FOREIGN KEY ([userName]) REFERENCES [NguoiDung] ([userName]) ON DELETE CASCADE,
+    CONSTRAINT [FK_RefreshToken_Token_StrTokenId] FOREIGN KEY ([StrTokenId]) REFERENCES [Token] ([Id])
+);"
+2023-10-19T01:19:09.4658542+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [ChiTietDichVu] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaDichVu] nvarchar(450) NOT NULL,
+    [TongTien] float NOT NULL,
+    [Id] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_ChiTietDichVu] PRIMARY KEY ([MaTiec], [MaDichVu]),
+    CONSTRAINT [FK_ChiTietDichVu_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ChiTietDichVu_DichVu_MaDichVu] FOREIGN KEY ([MaDichVu]) REFERENCES [DichVu] ([MaDichVu]) ON DELETE CASCADE
+);"
+2023-10-19T01:19:09.4713645+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [ChiTietMenu] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaMenu] nvarchar(450) NOT NULL,
+    [SoLuongMenuBan] int NOT NULL,
+    [TongTien] float NOT NULL,
+    [Id] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_ChiTietMenu] PRIMARY KEY ([MaTiec], [MaMenu]),
+    CONSTRAINT [FK_ChiTietMenu_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ChiTietMenu_Menu_MaMenu] FOREIGN KEY ([MaMenu]) REFERENCES [Menu] ([MaMenu]) ON DELETE CASCADE
+);"
+2023-10-19T01:19:09.4747606+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [LichSanhTiec] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaSanh] nvarchar(450) NOT NULL,
+    [NgayToChuc] datetimeoffset NOT NULL,
+    [Ca] nvarchar(max) NOT NULL,
+    [TrangThai] nvarchar(max) NOT NULL,
+    [Id] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_LichSanhTiec] PRIMARY KEY ([MaTiec], [MaSanh]),
+    CONSTRAINT [FK_LichSanhTiec_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_LichSanhTiec_Sanh_MaSanh] FOREIGN KEY ([MaSanh]) REFERENCES [Sanh] ([MaSanh]) ON DELETE CASCADE
+);"
+2023-10-19T01:19:13.1291505+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [SuDungKhuyenMai] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaKM] nvarchar(450) NOT NULL,
+    [Id] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_SuDungKhuyenMai] PRIMARY KEY ([MaTiec], [MaKM]),
+    CONSTRAINT [FK_SuDungKhuyenMai_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_SuDungKhuyenMai_KhuyenMai_MaKM] FOREIGN KEY ([MaKM]) REFERENCES [KhuyenMai] ([MaKM]) ON DELETE CASCADE
+);"
+2023-10-19T01:19:13.1321526+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [MonAnTrongMenu] (
+    [MaMenu] nvarchar(450) NOT NULL,
+    [MaMonAn] nvarchar(450) NOT NULL,
+    [SoLuongMon] int NOT NULL,
+    [DonGia] float NOT NULL,
+    [Id] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_MonAnTrongMenu] PRIMARY KEY ([MaMenu], [MaMonAn]),
+    CONSTRAINT [FK_MonAnTrongMenu_Menu_MaMenu] FOREIGN KEY ([MaMenu]) REFERENCES [Menu] ([MaMenu]) ON DELETE CASCADE,
+    CONSTRAINT [FK_MonAnTrongMenu_MonAn_MaMonAn] FOREIGN KEY ([MaMonAn]) REFERENCES [MonAn] ([MaMonAn]) ON DELETE CASCADE
+);"
+2023-10-19T01:19:13.1405434+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [ChiTietNuocUong] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaNuoc] nvarchar(450) NOT NULL,
+    [SoLuong] int NOT NULL,
+    [TongTien] float NOT NULL,
+    [Id] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [LastUpdatedBy] nvarchar(max) NULL,
+    [DeletedBy] nvarchar(max) NULL,
+    [CreatedTime] datetimeoffset NULL,
+    [LastUpdatedTime] datetimeoffset NULL,
+    [DeletedTime] datetimeoffset NULL,
+    CONSTRAINT [PK_ChiTietNuocUong] PRIMARY KEY ([MaTiec], [MaNuoc]),
+    CONSTRAINT [FK_ChiTietNuocUong_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ChiTietNuocUong_Nuoc_MaNuoc] FOREIGN KEY ([MaNuoc]) REFERENCES [Nuoc] ([MaNuoc]) ON DELETE CASCADE
+);"
+2023-10-19T01:19:13.1458633+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_AccessToken_StrTokenId] ON [AccessToken] ([StrTokenId]);"
+2023-10-19T01:19:13.1471975+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_AccessToken_userName] ON [AccessToken] ([userName]);"
+2023-10-19T01:19:13.1481030+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_ChiTietDichVu_MaDichVu] ON [ChiTietDichVu] ([MaDichVu]);"
+2023-10-19T01:19:13.1490152+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_ChiTietMenu_MaMenu] ON [ChiTietMenu] ([MaMenu]);"
+2023-10-19T01:19:13.1498324+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_ChiTietNuocUong_MaNuoc] ON [ChiTietNuocUong] ([MaNuoc]);"
+2023-10-19T01:19:16.9121668+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_DatTiec_KhachHangsMaKhachHang] ON [DatTiec] ([KhachHangsMaKhachHang]);"
+2023-10-19T01:19:16.9132484+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_LichSanhTiec_MaSanh] ON [LichSanhTiec] ([MaSanh]);"
+2023-10-19T01:19:16.9148592+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_MonAn_LoaiMonAnsMaLoaiMon] ON [MonAn] ([LoaiMonAnsMaLoaiMon]);"
+2023-10-19T01:19:16.9155932+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_MonAnTrongMenu_MaMonAn] ON [MonAnTrongMenu] ([MaMonAn]);"
+2023-10-19T01:19:16.9242807+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_Nuoc_LoaiNuocsMaLoaiNuoc] ON [Nuoc] ([LoaiNuocsMaLoaiNuoc]);"
+2023-10-19T01:19:16.9251799+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_RefreshToken_StrTokenId] ON [RefreshToken] ([StrTokenId]);"
+2023-10-19T01:19:16.9280766+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_RefreshToken_userName] ON [RefreshToken] ([userName]);"
+2023-10-19T01:19:16.9288164+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_SuDungKhuyenMai_MaKM] ON [SuDungKhuyenMai] ([MaKM]);"
+2023-10-19T01:19:16.9344278+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20231018173925_Update', N'7.0.9');"
+2023-10-19T01:19:16.9417382+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) Applying migration '"20231018181855_UpdateDB"'.
+2023-10-19T01:19:16.9724811+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""ALTER TABLE [NguoiDung] ADD [quyen] nvarchar(max) NOT NULL DEFAULT N'';"
+2023-10-19T01:19:16.9736631+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20231018181855_UpdateDB', N'7.0.9');"
+2023-10-19T04:37:29.8694575+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("68"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T04:37:30.0343899+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("61"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T04:37:30.0426544+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T04:37:30.0526082+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T04:37:30.1117936+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T04:37:30.1464620+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T04:37:31.2770438+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T04:37:31.2788503+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T04:37:31.2854862+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T04:37:31.2881626+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T04:37:31.2897502+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T04:56:26.0477427+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("65"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T04:56:26.1973328+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("53"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T04:56:26.2084811+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T04:56:26.2162394+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T04:56:26.2695035+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T04:56:26.3077354+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T04:56:26.7999510+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T04:56:26.8016355+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T04:56:26.8059673+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T04:56:26.8085349+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T04:56:26.8097649+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T04:56:59.2083221+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/sanh/add" responded 401 in 42.7133 ms
+2023-10-19T04:57:28.4203528+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("48"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T04:57:28.5616360+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("47"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T04:57:28.5718646+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T04:57:28.5813923+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T04:57:28.6143594+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T04:57:28.6556694+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T04:57:29.0261540+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T04:57:29.0278937+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T04:57:29.0314736+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T04:57:29.0334873+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T04:57:29.0340368+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T04:58:19.6492261+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("136"ms) [Parameters=["@__model_MaSanh_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Sanh] AS [s]
+        WHERE [s].[MaSanh] = @__model_MaSanh_0 AND ([s].[DeletedTime] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-10-19T04:58:20.1339437+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("27"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (DbType = DateTimeOffset), @p3='?' (Size = 4000), @p4='?' (DbType = DateTimeOffset), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTimeOffset), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Sanh] ([MaSanh], [CreatedBy], [CreatedTime], [DeletedBy], [DeletedTime], [Id], [LastUpdatedBy], [LastUpdatedTime], [SucChucToiDa], [SucChucToiThieu], [TenSanh])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);"
+2023-10-19T04:58:20.1853437+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/sanh/add" responded 200 in 2038.2064 ms
+2023-10-19T04:59:01.1738193+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/print-succhua/S001" responded 400 in 153.6243 ms
+2023-10-19T04:59:12.1272038+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[CreatedBy], [s].[CreatedTime], [s].[DeletedBy], [s].[DeletedTime], [s].[Id], [s].[LastUpdatedBy], [s].[LastUpdatedTime], [s].[SucChucToiDa], [s].[SucChucToiThieu], [s].[TenSanh]
+FROM [Sanh] AS [s]
+WHERE [s].[DeletedTime] IS NULL"
+2023-10-19T04:59:12.1764840+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 114.8291 ms
+2023-10-19T04:59:21.2369826+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[CreatedBy], [s].[CreatedTime], [s].[DeletedBy], [s].[DeletedTime], [s].[Id], [s].[LastUpdatedBy], [s].[LastUpdatedTime], [s].[SucChucToiDa], [s].[SucChucToiThieu], [s].[TenSanh]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[DeletedTime] IS NULL)"
+2023-10-19T04:59:21.2412156+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/print-succhua/S001" responded 200 in 33.2847 ms
+2023-10-19T05:00:55.3362591+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("47"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:00:55.4693461+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("45"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:00:55.4790137+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:00:55.4928673+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:00:55.5357090+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:00:55.5817897+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:00:55.9417411+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:00:55.9439301+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:00:55.9475686+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:00:55.9492533+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:00:55.9519792+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T05:01:36.5317943+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[CreatedBy], [s].[CreatedTime], [s].[DeletedBy], [s].[DeletedTime], [s].[Id], [s].[LastUpdatedBy], [s].[LastUpdatedTime], [s].[SucChucToiDa], [s].[SucChucToiThieu], [s].[TenSanh]
+FROM [Sanh] AS [s]
+WHERE [s].[DeletedTime] IS NULL"
+2023-10-19T05:01:36.6129428+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 1101.6620 ms
+2023-10-19T05:01:59.2265834+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("78"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[CreatedBy], [s].[CreatedTime], [s].[DeletedBy], [s].[DeletedTime], [s].[Id], [s].[LastUpdatedBy], [s].[LastUpdatedTime], [s].[SucChucToiDa], [s].[SucChucToiThieu], [s].[TenSanh]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[DeletedTime] IS NULL)"
+2023-10-19T05:04:53.1432923+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("48"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:04:53.2699692+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("44"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:04:53.2825167+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:04:53.2864369+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:04:53.3233728+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:04:53.3555240+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:04:53.6905024+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:04:53.6919445+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:04:53.6955912+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:04:53.6971129+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:04:53.6978895+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T05:05:04.8179838+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[CreatedBy], [s].[CreatedTime], [s].[DeletedBy], [s].[DeletedTime], [s].[Id], [s].[LastUpdatedBy], [s].[LastUpdatedTime], [s].[SucChucToiDa], [s].[SucChucToiThieu], [s].[TenSanh]
+FROM [Sanh] AS [s]
+WHERE [s].[DeletedTime] IS NULL"
+2023-10-19T05:05:04.8789576+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 770.5246 ms
+2023-10-19T05:05:30.3898077+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("42"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[CreatedBy], [s].[CreatedTime], [s].[DeletedBy], [s].[DeletedTime], [s].[Id], [s].[LastUpdatedBy], [s].[LastUpdatedTime], [s].[SucChucToiDa], [s].[SucChucToiThieu], [s].[TenSanh]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[DeletedTime] IS NULL)"
+2023-10-19T05:05:30.3944916+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/print-succhua/S001" responded 200 in 210.7724 ms
+2023-10-19T05:06:28.1715217+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("55"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:06:28.2934965+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("42"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:06:28.3024519+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:06:28.3061256+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:06:28.3418817+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:06:28.3843320+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:06:28.7436409+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:06:28.7446768+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:06:28.7483643+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:06:28.7502556+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:06:28.7508740+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T05:06:52.3751003+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("65"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[CreatedBy], [s].[CreatedTime], [s].[DeletedBy], [s].[DeletedTime], [s].[Id], [s].[LastUpdatedBy], [s].[LastUpdatedTime], [s].[SucChucToiDa], [s].[SucChucToiThieu], [s].[TenSanh]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[DeletedTime] IS NULL)"
+2023-10-19T05:06:52.4254966+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/print-succhua/S001" responded 200 in 1428.7864 ms
+2023-10-19T05:17:54.5182158+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("81"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:17:54.6946803+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("54"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:17:54.7045920+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:17:54.7078061+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:17:54.7703681+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:17:54.8277937+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:17:55.4098962+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:17:55.4121346+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:17:55.4168212+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:17:55.4187697+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:17:55.4198906+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T05:18:14.5614575+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("92"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[CreatedBy], [s].[CreatedTime], [s].[DeletedBy], [s].[DeletedTime], [s].[Id], [s].[LastUpdatedBy], [s].[LastUpdatedTime], [s].[SucChucToiDa], [s].[SucChucToiThieu], [s].[TenSanh]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[DeletedTime] IS NULL)"
+2023-10-19T05:18:14.6272883+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/print-succhua/S001" responded 200 in 1453.2503 ms
+2023-10-19T05:18:51.6060118+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("71"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:18:51.7650805+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("54"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:18:51.7728598+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:18:51.7755952+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:18:51.8141296+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:18:51.8499895+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:18:52.2067317+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:18:52.2088848+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:18:52.2128354+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:18:52.2152136+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:18:52.2169816+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T05:32:23.4321630+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("63"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:32:23.5823644+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("50"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:32:23.6039118+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:32:23.6085788+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:32:23.6489937+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:32:23.6897727+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:32:24.1902541+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:32:24.1924222+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:32:24.1957827+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:32:24.1966387+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:32:24.1983090+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T05:33:05.7491105+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("52"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:33:05.8853722+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("47"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:33:05.8951269+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:33:05.8981900+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:33:05.9398709+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:33:05.9774168+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:33:06.3326051+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:33:06.3339529+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:33:06.3371753+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:33:06.3384308+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:33:06.3395156+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T05:33:59.3927255+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("60"ms) [Parameters=["@__model_MaTiec_0='?' (Size = 450), @__model_MaSanh_1='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [LichSanhTiec] AS [l]
+        WHERE [l].[MaTiec] = @__model_MaTiec_0 AND [l].[MaSanh] = @__model_MaSanh_1 AND ([l].[DeletedTime] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-10-19T05:33:59.9400059+07:00 [ERR] (Microsoft.EntityFrameworkCore.Database.Command) Failed executing DbCommand ("150"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTimeOffset), @p5='?' (Size = 4000), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [LichSanhTiec] ([MaSanh], [MaTiec], [Ca], [CreatedBy], [CreatedTime], [DeletedBy], [DeletedTime], [Id], [LastUpdatedBy], [LastUpdatedTime], [NgayToChuc], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2023-10-19T05:34:00.1188219+07:00 [ERR] (Microsoft.EntityFrameworkCore.Update) An exception occurred in the database while saving changes for context type '"WeddingRestaurant.Repository.Infrastructure.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_LichSanhTiec_DatTiec_MaTiec\". The conflict occurred in database \"DB_WeddingRestaurant\", table \"dbo.DatTiec\", column 'MaTiec'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:79f471d3-79da-44f2-800d-6e05d0660d52
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_LichSanhTiec_DatTiec_MaTiec". The conflict occurred in database "DB_WeddingRestaurant", table "dbo.DatTiec", column 'MaTiec'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:79f471d3-79da-44f2-800d-6e05d0660d52
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-10-19T05:34:00.5356314+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/lich-sanh-tiec/add" responded 400 in 2576.8583 ms
+2023-10-19T05:34:19.0810609+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__model_MaTiec_0='?' (Size = 450), @__model_MaSanh_1='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [LichSanhTiec] AS [l]
+        WHERE [l].[MaTiec] = @__model_MaTiec_0 AND [l].[MaSanh] = @__model_MaSanh_1 AND ([l].[DeletedTime] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-10-19T05:34:19.2226884+07:00 [ERR] (Microsoft.EntityFrameworkCore.Database.Command) Failed executing DbCommand ("137"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTimeOffset), @p5='?' (Size = 4000), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [LichSanhTiec] ([MaSanh], [MaTiec], [Ca], [CreatedBy], [CreatedTime], [DeletedBy], [DeletedTime], [Id], [LastUpdatedBy], [LastUpdatedTime], [NgayToChuc], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2023-10-19T05:34:19.2288282+07:00 [ERR] (Microsoft.EntityFrameworkCore.Update) An exception occurred in the database while saving changes for context type '"WeddingRestaurant.Repository.Infrastructure.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_LichSanhTiec_DatTiec_MaTiec\". The conflict occurred in database \"DB_WeddingRestaurant\", table \"dbo.DatTiec\", column 'MaTiec'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:79f471d3-79da-44f2-800d-6e05d0660d52
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_LichSanhTiec_DatTiec_MaTiec". The conflict occurred in database "DB_WeddingRestaurant", table "dbo.DatTiec", column 'MaTiec'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:79f471d3-79da-44f2-800d-6e05d0660d52
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-10-19T05:34:19.3059519+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/lich-sanh-tiec/add" responded 400 in 326.1172 ms
+2023-10-19T05:34:27.6759332+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/lich-sanh-tiec/add" responded 400 in 31.7244 ms
+2023-10-19T05:35:47.6579576+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("51"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:35:47.7935460+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("51"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:35:47.8020855+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:35:47.8112071+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:35:47.8540047+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:35:47.8869638+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:35:48.2580092+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:35:48.2603925+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:35:48.2644540+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:35:48.2657094+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:35:48.2672546+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T05:36:23.9160200+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("70"ms) [Parameters=["@__model_MaTiec_0='?' (Size = 450), @__model_MaSanh_1='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [LichSanhTiec] AS [l]
+        WHERE [l].[MaTiec] = @__model_MaTiec_0 AND [l].[MaSanh] = @__model_MaSanh_1 AND ([l].[DeletedTime] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-10-19T05:36:24.3226331+07:00 [ERR] (Microsoft.EntityFrameworkCore.Database.Command) Failed executing DbCommand ("15"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTimeOffset), @p5='?' (Size = 4000), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [LichSanhTiec] ([MaSanh], [MaTiec], [Ca], [CreatedBy], [CreatedTime], [DeletedBy], [DeletedTime], [Id], [LastUpdatedBy], [LastUpdatedTime], [NgayToChuc], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2023-10-19T05:36:24.4042436+07:00 [ERR] (Microsoft.EntityFrameworkCore.Update) An exception occurred in the database while saving changes for context type '"WeddingRestaurant.Repository.Infrastructure.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_LichSanhTiec_DatTiec_MaTiec\". The conflict occurred in database \"DB_WeddingRestaurant\", table \"dbo.DatTiec\", column 'MaTiec'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:44e4dbdb-9d4b-47dd-9ebf-76771db02d2a
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_LichSanhTiec_DatTiec_MaTiec". The conflict occurred in database "DB_WeddingRestaurant", table "dbo.DatTiec", column 'MaTiec'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:44e4dbdb-9d4b-47dd-9ebf-76771db02d2a
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-10-19T05:36:24.6886286+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/lich-sanh-tiec/add" responded 400 in 2241.3130 ms
+2023-10-19T05:46:03.6255243+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("56"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:46:03.7853724+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("60"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:46:03.7934931+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:46:03.8062109+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:46:03.8534070+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:46:03.8875061+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:46:04.3864736+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:46:04.3878944+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:46:04.3914801+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:46:04.3928775+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:46:04.3939399+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T05:46:33.9480987+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("47"ms) [Parameters=["@__model_MaTiec_0='?' (Size = 450), @__model_MaSanh_1='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [LichSanhTiec] AS [l]
+        WHERE [l].[MaTiec] = @__model_MaTiec_0 AND [l].[MaSanh] = @__model_MaSanh_1 AND ([l].[DeletedTime] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-10-19T05:46:34.2282259+07:00 [ERR] (Microsoft.EntityFrameworkCore.Database.Command) Failed executing DbCommand ("13"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTimeOffset), @p5='?' (Size = 4000), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [LichSanhTiec] ([MaSanh], [MaTiec], [Ca], [CreatedBy], [CreatedTime], [DeletedBy], [DeletedTime], [Id], [LastUpdatedBy], [LastUpdatedTime], [NgayToChuc], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2023-10-19T05:46:34.2903497+07:00 [ERR] (Microsoft.EntityFrameworkCore.Update) An exception occurred in the database while saving changes for context type '"WeddingRestaurant.Repository.Infrastructure.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_LichSanhTiec_DatTiec_MaTiec\". The conflict occurred in database \"DB_WeddingRestaurant\", table \"dbo.DatTiec\", column 'MaTiec'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:0cc00ef6-d7fc-4aa9-ad13-52942531cc45
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_LichSanhTiec_DatTiec_MaTiec". The conflict occurred in database "DB_WeddingRestaurant", table "dbo.DatTiec", column 'MaTiec'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:0cc00ef6-d7fc-4aa9-ad13-52942531cc45
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-10-19T05:46:34.5426161+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/lich-sanh-tiec/add" responded 400 in 1504.2223 ms
+2023-10-19T05:47:22.7278808+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("48"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:47:22.8563187+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("48"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:47:22.8657840+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:47:22.8695887+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:47:22.9038595+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:47:22.9369141+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:47:23.3525613+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:47:23.3540950+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:47:23.3578652+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:47:23.3591967+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:47:23.3601109+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T05:48:18.9804411+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("48"ms) [Parameters=["@__model_MaTiec_0='?' (Size = 450), @__model_MaSanh_1='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [LichSanhTiec] AS [l]
+        WHERE [l].[MaTiec] = @__model_MaTiec_0 AND [l].[MaSanh] = @__model_MaSanh_1 AND ([l].[DeletedTime] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-10-19T05:49:25.2561645+07:00 [ERR] (Microsoft.EntityFrameworkCore.Database.Command) Failed executing DbCommand ("12"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTimeOffset), @p5='?' (Size = 4000), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [LichSanhTiec] ([MaSanh], [MaTiec], [Ca], [CreatedBy], [CreatedTime], [DeletedBy], [DeletedTime], [Id], [LastUpdatedBy], [LastUpdatedTime], [NgayToChuc], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2023-10-19T05:49:25.3137153+07:00 [ERR] (Microsoft.EntityFrameworkCore.Update) An exception occurred in the database while saving changes for context type '"WeddingRestaurant.Repository.Infrastructure.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_LichSanhTiec_DatTiec_MaTiec\". The conflict occurred in database \"DB_WeddingRestaurant\", table \"dbo.DatTiec\", column 'MaTiec'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:6dd2d843-857a-4291-bd25-65c4f3bf78d8
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_LichSanhTiec_DatTiec_MaTiec". The conflict occurred in database "DB_WeddingRestaurant", table "dbo.DatTiec", column 'MaTiec'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:6dd2d843-857a-4291-bd25-65c4f3bf78d8
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-10-19T05:50:21.2070214+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("57"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:50:21.3302713+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("44"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:50:21.3384063+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:50:21.3427939+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:50:21.3945720+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:50:21.4389598+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:50:21.8436080+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:50:21.8458750+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:50:21.8519396+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:50:21.8538026+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:50:21.8546886+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T05:51:13.7372254+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("46"ms) [Parameters=["@__model_MaTiec_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [DatTiec] AS [d]
+        WHERE [d].[MaTiec] = @__model_MaTiec_0 AND ([d].[DeletedTime] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-10-19T05:51:14.0317335+07:00 [ERR] (Microsoft.EntityFrameworkCore.Database.Command) Failed executing DbCommand ("22"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (DbType = DateTimeOffset), @p3='?' (Size = 4000), @p4='?' (DbType = DateTimeOffset), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 4000), @p10='?' (DbType = DateTimeOffset), @p11='?' (DbType = DateTimeOffset), @p12='?' (DbType = Double), @p13='?' (DbType = Int32), @p14='?' (Size = 4000), @p15='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [DatTiec] ([MaTiec], [CreatedBy], [CreatedTime], [DeletedBy], [DeletedTime], [Id], [KhachHangsMaKhachHang], [LastUpdatedBy], [LastUpdatedTime], [MaKhachHang], [NgayDatTiec], [NgayToChuc], [PhiDichVu], [SoBan], [TenTiec], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);"
+2023-10-19T05:51:14.0682818+07:00 [ERR] (Microsoft.EntityFrameworkCore.Update) An exception occurred in the database while saving changes for context type '"WeddingRestaurant.Repository.Infrastructure.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'KhachHangsMaKhachHang', table 'DB_WeddingRestaurant.dbo.DatTiec'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:6d916274-d4b8-48bd-8396-32b638111ee5
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'KhachHangsMaKhachHang', table 'DB_WeddingRestaurant.dbo.DatTiec'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:6d916274-d4b8-48bd-8396-32b638111ee5
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-10-19T05:51:14.2398604+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/dat-tiec/add" responded 400 in 1340.4016 ms
+2023-10-19T05:52:22.2858516+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("53"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:52:22.4275432+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("44"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:52:22.4369201+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:52:22.4457823+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:52:22.4783463+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:52:22.5203269+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:52:22.8610549+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:52:22.8633265+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:52:22.8672634+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:52:22.8693916+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:52:22.8701715+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T05:53:00.5998105+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:53:00.6549898+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:53:00.6579404+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:53:00.6584373+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:53:00.6731175+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:53:00.6899658+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) Applying migration '"20231018225253_UpdateDB2"'.
+2023-10-19T05:53:00.7787488+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""ALTER TABLE [DatTiec] DROP CONSTRAINT [FK_DatTiec_KhachHang_KhachHangsMaKhachHang];"
+2023-10-19T05:53:00.8242157+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("45"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[DatTiec]') AND [c].[name] = N'KhachHangsMaKhachHang');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [DatTiec] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [DatTiec] ALTER COLUMN [KhachHangsMaKhachHang] nvarchar(450) NULL;"
+2023-10-19T05:53:00.8310001+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""ALTER TABLE [DatTiec] ADD CONSTRAINT [FK_DatTiec_KhachHang_KhachHangsMaKhachHang] FOREIGN KEY ([KhachHangsMaKhachHang]) REFERENCES [KhachHang] ([MaKhachHang]);"
+2023-10-19T05:53:00.8360258+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20231018225253_UpdateDB2', N'7.0.9');"
+2023-10-19T05:53:13.2070123+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("48"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:53:13.3517849+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("55"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:53:13.3595887+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:53:13.3641064+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:53:13.4171429+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:53:13.4536324+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:53:13.8552177+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:53:13.8576257+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:53:13.8630501+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:53:13.8648215+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:53:13.8665198+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T05:53:34.6853874+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("76"ms) [Parameters=["@__model_MaTiec_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [DatTiec] AS [d]
+        WHERE [d].[MaTiec] = @__model_MaTiec_0 AND ([d].[DeletedTime] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-10-19T05:53:35.0667902+07:00 [ERR] (Microsoft.EntityFrameworkCore.Database.Command) Failed executing DbCommand ("14"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (DbType = DateTimeOffset), @p3='?' (Size = 4000), @p4='?' (DbType = DateTimeOffset), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 4000), @p10='?' (DbType = DateTimeOffset), @p11='?' (DbType = DateTimeOffset), @p12='?' (DbType = Double), @p13='?' (DbType = Int32), @p14='?' (Size = 4000), @p15='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [DatTiec] ([MaTiec], [CreatedBy], [CreatedTime], [DeletedBy], [DeletedTime], [Id], [KhachHangsMaKhachHang], [LastUpdatedBy], [LastUpdatedTime], [MaKhachHang], [NgayDatTiec], [NgayToChuc], [PhiDichVu], [SoBan], [TenTiec], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);"
+2023-10-19T05:53:35.1505677+07:00 [ERR] (Microsoft.EntityFrameworkCore.Update) An exception occurred in the database while saving changes for context type '"WeddingRestaurant.Repository.Infrastructure.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'MaKhachHang', table 'DB_WeddingRestaurant.dbo.DatTiec'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:de61e653-04d1-4588-b5f8-a5ccc18872b6
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'MaKhachHang', table 'DB_WeddingRestaurant.dbo.DatTiec'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:de61e653-04d1-4588-b5f8-a5ccc18872b6
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-10-19T05:53:35.4039283+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/dat-tiec/add" responded 400 in 2051.5153 ms
+2023-10-19T05:53:54.1092120+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__model_MaTiec_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [DatTiec] AS [d]
+        WHERE [d].[MaTiec] = @__model_MaTiec_0 AND ([d].[DeletedTime] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-10-19T05:53:54.1179562+07:00 [ERR] (Microsoft.EntityFrameworkCore.Database.Command) Failed executing DbCommand ("4"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (DbType = DateTimeOffset), @p3='?' (Size = 4000), @p4='?' (DbType = DateTimeOffset), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 4000), @p10='?' (DbType = DateTimeOffset), @p11='?' (DbType = DateTimeOffset), @p12='?' (DbType = Double), @p13='?' (DbType = Int32), @p14='?' (Size = 4000), @p15='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [DatTiec] ([MaTiec], [CreatedBy], [CreatedTime], [DeletedBy], [DeletedTime], [Id], [KhachHangsMaKhachHang], [LastUpdatedBy], [LastUpdatedTime], [MaKhachHang], [NgayDatTiec], [NgayToChuc], [PhiDichVu], [SoBan], [TenTiec], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);"
+2023-10-19T05:53:54.1231104+07:00 [ERR] (Microsoft.EntityFrameworkCore.Update) An exception occurred in the database while saving changes for context type '"WeddingRestaurant.Repository.Infrastructure.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'MaKhachHang', table 'DB_WeddingRestaurant.dbo.DatTiec'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:de61e653-04d1-4588-b5f8-a5ccc18872b6
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'MaKhachHang', table 'DB_WeddingRestaurant.dbo.DatTiec'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:de61e653-04d1-4588-b5f8-a5ccc18872b6
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-10-19T05:53:54.1803139+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/dat-tiec/add" responded 400 in 160.8506 ms
+2023-10-19T05:54:36.4665151+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("47"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:54:36.6094021+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("61"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:54:36.6231299+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:54:36.6255822+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:54:36.6704855+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:54:36.7130266+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:54:37.0695907+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:54:37.0715531+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:54:37.0754631+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:54:37.0766629+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:54:37.0775204+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T05:55:07.6381118+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("49"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:55:07.7900978+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("50"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:55:07.8017851+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:55:07.8065393+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:55:07.8573303+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:55:07.8944966+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:55:08.3028040+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:55:08.3052255+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:55:08.3099073+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:55:08.3116127+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:55:08.3122279+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T05:55:30.6607825+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("74"ms) [Parameters=["@__model_MaKhachHang_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [KhachHang] AS [k]
+        WHERE [k].[MaKhachHang] = @__model_MaKhachHang_0 AND ([k].[DeletedTime] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-10-19T05:55:31.0823191+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("8"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTimeOffset), @p4='?' (Size = 4000), @p5='?' (DbType = DateTimeOffset), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [KhachHang] ([MaKhachHang], [CCCD], [CreatedBy], [CreatedTime], [DeletedBy], [DeletedTime], [Gmail], [Id], [LastUpdatedBy], [LastUpdatedTime], [NgaySinh], [SoDienThoai], [TenKhachHang])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);"
+2023-10-19T05:55:31.1326463+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/khach-hang/add" responded 200 in 1736.7196 ms
+2023-10-19T05:55:59.7211408+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__model_MaTiec_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [DatTiec] AS [d]
+        WHERE [d].[MaTiec] = @__model_MaTiec_0 AND ([d].[DeletedTime] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-10-19T05:55:59.8651109+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("33"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (DbType = DateTimeOffset), @p3='?' (Size = 4000), @p4='?' (DbType = DateTimeOffset), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 4000), @p10='?' (DbType = DateTimeOffset), @p11='?' (DbType = DateTimeOffset), @p12='?' (DbType = Double), @p13='?' (DbType = Int32), @p14='?' (Size = 4000), @p15='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [DatTiec] ([MaTiec], [CreatedBy], [CreatedTime], [DeletedBy], [DeletedTime], [Id], [KhachHangsMaKhachHang], [LastUpdatedBy], [LastUpdatedTime], [MaKhachHang], [NgayDatTiec], [NgayToChuc], [PhiDichVu], [SoBan], [TenTiec], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);"
+2023-10-19T05:55:59.8690528+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/dat-tiec/add" responded 200 in 306.1645 ms
+2023-10-19T05:56:07.4015291+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__model_MaTiec_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [DatTiec] AS [d]
+        WHERE [d].[MaTiec] = @__model_MaTiec_0 AND ([d].[DeletedTime] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-10-19T05:56:07.4072309+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (DbType = DateTimeOffset), @p3='?' (Size = 4000), @p4='?' (DbType = DateTimeOffset), @p5='?' (Size = 4000), @p6='?' (Size = 450), @p7='?' (Size = 4000), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 4000), @p10='?' (DbType = DateTimeOffset), @p11='?' (DbType = DateTimeOffset), @p12='?' (DbType = Double), @p13='?' (DbType = Int32), @p14='?' (Size = 4000), @p15='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [DatTiec] ([MaTiec], [CreatedBy], [CreatedTime], [DeletedBy], [DeletedTime], [Id], [KhachHangsMaKhachHang], [LastUpdatedBy], [LastUpdatedTime], [MaKhachHang], [NgayDatTiec], [NgayToChuc], [PhiDichVu], [SoBan], [TenTiec], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);"
+2023-10-19T05:56:07.4106458+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/dat-tiec/add" responded 200 in 18.5116 ms
+2023-10-19T05:56:46.8602941+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__model_MaTiec_0='?' (Size = 450), @__model_MaSanh_1='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [LichSanhTiec] AS [l]
+        WHERE [l].[MaTiec] = @__model_MaTiec_0 AND [l].[MaSanh] = @__model_MaSanh_1 AND ([l].[DeletedTime] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-10-19T05:56:47.0605431+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("138"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTimeOffset), @p5='?' (Size = 4000), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [LichSanhTiec] ([MaSanh], [MaTiec], [Ca], [CreatedBy], [CreatedTime], [DeletedBy], [DeletedTime], [Id], [LastUpdatedBy], [LastUpdatedTime], [NgayToChuc], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2023-10-19T05:56:47.0666825+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/lich-sanh-tiec/add" responded 200 in 236.2936 ms
+2023-10-19T05:56:55.1932238+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__model_MaTiec_0='?' (Size = 450), @__model_MaSanh_1='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [LichSanhTiec] AS [l]
+        WHERE [l].[MaTiec] = @__model_MaTiec_0 AND [l].[MaSanh] = @__model_MaSanh_1 AND ([l].[DeletedTime] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-10-19T05:56:55.2095223+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("6"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTimeOffset), @p5='?' (Size = 4000), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTimeOffset), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [LichSanhTiec] ([MaSanh], [MaTiec], [Ca], [CreatedBy], [CreatedTime], [DeletedBy], [DeletedTime], [Id], [LastUpdatedBy], [LastUpdatedTime], [NgayToChuc], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);"
+2023-10-19T05:56:55.2137163+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/lich-sanh-tiec/add" responded 200 in 24.3028 ms
+2023-10-19T05:58:32.8116668+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("47"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:58:32.9391754+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("49"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:58:32.9525565+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T05:58:32.9639516+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T05:58:33.0005450+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T05:58:33.0369125+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T05:58:33.3617603+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T05:58:33.3637231+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T05:58:33.3686300+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T05:58:33.3706126+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T05:58:33.3712017+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T06:00:17.4473876+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("48"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T06:00:17.5760847+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("52"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T06:00:17.5851285+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T06:00:17.5962313+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T06:00:17.6376997+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T06:00:17.6704537+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T06:00:18.0361391+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T06:00:18.0382064+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T06:00:18.0427122+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T06:00:18.0444218+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T06:00:18.0454176+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T06:00:39.1759671+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/lich-sanh-tiec/print-lichsanhtiec-sanh/S001" responded 400 in 436.7809 ms
+2023-10-19T18:49:39.9433901+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("117"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T18:49:40.2650710+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("158"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T18:49:40.2891692+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T18:49:40.2947908+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T18:49:40.3628376+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T18:49:40.4431681+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T18:49:41.3262285+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T18:49:41.3284013+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T18:49:41.3373612+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T18:49:41.3397423+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T18:49:41.3414845+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T18:53:05.4529614+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("92"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T18:53:05.6659498+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("76"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T18:53:05.6913876+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T18:53:05.7009563+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T18:53:05.7533193+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T18:53:05.8044434+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T18:53:06.4594759+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T18:53:06.4623073+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T18:53:06.4684709+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T18:53:06.4718424+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T18:53:06.4737992+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T18:54:23.5818793+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("93"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T18:54:23.7641530+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("70"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T18:54:23.7735566+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T18:54:23.7819086+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T18:54:23.8604745+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T18:54:23.9188905+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T18:54:24.4823598+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T18:54:24.4852650+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T18:54:24.4894660+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T18:54:24.4984475+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T18:54:24.5054772+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T18:55:32.9965797+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("62"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T18:55:33.1795598+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("64"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T18:55:33.1932142+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T18:55:33.2196711+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T18:55:33.2856677+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T18:55:33.3436300+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T18:55:33.8365688+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T18:55:33.8398742+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T18:55:33.8464184+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T18:55:33.8496740+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T18:55:33.8550468+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T18:58:25.7943107+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("89"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T18:58:26.1282182+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("174"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T18:58:26.1462575+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T18:58:26.1571818+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T18:58:26.2497461+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("37"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T18:58:26.3039560+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T18:58:26.9274051+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T18:58:26.9291983+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T18:58:26.9366818+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T18:58:26.9388126+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T18:58:26.9403732+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T18:59:16.5044473+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("92"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T18:59:16.8261712+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("178"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T18:59:16.8516251+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T18:59:16.8750640+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T18:59:16.9863028+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("46"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T18:59:17.0232970+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T18:59:17.6588196+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T18:59:17.6622329+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T18:59:17.6926227+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T18:59:17.6960415+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T18:59:17.7243406+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T18:59:45.5924060+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("317"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaTiec], [l].[MaSanh], [l].[Ca], [l].[CreatedBy], [l].[CreatedTime], [l].[DeletedBy], [l].[DeletedTime], [l].[Id], [l].[LastUpdatedBy], [l].[LastUpdatedTime], [l].[NgayToChuc], [l].[TrangThai]
+FROM [LichSanhTiec] AS [l]
+WHERE [l].[MaSanh] = @__id_0 AND ([l].[DeletedTime] IS NULL)"
+2023-10-19T19:02:52.9304021+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("97"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T19:02:53.2972935+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("191"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T19:02:53.3098495+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-19T19:02:53.3148432+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-19T19:02:53.4207616+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("50"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-19T19:02:53.4840154+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-10-19T19:02:54.0720289+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-10-19T19:02:54.0738338+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-10-19T19:02:54.0802147+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-10-19T19:02:54.0832925+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-10-19T19:02:54.0848491+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-10-19T19:03:09.0107766+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("207"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaTiec], [l].[MaSanh], [l].[Ca], [l].[CreatedBy], [l].[CreatedTime], [l].[DeletedBy], [l].[DeletedTime], [l].[Id], [l].[LastUpdatedBy], [l].[LastUpdatedTime], [l].[NgayToChuc], [l].[TrangThai]
+FROM [LichSanhTiec] AS [l]
+WHERE [l].[MaSanh] = @__id_0 AND ([l].[DeletedTime] IS NULL)"
+2023-10-19T19:03:09.1338899+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/lich-sanh-tiec/print-lichsanhtiec-sanh/S001" responded 200 in 1859.4209 ms

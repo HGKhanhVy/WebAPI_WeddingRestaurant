@@ -1,0 +1,17 @@
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\bin\Debug\net6.0\WeddingRestaurant.Contract.Repository.deps.json
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\bin\Debug\net6.0\WeddingRestaurant.Contract.Repository.runtimeconfig.json
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\bin\Debug\net6.0\WeddingRestaurant.Contract.Repository.dll
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\bin\Debug\net6.0\WeddingRestaurant.Contract.Repository.pdb
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\bin\Debug\net6.0\WeddingRestaurant.Core.dll
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\bin\Debug\net6.0\WeddingRestaurant.Core.pdb
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\obj\Debug\net6.0\WeddingRestaurant.Contract.Repository.csproj.AssemblyReference.cache
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\obj\Debug\net6.0\WeddingRestaurant.Contract.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\obj\Debug\net6.0\WeddingRestaurant.Contract.Repository.AssemblyInfoInputs.cache
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\obj\Debug\net6.0\WeddingRestaurant.Contract.Repository.AssemblyInfo.cs
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\obj\Debug\net6.0\WeddingRestaurant.Contract.Repository.csproj.CoreCompileInputs.cache
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\obj\Debug\net6.0\WeddingRestaurant.Contract.Repository.csproj.CopyComplete
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\obj\Debug\net6.0\WeddingRestaurant.Contract.Repository.dll
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\obj\Debug\net6.0\refint\WeddingRestaurant.Contract.Repository.dll
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\obj\Debug\net6.0\WeddingRestaurant.Contract.Repository.pdb
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\obj\Debug\net6.0\WeddingRestaurant.Contract.Repository.genruntimeconfig.cache
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Contract.Repository\obj\Debug\net6.0\ref\WeddingRestaurant.Contract.Repository.dll
