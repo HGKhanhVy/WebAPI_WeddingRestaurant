@@ -11,7 +11,6 @@ namespace WeddingRestaurant.Contract.Repository.Models
     [Table("LoaiNuoc")]
     public class LoaiNuocEntity : Entity
     {
-        [Key]
         public string MaLoaiNuoc { get; set; }
         public string TenLoaiNuoc { get; set; }
 

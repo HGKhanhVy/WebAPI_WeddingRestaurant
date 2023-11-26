@@ -15,7 +15,7 @@ namespace WeddingRestaurant.Mapper
         public RefreshTokenProfile()
         {
             CreateMap<RefreshTokenModel, RefreshTokenEntity>()
-                .ForMember(x => x.Id, opt => opt.Ignore())
+                .ForMember(x => x.userName, opt => opt.Ignore())
                 .ReverseMap();
         }
     }

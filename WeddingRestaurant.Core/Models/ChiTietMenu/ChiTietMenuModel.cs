@@ -11,7 +11,7 @@ namespace WeddingRestaurant.Core.Models.ChiTietMenu
     {
         public string MaTiec { get; set; }
         public string MaMenu { get; set; }
-        public int SoLuongMenuBan { get; set; }
+        public int SoLuongMenuCuaTiec { get; set; }
         public double TongTien { get; set; }
     }
 }

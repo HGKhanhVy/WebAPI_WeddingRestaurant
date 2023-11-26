@@ -29,6 +29,5 @@ namespace WeddingRestaurant.Contract.Repository.IBase
         void DeleteWhere(Expression<Func<T, bool>> predicate, bool isPhysicalDelete = false);
         void DeleteWhere(List<string> ids, bool isPhysicalDelete = false);
         void DeleteWhere(Expression<Func<T, bool>> predicate);
-
     }
 }

@@ -32,9 +32,9 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpGet]
         [Route(WebApiEndpoint.LichSanhTiec.GetLichSanhTiec)]
-        public IActionResult GetLichSanhTiecById(string keyId, string id_Tiec)
+        public IActionResult GetLichSanhTiecById([FromRoute] string MaSanh, [FromRoute] string MaTiec)
         {
-            var data = _iLichSanhTiecService.GetByKeyIdAsync(keyId, id_Tiec);
+            var data = _iLichSanhTiecService.GetByKeyIdAsync(MaSanh, MaTiec);
             if (data == null)
             {
                 var result = new BaseResponseModel<string>(
@@ -82,12 +82,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPut]
         [Route(WebApiEndpoint.LichSanhTiec.UpdateLichSanhTiec)]
-        [Authorize]
-        public async Task<IActionResult> UpdateLichSanhTiec(string keyId, string id_Tiec, LichSanhTiecModel model)
+        public async Task<IActionResult> UpdateLichSanhTiec([FromRoute] string MaSanh, [FromRoute] string MaTiec, LichSanhTiecModel model)
         {
             try
             {
-                await _iLichSanhTiecService.UpdateAsync(keyId, id_Tiec, model);
+                await _iLichSanhTiecService.UpdateAsync(MaSanh, MaTiec, model);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -115,12 +114,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpDelete]
         [Route(WebApiEndpoint.LichSanhTiec.DeleteLichSanhTiec)]
-        [Authorize]
-        public async Task<IActionResult> DeleteLichSanhTiec(string keyId, string id_Tiec)
+        public async Task<IActionResult> DeleteLichSanhTiec([FromRoute] string MaSanh, [FromRoute] string MaTiec)
         {
             try
             {
-                await _iLichSanhTiecService.DeleteAsync(keyId, id_Tiec, false);
+                await _iLichSanhTiecService.DeleteAsync(MaSanh, MaTiec, false);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,

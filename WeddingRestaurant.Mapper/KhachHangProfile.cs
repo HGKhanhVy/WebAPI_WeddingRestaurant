@@ -15,7 +15,7 @@ namespace WeddingRestaurant.Mapper
         public KhachHangProfile()
         {
             CreateMap<KhachHangModel, KhachHangEntity>()
-                .ForMember(x => x.Id, opt => opt.Ignore())
+                .ForMember(x => x.MaKhachHang, opt => opt.Ignore())
                 .ReverseMap();
         }
     }

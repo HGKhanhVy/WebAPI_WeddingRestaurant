@@ -4,7 +4,6 @@ using WeddingRestaurant.Contract.Repository.Models;
 using WeddingRestaurant.Contract.Service;
 using WeddingRestaurant.Core.Constants;
 using WeddingRestaurant.Core.Exceptions;
-using WeddingRestaurant.Core.Models.ChiTietDichVu;
 using WeddingRestaurant.Core.Models;
 using WeddingRestaurant.Core.Models.ChiTietMenu;
 
@@ -32,9 +31,9 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpGet]
         [Route(WebApiEndpoint.ChiTietMenu.GetChiTietMenu)]
-        public IActionResult GetChiTietMenuById(string keyId, string id_Tiec)
+        public IActionResult GetChiTietMenuById([FromRoute] string MaMenu, [FromRoute] string MaTiec)
         {
-            var data = _iChiTietMenuService.GetByKeyIdAsync(keyId, id_Tiec);
+            var data = _iChiTietMenuService.GetByKeyIdAsync(MaMenu, MaTiec);
             if (data == null)
             {
                 var result = new BaseResponseModel<string>(
@@ -51,7 +50,6 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPost]
         [Route(WebApiEndpoint.ChiTietMenu.AddChiTietMenu)]
-        [Authorize]
         public async Task<IActionResult> CreateChiTietMenu(ChiTietMenuModel model)
         {
             try
@@ -83,12 +81,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPut]
         [Route(WebApiEndpoint.ChiTietMenu.UpdateChiTietMenu)]
-        [Authorize]
-        public async Task<IActionResult> UpdateChiTietMenu(string keyId, string id_Tiec, ChiTietMenuModel model)
+        public async Task<IActionResult> UpdateChiTietMenu([FromRoute] string MaMenu, [FromRoute] string MaTiec, ChiTietMenuModel model)
         {
             try
             {
-                await _iChiTietMenuService.UpdateAsync(keyId, id_Tiec, model);
+                await _iChiTietMenuService.UpdateAsync(MaMenu, MaTiec, model);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -116,12 +113,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpDelete]
         [Route(WebApiEndpoint.ChiTietMenu.DeleteChiTietMenu)]
-        [Authorize]
-        public async Task<IActionResult> DeleteChiTietMenu(string keyId, string id_Tiec)
+        public async Task<IActionResult> DeleteChiTietMenu([FromRoute] string MaMenu, [FromRoute] string MaTiec)
         {
             try
             {
-                await _iChiTietMenuService.DeleteAsync(keyId, id_Tiec, false);
+                await _iChiTietMenuService.DeleteAsync(MaMenu, MaTiec, false);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -175,6 +171,44 @@ namespace WeddingRestaurant.WebApi.Controllers
                     message: e.Message);
                 return BadRequest(result);
             }
+        }
+
+        [HttpGet]
+        [Route(WebApiEndpoint.ChiTietMenu.PrintAllChiTietMenuForTiec)]
+        public IActionResult GetChiTietMenuByIdTiec([FromRoute] string MaTiec)
+        {
+            var data = _iChiTietMenuService.GetAllByKey1Async(MaTiec);
+            if (data == null)
+            {
+                var result = new BaseResponseModel<string>(
+                    statusCode: StatusCodes.Status400BadRequest,
+                    code: ResponseCodeConstants.NOT_FOUND,
+                    message: ReponseMessageConstantsChiTietMenu.CHITIETMENU_NOT_FOUND);
+                return BadRequest(result);
+            }
+
+            return Ok(new BaseResponseModel<ICollection<ChiTietMenuEntity>?>(
+                statusCode: StatusCodes.Status200OK,
+                code: ResponseCodeConstants.SUCCESS, data: data));
+        }
+
+        [HttpGet]
+        [Route(WebApiEndpoint.ChiTietMenu.PrintAllChiTietMenuForMenu)]
+        public IActionResult GetChiTietMenuByIdMenu([FromRoute] string MaMenu)
+        {
+            var data = _iChiTietMenuService.GetAllByKey2Async(MaMenu);
+            if (data == null)
+            {
+                var result = new BaseResponseModel<string>(
+                    statusCode: StatusCodes.Status400BadRequest,
+                    code: ResponseCodeConstants.NOT_FOUND,
+                    message: ReponseMessageConstantsChiTietMenu.CHITIETMENU_NOT_FOUND);
+                return BadRequest(result);
+            }
+
+            return Ok(new BaseResponseModel<ICollection<ChiTietMenuEntity>?>(
+                statusCode: StatusCodes.Status200OK,
+                code: ResponseCodeConstants.SUCCESS, data: data));
         }
     }
 }

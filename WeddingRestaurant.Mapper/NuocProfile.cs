@@ -15,7 +15,7 @@ namespace WeddingRestaurant.Mapper
         public NuocProfile()
         {
             CreateMap<NuocModel, NuocEntity>()
-                .ForMember(x => x.Id, opt => opt.Ignore())
+                .ForMember(x => x.MaNuoc, opt => opt.Ignore())
                 .ReverseMap();
         }
     }

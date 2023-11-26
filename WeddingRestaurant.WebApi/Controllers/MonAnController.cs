@@ -7,6 +7,7 @@ using WeddingRestaurant.Core.Exceptions;
 using WeddingRestaurant.Core.Models.DatTiec;
 using WeddingRestaurant.Core.Models;
 using WeddingRestaurant.Core.Models.MonAn;
+using static WeddingRestaurant.Core.Constants.WebApiEndpoint;
 
 namespace WeddingRestaurant.WebApi.Controllers
 {
@@ -32,9 +33,9 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpGet]
         [Route(WebApiEndpoint.MonAn.GetMonAn)]
-        public IActionResult GetMonAnById(string keyId)
+        public IActionResult GetMonAnById([FromRoute] string MaMonAn)
         {
-            var data = _iMonAnService.GetByKeyIdAsync(keyId);
+            var data = _iMonAnService.GetByKeyIdAsync(MaMonAn);
             if (data == null)
             {
                 var result = new BaseResponseModel<string>(
@@ -51,7 +52,6 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPost]
         [Route(WebApiEndpoint.MonAn.AddMonAn)]
-        [Authorize]
         public async Task<IActionResult> CreateMonAn(MonAnModel model)
         {
             try
@@ -83,12 +83,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPut]
         [Route(WebApiEndpoint.MonAn.UpdateMonAn)]
-        [Authorize]
-        public async Task<IActionResult> UpdateMonAn(string keyId, MonAnModel model)
+        public async Task<IActionResult> UpdateMonAn([FromRoute] string MaMonAn, MonAnModel model)
         {
             try
             {
-                await _iMonAnService.UpdateAsync(keyId, model);
+                await _iMonAnService.UpdateAsync(MaMonAn, model);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -116,12 +115,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpDelete]
         [Route(WebApiEndpoint.MonAn.DeleteMonAn)]
-        [Authorize]
-        public async Task<IActionResult> DeleteMonAn(string keyId)
+        public async Task<IActionResult> DeleteMonAn([FromRoute] string MaMonAn)
         {
             try
             {
-                await _iMonAnService.DeleteAsync(keyId, false);
+                await _iMonAnService.DeleteAsync(MaMonAn, false);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,

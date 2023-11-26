@@ -37,12 +37,13 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(MonAnModel model, CancellationToken cancellationToken = default)
         {
-            if (_monAnRepository.Get(_ => _.MaMonAn == model.MaMonAn && _.DeletedTime == null).Any())
+            if (_monAnRepository.Get(_ => _.MaMonAn.Equals(model.MaMonAn) && _.TrangThai == null).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaMonAn);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsMonAn.MONAN_EXISTED, statusCode: StatusCodes.Status400BadRequest);
             }
             var entity = _mapper.Map<MonAnEntity>(model);
+            entity.MaMonAn = model.MaMonAn;
             _monAnRepository.Add(entity);
             UnitOfWork.SaveChange();
             return Task.FromResult(entity.MaMonAn);
@@ -50,32 +51,33 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _monAnRepository.GetTracking(x => x.MaMonAn == id && x.DeletedTime == null).FirstOrDefault();
+            var entity = _monAnRepository.GetTracking(x => x.MaMonAn.Equals(id) && x.TrangThai == null).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id);
                 throw new CoreException(code: ResponseCodeConstants.NOT_FOUND, message: ReponseMessageConstantsMonAn.MONAN_NOT_FOUND, statusCode: StatusCodes.Status404NotFound);
             }
             _monAnRepository.Delete(entity, isPhysicalDelete: isPhysical);
+            entity.TrangThai = "Da xoa";
             UnitOfWork.SaveChange();
             return Task.CompletedTask;
         }
 
         public ICollection<MonAnEntity> GetAllAsync()
         {
-            var entities = _monAnRepository.Get(_ => _.DeletedTime == null).ToList();
+            var entities = _monAnRepository.Get(_ => _.TrangThai == null).ToList();
             return (ICollection<MonAnEntity>)entities;
         }
 
         public MonAnEntity GetByKeyIdAsync(string id)
         {
-            var entity = _monAnRepository.GetSingle(_ => _.MaMonAn == id && _.DeletedTime == null);
+            var entity = _monAnRepository.GetSingle(_ => _.MaMonAn.Equals(id) && _.TrangThai == null);
             return entity;
         }
 
         public Task UpdateAsync(string Id, MonAnModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _monAnRepository.GetTracking(x => x.MaMonAn == Id && x.DeletedTime == null).FirstOrDefault();
+            var entity = _monAnRepository.GetTracking(x => x.MaMonAn.Equals(Id) && x.TrangThai == null).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id);
@@ -83,7 +85,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaMonAn != Id)
             {
-                var isDuplicate = _monAnRepository.GetTracking(x => x.MaMonAn == model.MaMonAn && x.DeletedTime == null).FirstOrDefault();
+                var isDuplicate = _monAnRepository.GetTracking(x => x.MaMonAn.Equals(model.MaMonAn) && x.TrangThai == null).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);
@@ -100,7 +102,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _monAnRepository.Get(_ => _.DeletedTime == null).ToList();
+            var entities = _monAnRepository.Get(_ => _.TrangThai == null).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;

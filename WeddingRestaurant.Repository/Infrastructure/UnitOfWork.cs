@@ -8,7 +8,7 @@ using Entity = WeddingRestaurant.Contract.Repository.Models.Entity;
 namespace WeddingRestaurant.Repository.Infrastructure
 {
     [ScopedDependency(ServiceType = typeof(IUnitOfWork))]
-    public class UnitOfWork: IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly IDbContext _dbContext;
         private bool disposed = false;
@@ -50,17 +50,12 @@ namespace WeddingRestaurant.Repository.Infrastructure
                 {
                     if (entry.State == EntityState.Added)
                     {
-                        baseEntity.DeletedTime = null;
-
-                        baseEntity.LastUpdatedTime = baseEntity.CreatedTime = dateTimeNow;
+                        baseEntity.TrangThai = null;
                     }
                     else
                     {
-                        if (baseEntity.DeletedTime != null)
-                            baseEntity.DeletedTime =
-                                ObjHelper.ReplaceNullOrDefault(baseEntity.DeletedTime, dateTimeNow);
-                        else
-                            baseEntity.LastUpdatedTime = dateTimeNow;
+                        if (baseEntity.TrangThai != null)
+                            baseEntity.TrangThai = ObjHelper.ReplaceNullOrDefault(baseEntity.TrangThai, dateTimeNow.ToString());
                     }
                 }
 

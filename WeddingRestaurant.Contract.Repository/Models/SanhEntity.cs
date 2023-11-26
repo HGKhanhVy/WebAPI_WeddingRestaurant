@@ -11,11 +11,11 @@ namespace WeddingRestaurant.Contract.Repository.Models
     [Table("Sanh")]
     public class SanhEntity : Entity
     {
-        [Key]
         public string MaSanh { get; set; }
         public string TenSanh { get; set; }
-        public int SucChucToiThieu { get; set;}
-        public int SucChucToiDa { get; set; }
+        public int SucChuaToiThieu { get; set;}
+        public int SucChuaToiDa { get; set; }
+
         public virtual ICollection<LichSanhTiecEntity>? LichSanhTiecs { get; set; }
     }
 }

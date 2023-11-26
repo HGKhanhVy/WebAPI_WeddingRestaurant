@@ -35,16 +35,14 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(NguoiDungModel model, CancellationToken cancellationToken = default)
         {
-            if (_nguoiDungRepository.Get(x => x.userName == model.UserName &&
-                x.DeletedTime == null
-                ).Any())
+            if (_nguoiDungRepository.Get(x => x.userName.Equals(model.userName) && x.TrangThai == null).Any())
             {
-                _logger.Information(ErrorCode.NotUnique, model.UserName);
+                _logger.Information(ErrorCode.NotUnique, model.userName);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsNguoiDung.NGUOIDUNG_EXISTED, statusCode: StatusCodes.Status400BadRequest);
             }
             var entity = _mapper.Map<NguoiDungEntity>(model);
             //Set tai khoan dang nhap
-            entity.Id = model.UserName;
+            entity.userName = model.userName;
             _nguoiDungRepository.Add(entity);
             UnitOfWork.SaveChange();
             return Task.FromResult(entity.userName);
@@ -52,40 +50,41 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _nguoiDungRepository.GetTracking(x => x.userName == id && x.DeletedTime == null).FirstOrDefault();
+            var entity = _nguoiDungRepository.GetTracking(x => x.userName.Equals(id) && x.TrangThai == null).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id);
                 throw new CoreException(code: ResponseCodeConstants.NOT_FOUND, message: ReponseMessageConstantsNguoiDung.NGUOIDUNG_NOT_FOUND, statusCode: StatusCodes.Status404NotFound);
             }
             _nguoiDungRepository.Delete(entity, isPhysicalDelete: isPhysical);
+            entity.TrangThai = "Da xoa";
             UnitOfWork.SaveChange();
             return Task.CompletedTask;
         }
 
         public ICollection<NguoiDungEntity> GetAllAsync()
         {
-            var entities = _nguoiDungRepository.Get(_ => _.DeletedTime == null).ToList();
+            var entities = _nguoiDungRepository.Get(_ => _.TrangThai == null).ToList();
             return (ICollection<NguoiDungEntity>)entities;
         }
 
         public NguoiDungEntity GetByKeyIdAsync(string id)
         {
-            var entity = _nguoiDungRepository.GetSingle(_ => _.userName == id && _.DeletedTime == null);
+            var entity = _nguoiDungRepository.GetSingle(_ => _.userName.Equals(id) && _.TrangThai == null);
             return entity;
         }
 
         public Task UpdateAsync(string Id, NguoiDungModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _nguoiDungRepository.GetTracking(x => x.userName == Id && x.DeletedTime == null).FirstOrDefault();
+            var entity = _nguoiDungRepository.GetTracking(x => x.userName.Equals(Id) && x.TrangThai == null).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id);
                 throw new CoreException(code: ResponseCodeConstants.NOT_FOUND, message: ReponseMessageConstantsNguoiDung.NGUOIDUNG_NOT_FOUND, statusCode: StatusCodes.Status404NotFound);
             }
-            if (model.UserName != Id)
+            if (model.userName != Id)
             {
-                var isDuplicate = _nguoiDungRepository.GetTracking(x => x.userName == model.UserName && x.DeletedTime == null).FirstOrDefault();
+                var isDuplicate = _nguoiDungRepository.GetTracking(x => x.userName == model.userName && x.TrangThai == null).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);
@@ -102,7 +101,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _nguoiDungRepository.Get(_ => _.DeletedTime == null).ToList();
+            var entities = _nguoiDungRepository.Get(_ => _.TrangThai == null).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;
@@ -116,7 +115,7 @@ namespace WeddingRestaurant.Service
 
         public NguoiDungEntity GetByLoginAsync(LoginModel model)
         {
-            var entity = _nguoiDungRepository.GetTracking(x => x.userName == model.UserName && x.password == model.Password).FirstOrDefault();
+            var entity = _nguoiDungRepository.GetTracking(x => x.userName.Equals(model.UserName) && x.password == model.Password).FirstOrDefault();
             if (entity == null)
             {
                 return null;
@@ -126,7 +125,7 @@ namespace WeddingRestaurant.Service
 
         public NguoiDungEntity GetByUserNameAsync(RefreshTokenEntity model)
         {
-            var entity = _nguoiDungRepository.GetTracking(x => x.userName == model.userName).SingleOrDefault();
+            var entity = _nguoiDungRepository.GetTracking(x => x.userName.Equals(model.userName)).SingleOrDefault();
             if (entity == null)
             {
                 return null;

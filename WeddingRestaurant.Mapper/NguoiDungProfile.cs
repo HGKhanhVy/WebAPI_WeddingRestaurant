@@ -9,7 +9,7 @@ namespace WeddingRestaurant.Mapper
         public NguoiDungProfile()
         {
             CreateMap<NguoiDungModel, NguoiDungEntity>()
-                .ForMember(x => x.Id, opt => opt.Ignore())
+                .ForMember(x => x.userName, opt => opt.Ignore())
                 .ReverseMap();
         }
     }

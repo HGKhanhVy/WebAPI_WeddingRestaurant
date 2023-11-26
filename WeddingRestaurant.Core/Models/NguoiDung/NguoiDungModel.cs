@@ -8,9 +8,9 @@ namespace WeddingRestaurant.Core.Models.NguoiDung
 {
     public class NguoiDungModel
     {
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public string Quyen { get; set; }
+        public string userName { get; set; }
+        public string password { get; set; }
+        public string quyen { get; set; }
         public string hoTen { get; set; }
         public string sdt { get; set; }
         public string email { get; set; }

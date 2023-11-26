@@ -15,7 +15,7 @@ namespace WeddingRestaurant.Mapper
         public LoginProfile()
         {
             CreateMap<LoginModel, LoginEntity>()
-                .ForMember(x => x.Id, opt => opt.Ignore())
+                .ForMember(x => x.userName, opt => opt.Ignore())
                 .ReverseMap();
         }
     }

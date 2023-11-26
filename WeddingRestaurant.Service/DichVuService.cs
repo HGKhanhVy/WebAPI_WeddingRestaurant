@@ -37,12 +37,13 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(DichVuModel model, CancellationToken cancellationToken = default)
         {
-            if (_dvRepository.Get(_ => _.MaDichVu == model.MaDichVu && _.DeletedTime == null).Any())
+            if (_dvRepository.Get(_ => _.MaDichVu.Equals(model.MaDichVu) && _.TrangThai == null).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaDichVu);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsDichVu.DICHVU_EXISTED, statusCode: StatusCodes.Status400BadRequest);
             }
             var entity = _mapper.Map<DichVuEntity>(model);
+            entity.MaDichVu = model.MaDichVu;
             _dvRepository.Add(entity);
             UnitOfWork.SaveChange();
             return Task.FromResult(entity.MaDichVu);
@@ -50,32 +51,33 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _dvRepository.GetTracking(x => x.MaDichVu == id && x.DeletedTime == null).FirstOrDefault();
+            var entity = _dvRepository.GetTracking(x => x.MaDichVu.Equals(id) && x.TrangThai == null).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id);
                 throw new CoreException(code: ResponseCodeConstants.NOT_FOUND, message: ReponseMessageConstantsDichVu.DICHVU_NOT_FOUND, statusCode: StatusCodes.Status404NotFound);
             }
             _dvRepository.Delete(entity, isPhysicalDelete: isPhysical);
+            entity.TrangThai = "Da xoa";
             UnitOfWork.SaveChange();
             return Task.CompletedTask;
         }
 
         public ICollection<DichVuEntity> GetAllAsync()
         {
-            var entities = _dvRepository.Get(_ => _.DeletedTime == null).ToList();
+            var entities = _dvRepository.Get(_ => _.TrangThai == null).ToList();
             return (ICollection<DichVuEntity>)entities;
         }
 
         public DichVuEntity GetByKeyIdAsync(string id)
         {
-            var entity = _dvRepository.GetSingle(_ => _.MaDichVu == id && _.DeletedTime == null);
+            var entity = _dvRepository.GetSingle(_ => _.MaDichVu.Equals(id) && _.TrangThai == null);
             return entity;
         }
 
         public Task UpdateAsync(string Id, DichVuModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _dvRepository.GetTracking(x => x.MaDichVu == Id && x.DeletedTime == null).FirstOrDefault();
+            var entity = _dvRepository.GetTracking(x => x.MaDichVu.Equals(Id) && x.TrangThai == null).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id);
@@ -83,7 +85,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaDichVu != Id)
             {
-                var isDuplicate = _dvRepository.GetTracking(x => x.MaDichVu == model.MaDichVu && x.DeletedTime == null).FirstOrDefault();
+                var isDuplicate = _dvRepository.GetTracking(x => x.MaDichVu.Equals(model.MaDichVu) && x.TrangThai == null).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);
@@ -100,7 +102,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _dvRepository.Get(_ => _.DeletedTime == null).ToList();
+            var entities = _dvRepository.Get(_ => _.TrangThai == null).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;

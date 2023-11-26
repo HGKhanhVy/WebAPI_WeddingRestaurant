@@ -1,3 +1,8 @@
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\obj\Debug\net6.0\WeddingRestaurant.Service.csproj.AssemblyReference.cache
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\obj\Debug\net6.0\WeddingRestaurant.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\obj\Debug\net6.0\WeddingRestaurant.Service.AssemblyInfoInputs.cache
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\obj\Debug\net6.0\WeddingRestaurant.Service.AssemblyInfo.cs
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\obj\Debug\net6.0\WeddingRestaurant.Service.csproj.CoreCompileInputs.cache
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\bin\Debug\net6.0\WeddingRestaurant.Service.deps.json
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\bin\Debug\net6.0\WeddingRestaurant.Service.dll
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\bin\Debug\net6.0\WeddingRestaurant.Service.pdb
@@ -7,11 +12,6 @@ D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\bin\Debug\net6.0\
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\bin\Debug\net6.0\WeddingRestaurant.Contract.Service.pdb
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\bin\Debug\net6.0\WeddingRestaurant.Contract.Repository.pdb
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\bin\Debug\net6.0\WeddingRestaurant.Core.pdb
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\obj\Debug\net6.0\WeddingRestaurant.Service.csproj.AssemblyReference.cache
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\obj\Debug\net6.0\WeddingRestaurant.Service.GeneratedMSBuildEditorConfig.editorconfig
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\obj\Debug\net6.0\WeddingRestaurant.Service.AssemblyInfoInputs.cache
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\obj\Debug\net6.0\WeddingRestaurant.Service.AssemblyInfo.cs
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\obj\Debug\net6.0\WeddingRestaurant.Service.csproj.CoreCompileInputs.cache
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\obj\Debug\net6.0\WeddingRestaurant.Service.csproj.CopyComplete
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\obj\Debug\net6.0\WeddingRestaurant.Service.dll
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Service\obj\Debug\net6.0\refint\WeddingRestaurant.Service.dll

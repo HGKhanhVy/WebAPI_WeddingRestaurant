@@ -11,8 +11,9 @@ namespace WeddingRestaurant.Core.Models.LichSanhTiec
     {
         public string MaTiec { get; set; }
         public string MaSanh { get; set; }
-        public DateTimeOffset NgayToChuc { get; set; }
+        public DateTime NgayDienRa { get; set; }
         public string Ca { get; set; }
         public string TrangThai { get; set; }
+        public double TienPhuThu { get; set; }
     }
 }

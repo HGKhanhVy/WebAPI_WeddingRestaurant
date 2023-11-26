@@ -6,6 +6,7 @@ using WeddingRestaurant.Core.Constants;
 using WeddingRestaurant.Core.Exceptions;
 using WeddingRestaurant.Core.Models.MonAnTrongMenu;
 using WeddingRestaurant.Core.Models;
+using WeddingRestaurant.Service;
 
 namespace WeddingRestaurant.WebApi.Controllers
 {
@@ -31,9 +32,9 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpGet]
         [Route(WebApiEndpoint.MonAnTrongMenu.GetMonAnTrongMenu)]
-        public IActionResult GetMonAnTrongMenuById(string keyId, string id_Menu)
+        public IActionResult GetMonAnTrongMenuById([FromRoute] string MaMenu, [FromRoute] string MaMonAn)
         {
-            var data = _iMonAnTrongMenuService.GetByKeyIdAsync(keyId, id_Menu);
+            var data = _iMonAnTrongMenuService.GetByKeyIdAsync(MaMenu, MaMonAn);
             if (data == null)
             {
                 var result = new BaseResponseModel<string>(
@@ -50,7 +51,6 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPost]
         [Route(WebApiEndpoint.MonAnTrongMenu.AddMonAnTrongMenu)]
-        [Authorize]
         public async Task<IActionResult> CreateMonAnTrongMenu(MonAnTrongMenuModel model)
         {
             try
@@ -82,12 +82,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPut]
         [Route(WebApiEndpoint.MonAnTrongMenu.UpdateMonAnTrongMenu)]
-        [Authorize]
-        public async Task<IActionResult> UpdateMonAnTrongMenu(string keyId, string id_Menu, MonAnTrongMenuModel model)
+        public async Task<IActionResult> UpdateMonAnTrongMenu([FromRoute] string MaMenu, [FromRoute] string MaMonAn, MonAnTrongMenuModel model)
         {
             try
             {
-                await _iMonAnTrongMenuService.UpdateAsync(keyId, id_Menu, model);
+                await _iMonAnTrongMenuService.UpdateAsync(MaMenu, MaMonAn, model);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -115,12 +114,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpDelete]
         [Route(WebApiEndpoint.MonAnTrongMenu.DeleteMonAnTrongMenu)]
-        [Authorize]
-        public async Task<IActionResult> DeleteMonAnTrongMenu(string keyId, string id_Menu)
+        public async Task<IActionResult> DeleteMonAnTrongMenu([FromRoute] string MaMenu, [FromRoute] string MaMonAn)
         {
             try
             {
-                await _iMonAnTrongMenuService.DeleteAsync(keyId, id_Menu, false);
+                await _iMonAnTrongMenuService.DeleteAsync(MaMenu, MaMonAn, false);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -174,6 +172,44 @@ namespace WeddingRestaurant.WebApi.Controllers
                     message: e.Message);
                 return BadRequest(result);
             }
+        }
+
+        [HttpGet]
+        [Route(WebApiEndpoint.MonAnTrongMenu.PrintAllMonAnTrongMenuForMenu)]
+        public IActionResult GetChiTietMenuByIdMenu([FromRoute] string MaMenu)
+        {
+            var data = _iMonAnTrongMenuService.GetAllByKey1Async(MaMenu);
+            if (data == null)
+            {
+                var result = new BaseResponseModel<string>(
+                    statusCode: StatusCodes.Status400BadRequest,
+                    code: ResponseCodeConstants.NOT_FOUND,
+                    message: ReponseMessageConstantsMonAnTrongMenu.MONANTRONGMENU_NOT_FOUND);
+                return BadRequest(result);
+            }
+
+            return Ok(new BaseResponseModel<ICollection<MonAnTrongMenuEntity>?>(
+                statusCode: StatusCodes.Status200OK,
+                code: ResponseCodeConstants.SUCCESS, data: data));
+        }
+
+        [HttpGet]
+        [Route(WebApiEndpoint.MonAnTrongMenu.PrintAllMonAnTrongMenuForMonAn)]
+        public IActionResult GetChiTietMenuByIdMonAn([FromRoute] string MaMonAn)
+        {
+            var data = _iMonAnTrongMenuService.GetAllByKey2Async(MaMonAn);
+            if (data == null)
+            {
+                var result = new BaseResponseModel<string>(
+                    statusCode: StatusCodes.Status400BadRequest,
+                    code: ResponseCodeConstants.NOT_FOUND,
+                    message: ReponseMessageConstantsMonAnTrongMenu.MONANTRONGMENU_NOT_FOUND);
+                return BadRequest(result);
+            }
+
+            return Ok(new BaseResponseModel<ICollection<MonAnTrongMenuEntity>?>(
+                statusCode: StatusCodes.Status200OK,
+                code: ResponseCodeConstants.SUCCESS, data: data));
         }
     }
 }

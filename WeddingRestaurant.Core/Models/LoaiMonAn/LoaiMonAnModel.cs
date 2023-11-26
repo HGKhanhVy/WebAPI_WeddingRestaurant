@@ -8,7 +8,7 @@ namespace WeddingRestaurant.Core.Models.LoaiMonAn
 {
     public class LoaiMonAnModel
     {
-        public string MaLoaiMon { get; set; }
+        public string MaLoaiMonAn { get; set; }
         public string TenLoaiMon { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace WeddingRestaurant.Mapper
         public DichVuProfile()
         {
             CreateMap<DichVuModel, DichVuEntity>()
-                .ForMember(x => x.Id, opt => opt.Ignore())
+                .ForMember(x => x.MaDichVu, opt => opt.Ignore())
                 .ReverseMap();
         }
     }

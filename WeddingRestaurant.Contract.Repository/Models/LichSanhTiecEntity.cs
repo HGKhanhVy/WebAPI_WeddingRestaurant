@@ -10,17 +10,17 @@ namespace WeddingRestaurant.Contract.Repository.Models
     [Table("LichSanhTiec")]
     public class LichSanhTiecEntity : Entity
     {
-        [ForeignKey("DatTiec")]
+        // Khóa ngoại Đặt tiệc
         public string MaTiec { get; set; }
-        public virtual DatTiecEntity? DatTiecs { get; set; }
+        public virtual DatTiecEntity DatTiecs { get; set; }
 
-        [ForeignKey("Sanh")]
+        // Khóa ngoại Sảnh
         public string MaSanh { get; set; }
-        public virtual SanhEntity? Sanhs { get; set; }
+        public virtual SanhEntity Sanhs { get; set; }
 
-        public DateTimeOffset NgayToChuc { get; set; }
-        public string Ca { get; set; }
-        public string TrangThai { get; set; }
+        public DateTime NgayDienRa { get; set; }
+        public string Ca { get; set; } 
+        public double TienPhuThu { get; set; }
 
     }
 }

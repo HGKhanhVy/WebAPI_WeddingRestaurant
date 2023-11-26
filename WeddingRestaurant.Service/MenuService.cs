@@ -37,12 +37,13 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(MenuModel model, CancellationToken cancellationToken = default)
         {
-            if (_menuRepository.Get(_ => _.MaMenu == model.MaMenu && _.DeletedTime == null).Any())
+            if (_menuRepository.Get(_ => _.MaMenu.Equals(model.MaMenu) && _.TrangThai == null).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaMenu);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsMenu.MENU_EXISTED, statusCode: StatusCodes.Status400BadRequest);
             }
             var entity = _mapper.Map<MenuEntity>(model);
+            entity.MaMenu = model.MaMenu;
             _menuRepository.Add(entity);
             UnitOfWork.SaveChange();
             return Task.FromResult(entity.MaMenu);
@@ -50,32 +51,33 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _menuRepository.GetTracking(x => x.MaMenu == id && x.DeletedTime == null).FirstOrDefault();
+            var entity = _menuRepository.GetTracking(x => x.MaMenu.Equals(id) && x.TrangThai == null).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id);
                 throw new CoreException(code: ResponseCodeConstants.NOT_FOUND, message: ReponseMessageConstantsMenu.MENU_NOT_FOUND, statusCode: StatusCodes.Status404NotFound);
             }
             _menuRepository.Delete(entity, isPhysicalDelete: isPhysical);
+            entity.TrangThai = "Da xoa";
             UnitOfWork.SaveChange();
             return Task.CompletedTask;
         }
 
         public ICollection<MenuEntity> GetAllAsync()
         {
-            var entities = _menuRepository.Get(_ => _.DeletedTime == null).ToList();
+            var entities = _menuRepository.Get(_ => _.TrangThai == null).ToList();
             return (ICollection<MenuEntity>)entities;
         }
 
         public MenuEntity GetByKeyIdAsync(string id)
         {
-            var entity = _menuRepository.GetSingle(_ => _.MaMenu == id && _.DeletedTime == null);
+            var entity = _menuRepository.GetSingle(_ => _.MaMenu.Equals(id) && _.TrangThai == null);
             return entity;
         }
 
         public Task UpdateAsync(string Id, MenuModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _menuRepository.GetTracking(x => x.MaMenu == Id && x.DeletedTime == null).FirstOrDefault();
+            var entity = _menuRepository.GetTracking(x => x.MaMenu.Equals(Id) && x.TrangThai == null).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id);
@@ -83,7 +85,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaMenu != Id)
             {
-                var isDuplicate = _menuRepository.GetTracking(x => x.MaMenu == model.MaMenu && x.DeletedTime == null).FirstOrDefault();
+                var isDuplicate = _menuRepository.GetTracking(x => x.MaMenu.Equals(model.MaMenu) && x.TrangThai == null).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);
@@ -100,7 +102,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _menuRepository.Get(_ => _.DeletedTime == null).ToList();
+            var entities = _menuRepository.Get(_ => _.TrangThai == null).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;

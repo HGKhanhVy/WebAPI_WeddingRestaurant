@@ -35,7 +35,7 @@ namespace WeddingRestaurant.Service
 
         public RefreshTokenEntity CheckExistsToken(TokenModel model)
         {
-            var storedToken = _refreshTokenRepository.GetTracking(x => x.Token == model.RefreshToken).FirstOrDefault();
+            var storedToken = _refreshTokenRepository.GetTracking(x => x.Token.Equals(model.RefreshToken)).FirstOrDefault();
             if (storedToken == null)
             {
                 return null;

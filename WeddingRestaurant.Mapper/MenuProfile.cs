@@ -15,7 +15,7 @@ namespace WeddingRestaurant.Mapper
         public MenuProfile()
         {
             CreateMap<MenuModel, MenuEntity>()
-                .ForMember(x => x.Id, opt => opt.Ignore())
+                .ForMember(x => x.MaMenu, opt => opt.Ignore())
                 .ReverseMap();
         }
     }

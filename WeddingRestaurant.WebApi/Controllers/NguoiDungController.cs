@@ -51,9 +51,9 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpGet]
         [Route(WebApiEndpoint.NguoiDung.GetNguoiDung)]
-        public IActionResult GetNguoiDungById(string keyId)
+        public IActionResult GetNguoiDungById([FromRoute] string userName)
         {
-            var data = _iNguoiDungService.GetByKeyIdAsync(keyId);
+            var data = _iNguoiDungService.GetByKeyIdAsync(userName);
             if (data == null)
             {
                 var result = new BaseResponseModel<string>(statusCode: StatusCodes.Status400BadRequest, code: ResponseCodeConstants.NOT_FOUND, message: ReponseMessageConstantsNguoiDung.NGUOIDUNG_NOT_FOUND);
@@ -88,11 +88,11 @@ namespace WeddingRestaurant.WebApi.Controllers
         [HttpPut]
         [Route(WebApiEndpoint.NguoiDung.UpdateNguoiDung)]
         [Authorize]
-        public async Task<IActionResult> UpdateNguoiDung(string keyId, NguoiDungModel request)
+        public async Task<IActionResult> UpdateNguoiDung([FromRoute] string userName, NguoiDungModel request)
         {
             try
             {
-                await _iNguoiDungService.UpdateAsync(keyId, request);
+                await _iNguoiDungService.UpdateAsync(userName, request);
                 return Ok(new BaseResponseModel<string>(statusCode: StatusCodes.Status202Accepted, code: ResponseCodeConstants.SUCCESS, data: ReponseMessageConstantsNguoiDung.UPDATE_NGUOIDUNG_SUCCESS));
             }
             catch (Exception e)
@@ -111,11 +111,11 @@ namespace WeddingRestaurant.WebApi.Controllers
         [HttpDelete]
         [Route(WebApiEndpoint.NguoiDung.DeleteNguoiDung)]
         [Authorize]
-        public async Task<IActionResult> DeleteNguoiDung(string keyId)
+        public async Task<IActionResult> DeleteNguoiDung([FromRoute] string userName)
         {
             try
             {
-                await _iNguoiDungService.DeleteAsync(keyId, false);
+                await _iNguoiDungService.DeleteAsync(userName, false);
                 return Ok(new BaseResponseModel<string>(statusCode: StatusCodes.Status202Accepted, code: ResponseCodeConstants.SUCCESS, data: ReponseMessageConstantsNguoiDung.DELETE_NGUOIDUNG_SUCCESS));
             }
             catch (Exception e)

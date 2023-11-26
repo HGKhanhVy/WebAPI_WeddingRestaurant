@@ -15,7 +15,7 @@ namespace WeddingRestaurant.Mapper
         public LoaiNuocProfile()
         {
             CreateMap<LoaiNuocModel, LoaiNuocEntity>()
-                .ForMember(x => x.Id, opt => opt.Ignore())
+                .ForMember(x => x.MaLoaiNuoc, opt => opt.Ignore())
                 .ReverseMap();
         }
     }

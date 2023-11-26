@@ -36,7 +36,7 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(DatTiecModel model, CancellationToken cancellationToken = default)
         {
-            if (_datTiecRepository.Get(_ => _.MaTiec == model.MaTiec && _.DeletedTime == null).Any())
+            if (_datTiecRepository.Get(_ => _.MaTiec.Equals(model.MaTiec) && !_.TrangThai.Equals("Đã hủy")).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaTiec);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsDatTiec.TIEC_EXISTED, statusCode: StatusCodes.Status400BadRequest);
@@ -49,32 +49,33 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _datTiecRepository.GetTracking(x => x.MaTiec == id && x.DeletedTime == null).FirstOrDefault();
+            var entity = _datTiecRepository.GetTracking(x => x.MaTiec.Equals(id) && !x.TrangThai.Equals("Đã hủy")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id);
                 throw new CoreException(code: ResponseCodeConstants.NOT_FOUND, message: ReponseMessageConstantsDatTiec.TIEC_NOT_FOUND, statusCode: StatusCodes.Status404NotFound);
             }
             _datTiecRepository.Delete(entity, isPhysicalDelete: isPhysical);
+            entity.TrangThai = "Da huy";
             UnitOfWork.SaveChange();
             return Task.CompletedTask;
         }
 
         public ICollection<DatTiecEntity> GetAllAsync()
         {
-            var entities = _datTiecRepository.Get(_ => _.DeletedTime == null).ToList();
+            var entities = _datTiecRepository.Get(_ => !_.TrangThai.Equals("Đã hủy")).ToList();
             return (ICollection<DatTiecEntity>)entities;
         }
 
         public DatTiecEntity GetByKeyIdAsync(string id)
         {
-            var entity = _datTiecRepository.GetSingle(_ => _.MaTiec == id && _.DeletedTime == null);
+            var entity = _datTiecRepository.GetSingle(_ => _.MaTiec.Equals(id) && !_.TrangThai.Equals("Đã hủy"));
             return entity;
         }
 
         public Task UpdateAsync(string Id, DatTiecModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _datTiecRepository.GetTracking(x => x.MaTiec == Id && x.DeletedTime == null).FirstOrDefault();
+            var entity = _datTiecRepository.GetTracking(x => x.MaTiec.Equals(Id) && !x.TrangThai.Equals("Đã hủy")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id);
@@ -82,7 +83,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaTiec != Id)
             {
-                var isDuplicate = _datTiecRepository.GetTracking(x => x.MaTiec == model.MaTiec && x.DeletedTime == null).FirstOrDefault();
+                var isDuplicate = _datTiecRepository.GetTracking(x => x.MaTiec.Equals(model.MaTiec) && !x.TrangThai.Equals("Đã hủy")).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);
@@ -99,7 +100,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _datTiecRepository.Get(_ => _.DeletedTime == null).ToList();
+            var entities = _datTiecRepository.Get(_ => !_.TrangThai.Equals("Đã hủy")).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;
@@ -107,7 +108,7 @@ namespace WeddingRestaurant.Service
         }
         public List<DatTiecEntity> SortOrderByAsyn()
         {
-            var entities = _datTiecRepository.Get(_ => _.DeletedTime == null)
+            var entities = _datTiecRepository.Get(_ => !_.TrangThai.Equals("Đã hủy"))
                                           .OrderBy(entity => entity.NgayToChuc)
                                           .ToList();
 
@@ -115,7 +116,7 @@ namespace WeddingRestaurant.Service
         }
         public List<DatTiecEntity> SortOrderByDescendingAsyn()
         {
-            var entities = _datTiecRepository.Get(_ => _.DeletedTime == null)
+            var entities = _datTiecRepository.Get(_ => !_.TrangThai.Equals("Đã hủy"))
                                           .OrderByDescending(entity => entity.NgayToChuc)
                                           .ToList();
 
@@ -124,8 +125,7 @@ namespace WeddingRestaurant.Service
 
         public async Task UpdateStatusAsync()
         {
-            DateTimeOffset now = DateTimeOffset.Now;
-            var entities = _datTiecRepository.Get(entity => entity.NgayToChuc < now && entity.DeletedTime == null).ToList();
+            var entities = _datTiecRepository.Get(entity => entity.NgayToChuc < DateTime.Now.Date && !entity.TrangThai.Equals("Đã hủy")).ToList();
             foreach (var entity in entities)
             {
                 entity.TrangThai = "Đã tổ chức";

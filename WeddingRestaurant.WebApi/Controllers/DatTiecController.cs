@@ -33,9 +33,9 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpGet]
         [Route(WebApiEndpoint.DatTiec.GetDatTiec)]
-        public IActionResult GetDatTiecById(string keyId)
+        public IActionResult GetDatTiecById([FromRoute] string MaTiec)
         {
-            var data = _iDatTiecService.GetByKeyIdAsync(keyId);
+            var data = _iDatTiecService.GetByKeyIdAsync(MaTiec);
             if (data == null)
             {
                 var result = new BaseResponseModel<string>(
@@ -84,11 +84,11 @@ namespace WeddingRestaurant.WebApi.Controllers
         [HttpPut]
         [Route(WebApiEndpoint.DatTiec.UpdateDatTiec)]
         [Authorize]
-        public async Task<IActionResult> UpdateDatTiec(string keyId, DatTiecModel model)
+        public async Task<IActionResult> UpdateDatTiec([FromRoute] string MaTiec, DatTiecModel model)
         {
             try
             {
-                await _iDatTiecService.UpdateAsync(keyId, model);
+                await _iDatTiecService.UpdateAsync(MaTiec, model);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -116,11 +116,11 @@ namespace WeddingRestaurant.WebApi.Controllers
         [HttpDelete]
         [Route(WebApiEndpoint.DatTiec.DeleteDatTiec)]
         [Authorize]
-        public async Task<IActionResult> DeleteDatTiec(string keyId)
+        public async Task<IActionResult> DeleteDatTiec([FromRoute] string MaTiec)
         {
             try
             {
-                await _iDatTiecService.DeleteAsync(keyId, false);
+                await _iDatTiecService.DeleteAsync(MaTiec, false);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,

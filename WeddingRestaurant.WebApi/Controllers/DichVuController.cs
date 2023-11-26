@@ -32,9 +32,9 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpGet]
         [Route(WebApiEndpoint.DichVu.GetDichVu)]
-        public IActionResult GetDichVuById(string keyId)
+        public IActionResult GetDichVuById([FromRoute] string MaDichVu)
         {
-            var data = _iDichVuService.GetByKeyIdAsync(keyId);
+            var data = _iDichVuService.GetByKeyIdAsync(MaDichVu);
             if (data == null)
             {
                 var result = new BaseResponseModel<string>(
@@ -84,11 +84,11 @@ namespace WeddingRestaurant.WebApi.Controllers
         [HttpPut]
         [Route(WebApiEndpoint.DichVu.UpdateDichVu)]
         [Authorize]
-        public async Task<IActionResult> UpdateDichVu(string keyId, DichVuModel model)
+        public async Task<IActionResult> UpdateDichVu([FromRoute] string MaDichVu, DichVuModel model)
         {
             try
             {
-                await _iDichVuService.UpdateAsync(keyId, model);
+                await _iDichVuService.UpdateAsync(MaDichVu, model);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -117,11 +117,11 @@ namespace WeddingRestaurant.WebApi.Controllers
         [HttpDelete]
         [Route(WebApiEndpoint.DichVu.DeleteDichVu)]
         [Authorize]
-        public async Task<IActionResult> DeleteDichVu(string keyId)
+        public async Task<IActionResult> DeleteDichVu([FromRoute] string MaDichVu)
         {
             try
             {
-                await _iDichVuService.DeleteAsync(keyId, false);
+                await _iDichVuService.DeleteAsync(MaDichVu, false);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,

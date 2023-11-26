@@ -13,6 +13,6 @@ namespace WeddingRestaurant.Core.Models.MonAn
         public string TenMonAn { get; set; }
         public double DonGia { get; set; }
         public string DVT { get; set; }
-        public string MaLoaiMon { get; set; }
+        public string MaLoaiMonAn { get; set; }
     }
 }

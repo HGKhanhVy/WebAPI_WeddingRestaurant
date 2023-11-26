@@ -31,10 +31,10 @@ namespace WeddingRestaurant.WebApi.Controllers
         }
 
         [HttpGet]
-        [Route(WebApiEndpoint.KhachHang.GetKhachHang)]
-        public IActionResult GetKhachHangBySDT(string sdt)
+        [Route(WebApiEndpoint.KhachHang.GetKhachHangBySDT)]
+        public IActionResult GetKhachHangBySDT([FromRoute] string SDT)
         {
-            var data = _iKhachHangService.GetBySDTAsync(sdt);
+            var data = _iKhachHangService.GetBySDTAsync(SDT);
             if (data == null)
             {
                 var result = new BaseResponseModel<string>(
@@ -82,12 +82,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPut]
         [Route(WebApiEndpoint.KhachHang.UpdateKhachHang)]
-        [Authorize]
-        public async Task<IActionResult> UpdateKhachHang(string keyId, KhachHangModel model)
+        public async Task<IActionResult> UpdateKhachHang([FromRoute] string MaKhachHang, KhachHangModel model)
         {
             try
             {
-                await _iKhachHangService.UpdateAsync(keyId, model);
+                await _iKhachHangService.UpdateAsync(MaKhachHang, model);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -115,12 +114,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpDelete]
         [Route(WebApiEndpoint.KhachHang.DeleteKhachHang)]
-        [Authorize]
-        public async Task<IActionResult> DeleteKhachHang(string keyId)
+        public async Task<IActionResult> DeleteKhachHang([FromRoute] string MaKhachHang)
         {
             try
             {
-                await _iKhachHangService.DeleteAsync(keyId, false);
+                await _iKhachHangService.DeleteAsync(MaKhachHang, false);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,

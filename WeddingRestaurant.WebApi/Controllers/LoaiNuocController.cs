@@ -7,6 +7,7 @@ using WeddingRestaurant.Core.Exceptions;
 using WeddingRestaurant.Core.Models.DatTiec;
 using WeddingRestaurant.Core.Models;
 using WeddingRestaurant.Core.Models.LoaiNuoc;
+using WeddingRestaurant.Service;
 
 namespace WeddingRestaurant.WebApi.Controllers
 {
@@ -32,9 +33,9 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpGet]
         [Route(WebApiEndpoint.LoaiNuoc.GetLoaiNuoc)]
-        public IActionResult GetLoaiNuocById(string keyId)
+        public IActionResult GetLoaiNuocById([FromRoute] string MaLoaiNuoc)
         {
-            var data = _iLoaiNuocService.GetByKeyIdAsync(keyId);
+            var data = _iLoaiNuocService.GetByKeyIdAsync(MaLoaiNuoc);
             if (data == null)
             {
                 var result = new BaseResponseModel<string>(
@@ -51,7 +52,6 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPost]
         [Route(WebApiEndpoint.LoaiNuoc.AddLoaiNuoc)]
-        [Authorize]
         public async Task<IActionResult> CreateLoaiNuoc(LoaiNuocModel model)
         {
             try
@@ -83,12 +83,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPut]
         [Route(WebApiEndpoint.LoaiNuoc.UpdateLoaiNuoc)]
-        [Authorize]
-        public async Task<IActionResult> UpdateLoaiNuoc(string keyId, LoaiNuocModel model)
+        public async Task<IActionResult> UpdateLoaiNuoc([FromRoute] string MaLoaiNuoc, LoaiNuocModel model)
         {
             try
             {
-                await _iLoaiNuocService.UpdateAsync(keyId, model);
+                await _iLoaiNuocService.UpdateAsync(MaLoaiNuoc, model);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -116,12 +115,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpDelete]
         [Route(WebApiEndpoint.LoaiNuoc.DeleteLoaiNuoc)]
-        [Authorize]
-        public async Task<IActionResult> DeleteLoaiNuoc(string keyId)
+        public async Task<IActionResult> DeleteLoaiNuoc([FromRoute] string MaLoaiNuoc)
         {
             try
             {
-                await _iLoaiNuocService.DeleteAsync(keyId, false);
+                await _iLoaiNuocService.DeleteAsync(MaLoaiNuoc, false);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,

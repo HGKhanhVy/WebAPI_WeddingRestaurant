@@ -11,8 +11,7 @@ namespace WeddingRestaurant.Contract.Repository.Models
     [Table("LoaiMonAn")]
     public class LoaiMonAnEntity : Entity
     {
-        [Key]
-        public string MaLoaiMon { get; set; }
+        public string MaLoaiMonAn { get; set; }
         public string TenLoaiMon { get; set; }
 
         public virtual ICollection<MonAnEntity>? MonAns { get; set; }

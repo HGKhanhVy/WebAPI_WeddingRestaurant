@@ -1,3 +1,8 @@
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\obj\Debug\net6.0\WeddingRestaurant.Mapper.csproj.AssemblyReference.cache
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\obj\Debug\net6.0\WeddingRestaurant.Mapper.GeneratedMSBuildEditorConfig.editorconfig
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\obj\Debug\net6.0\WeddingRestaurant.Mapper.AssemblyInfoInputs.cache
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\obj\Debug\net6.0\WeddingRestaurant.Mapper.AssemblyInfo.cs
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\obj\Debug\net6.0\WeddingRestaurant.Mapper.csproj.CoreCompileInputs.cache
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\bin\Debug\net6.0\WeddingRestaurant.Mapper.deps.json
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\bin\Debug\net6.0\WeddingRestaurant.Mapper.dll
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\bin\Debug\net6.0\WeddingRestaurant.Mapper.pdb
@@ -7,11 +12,6 @@ D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\bin\Debug\net6.0\W
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\bin\Debug\net6.0\WeddingRestaurant.Contract.Repository.pdb
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\bin\Debug\net6.0\WeddingRestaurant.Contract.Service.pdb
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\bin\Debug\net6.0\WeddingRestaurant.Core.pdb
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\obj\Debug\net6.0\WeddingRestaurant.Mapper.csproj.AssemblyReference.cache
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\obj\Debug\net6.0\WeddingRestaurant.Mapper.GeneratedMSBuildEditorConfig.editorconfig
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\obj\Debug\net6.0\WeddingRestaurant.Mapper.AssemblyInfoInputs.cache
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\obj\Debug\net6.0\WeddingRestaurant.Mapper.AssemblyInfo.cs
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\obj\Debug\net6.0\WeddingRestaurant.Mapper.csproj.CoreCompileInputs.cache
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\obj\Debug\net6.0\WeddingRestaurant.Mapper.csproj.CopyComplete
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\obj\Debug\net6.0\WeddingRestaurant.Mapper.dll
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Mapper\obj\Debug\net6.0\refint\WeddingRestaurant.Mapper.dll

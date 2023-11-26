@@ -7,6 +7,7 @@ using WeddingRestaurant.Core.Exceptions;
 using WeddingRestaurant.Core.Models.DatTiec;
 using WeddingRestaurant.Core.Models;
 using WeddingRestaurant.Core.Models.Menu;
+using static WeddingRestaurant.Core.Constants.WebApiEndpoint;
 
 namespace WeddingRestaurant.WebApi.Controllers
 {
@@ -32,9 +33,9 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpGet]
         [Route(WebApiEndpoint.Menu.GetMenu)]
-        public IActionResult GetMenuById(string keyId)
+        public IActionResult GetMenuById([FromRoute] string MaMenu)
         {
-            var data = _iMenuService.GetByKeyIdAsync(keyId);
+            var data = _iMenuService.GetByKeyIdAsync(MaMenu);
             if (data == null)
             {
                 var result = new BaseResponseModel<string>(
@@ -51,7 +52,6 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPost]
         [Route(WebApiEndpoint.Menu.AddMenu)]
-        [Authorize]
         public async Task<IActionResult> CreateMenu(MenuModel model)
         {
             try
@@ -83,12 +83,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPut]
         [Route(WebApiEndpoint.Menu.UpdateMenu)]
-        [Authorize]
-        public async Task<IActionResult> UpdateMenu(string keyId, MenuModel model)
+        public async Task<IActionResult> UpdateMenu([FromRoute] string MaMenu, MenuModel model)
         {
             try
             {
-                await _iMenuService.UpdateAsync(keyId, model);
+                await _iMenuService.UpdateAsync(MaMenu, model);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -116,12 +115,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpDelete]
         [Route(WebApiEndpoint.Menu.DeleteMenu)]
-        [Authorize]
-        public async Task<IActionResult> DeleteMenu(string keyId)
+        public async Task<IActionResult> DeleteMenu([FromRoute] string MaMenu)
         {
             try
             {
-                await _iMenuService.DeleteAsync(keyId, false);
+                await _iMenuService.DeleteAsync(MaMenu, false);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,

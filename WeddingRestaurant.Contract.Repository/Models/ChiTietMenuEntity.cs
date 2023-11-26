@@ -10,15 +10,15 @@ namespace WeddingRestaurant.Contract.Repository.Models
     [Table("ChiTietMenu")]
     public class ChiTietMenuEntity : Entity
     {
-        [ForeignKey("DatTiec")]
+        // Khóa ngoại bảng DatTiec
         public string MaTiec { get; set; }
-        public virtual DatTiecEntity? DatTiecs { get; set; }
+        public virtual DatTiecEntity DatTiecs { get; set; }
 
-        [ForeignKey("Menu")]
+        // Khóa ngoại bảng Menu
         public string MaMenu { get; set; }
-        public virtual MenuEntity? Menus { get; set; }
+        public virtual MenuEntity Menus { get; set; }
 
-        public int SoLuongMenuBan { get; set; }
+        public int SoLuongMenuCuaTiec { get; set; }
         public double TongTien { get; set; }
     }
 }

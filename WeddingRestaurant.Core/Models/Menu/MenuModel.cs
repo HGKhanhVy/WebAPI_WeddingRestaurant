@@ -9,6 +9,7 @@ namespace WeddingRestaurant.Core.Models.Menu
     public class MenuModel
     {
         public string MaMenu { get; set; }
+        public string TenMenu { get; set; }
         public double DonGiaMenu { get; set; }
     }
 }

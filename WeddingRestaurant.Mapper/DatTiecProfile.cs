@@ -15,7 +15,7 @@ namespace WeddingRestaurant.Mapper
         public DatTiecProfile()
         {
             CreateMap<DatTiecModel, DatTiecEntity>()
-                .ForMember(x => x.Id, opt => opt.Ignore())
+                .ForMember(x => x.MaTiec, opt => opt.Ignore())
                 .ReverseMap();
         }
     }

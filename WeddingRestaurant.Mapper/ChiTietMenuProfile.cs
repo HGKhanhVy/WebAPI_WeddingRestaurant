@@ -15,7 +15,8 @@ namespace WeddingRestaurant.Mapper
         public ChiTietMenuProfile()
         {
             CreateMap<ChiTietMenuModel, ChiTietMenuEntity>()
-                .ForMember(x => x.Id, opt => opt.Ignore())
+                .ForMember(x => x.MaTiec, opt => opt.Ignore())
+                .ForMember(x => x.MaMenu, opt => opt.Ignore())
                 .ReverseMap();
         }
     }

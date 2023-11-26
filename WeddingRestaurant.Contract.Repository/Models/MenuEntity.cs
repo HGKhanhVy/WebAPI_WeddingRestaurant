@@ -11,8 +11,8 @@ namespace WeddingRestaurant.Contract.Repository.Models
     [Table("Menu")]
     public class MenuEntity : Entity
     {
-        [Key]
         public string MaMenu { get; set; }
+        public string TenMenu { get; set; }
         public double DonGiaMenu { get; set; }
         public virtual ICollection<MonAnTrongMenuEntity>? MonAnTrongMenus { get; set; }
         public virtual ICollection<ChiTietMenuEntity>? ChiTietMenus { get; set; }

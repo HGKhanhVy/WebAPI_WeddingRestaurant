@@ -24,21 +24,6 @@ namespace WeddingRestaurant.Repository.Migrations
 
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.AccessTokenEntity", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<DateTime>("ExpireAt")
                         .HasColumnType("datetime2");
 
@@ -48,69 +33,61 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<bool>("IsUsed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("StrTokenId")
+                    b.Property<string>("StrTokenIDToken")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Token")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("userName")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("StrTokenId");
+                    b.HasIndex("StrTokenIDToken");
 
                     b.HasIndex("userName");
 
                     b.ToTable("AccessToken");
                 });
 
-            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.ChiTietDichVuEntity", b =>
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.ChiTietDichVuTinhPhiEntity", b =>
                 {
                     b.Property<string>("MaTiec")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("MaDichVu")
+                    b.Property<string>("MaDichVuTinhPhi")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("TrangThai")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
+                    b.HasKey("MaTiec", "MaDichVuTinhPhi");
 
-                    b.Property<string>("DeletedBy")
+                    b.HasIndex("MaDichVuTinhPhi");
+
+                    b.ToTable("ChiTietDichVuTinhPhi");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.ChiTietDichVuUuDaiEntity", b =>
+                {
+                    b.Property<string>("MaTiec")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("MaDichVuUuDai")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("TrangThai")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
+                    b.HasKey("MaTiec", "MaDichVuUuDai");
 
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(max)");
+                    b.HasIndex("MaDichVuUuDai");
 
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<double>("TongTien")
-                        .HasColumnType("float");
-
-                    b.HasKey("MaTiec", "MaDichVu");
-
-                    b.HasIndex("MaDichVu");
-
-                    b.ToTable("ChiTietDichVu");
+                    b.ToTable("ChiTietDichVuUuDai");
                 });
 
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.ChiTietMenuEntity", b =>
@@ -121,32 +98,14 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<string>("MaMenu")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<int>("SoLuongMenuBan")
+                    b.Property<int>("SoLuongMenuCuaTiec")
                         .HasColumnType("int");
 
                     b.Property<double>("TongTien")
                         .HasColumnType("float");
+
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MaTiec", "MaMenu");
 
@@ -163,32 +122,14 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<string>("MaNuoc")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<int>("SoLuong")
                         .HasColumnType("int");
 
                     b.Property<double>("TongTien")
                         .HasColumnType("float");
+
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MaTiec", "MaNuoc");
 
@@ -197,63 +138,154 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.ToTable("ChiTietNuocUong");
                 });
 
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.ChiTietPhuThuDichVuEntity", b =>
+                {
+                    b.Property<string>("MaPhuThu")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("MaDichVuTinhPhi")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("DonGia")
+                        .HasColumnType("float");
+
+                    b.Property<int>("SoLuong")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MaPhuThu", "MaDichVuTinhPhi");
+
+                    b.HasIndex("MaDichVuTinhPhi");
+
+                    b.ToTable("ChiTietPhuThuDichVu");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.ChiTietPhuThuMonAnEntity", b =>
+                {
+                    b.Property<string>("MaPhuThu")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("MaMonAn")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("DonGia")
+                        .HasColumnType("float");
+
+                    b.Property<int>("SoLuong")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MaPhuThu", "MaMonAn");
+
+                    b.HasIndex("MaMonAn");
+
+                    b.ToTable("ChiTietPhuThuMonAn");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.ChiTietPhuThuNuocEntity", b =>
+                {
+                    b.Property<string>("MaPhuThu")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("MaNuoc")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("DonGia")
+                        .HasColumnType("float");
+
+                    b.Property<int>("SoLuong")
+                        .HasColumnType("int");
+
+                    b.Property<double>("ThanhTien")
+                        .HasColumnType("float");
+
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MaPhuThu", "MaNuoc");
+
+                    b.HasIndex("MaNuoc");
+
+                    b.ToTable("ChiTietPhuThuNuoc");
+                });
+
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.DatTiecEntity", b =>
                 {
                     b.Property<string>("MaTiec")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Id")
+                    b.Property<string>("GhiChu")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("KhachHangsMaKhachHang")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("LastUpdatedBy")
+                    b.Property<string>("LoaiBan")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
+                    b.Property<string>("LoaiHinhTiec")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MaHoaDon")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MaKhachHang")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTimeOffset>("NgayDatTiec")
-                        .HasColumnType("datetimeoffset");
+                    b.Property<DateTime>("NgayDatTiec")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTimeOffset>("NgayToChuc")
-                        .HasColumnType("datetimeoffset");
+                    b.Property<DateTime>("NgayToChuc")
+                        .HasColumnType("datetime2");
 
                     b.Property<double>("PhiDichVu")
                         .HasColumnType("float");
 
-                    b.Property<int>("SoBan")
+                    b.Property<int>("SoLuongBanChay")
                         .HasColumnType("int");
 
-                    b.Property<string>("TenTiec")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("SoLuongBanChinhThuc")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SoLuongBanDuPhong")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SoLuongBanTang")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ThoiGianToChuc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("TienCocLan1")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TienCocLan2")
+                        .HasColumnType("float");
+
+                    b.Property<int>("TongBanSetup")
+                        .HasColumnType("int");
+
+                    b.Property<double>("TongTienDuKien")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TongTienGiam")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TongTienPhaiTra")
+                        .HasColumnType("float");
 
                     b.Property<string>("TrangThai")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MaTiec");
 
-                    b.HasIndex("KhachHangsMaKhachHang");
+                    b.HasIndex("MaKhachHang");
 
                     b.ToTable("DatTiec");
                 });
@@ -263,38 +295,120 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<string>("MaDichVu")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<double>("DonGiaDichVu")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Id")
+                    b.Property<string>("MaLoaiDichVu")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("TenDichVu")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("MaDichVu");
 
+                    b.HasIndex("MaLoaiDichVu");
+
                     b.ToTable("DichVu");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.DichVuTinhPhiEntity", b =>
+                {
+                    b.Property<string>("MaDichVuTinhPhi")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("DonGiaDichVu")
+                        .HasColumnType("float");
+
+                    b.Property<string>("HinhAnh")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MaDichVu")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("MoTa")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TenDichVu")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MaDichVuTinhPhi");
+
+                    b.HasIndex("MaDichVu");
+
+                    b.ToTable("DichVuTinhPhi");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.DichVuUuDaiEntity", b =>
+                {
+                    b.Property<string>("MaDichVuUuDai")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("DieuKienApDung")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HinhAnh")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MaDichVu")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("MoTa")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TenDichVu")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MaDichVuUuDai");
+
+                    b.HasIndex("MaDichVu");
+
+                    b.ToTable("DichVuUuDai");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.HoaDonEntity", b =>
+                {
+                    b.Property<string>("MaHoaDon")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("MaTiec")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NgayLap")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("TongTienPhuThu")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("TongTienThanhToan")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MaHoaDon");
+
+                    b.ToTable("HoaDon");
                 });
 
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.KhachHangEntity", b =>
@@ -306,31 +420,9 @@ namespace WeddingRestaurant.Repository.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<string>("Gmail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Id")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("NgaySinh")
                         .IsRequired()
@@ -344,52 +436,12 @@ namespace WeddingRestaurant.Repository.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("MaKhachHang");
 
                     b.ToTable("KhachHang");
-                });
-
-            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.KhuyenMaiEntity", b =>
-                {
-                    b.Property<string>("MaKM")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DieuKien")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("GiaTri")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Id")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("MoTa")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("MaKM");
-
-                    b.ToTable("KhuyenMai");
                 });
 
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.LichSanhTiecEntity", b =>
@@ -404,32 +456,13 @@ namespace WeddingRestaurant.Repository.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("NgayDienRa")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<DateTimeOffset>("NgayToChuc")
-                        .HasColumnType("datetimeoffset");
+                    b.Property<double>("TienPhuThu")
+                        .HasColumnType("float");
 
                     b.Property<string>("TrangThai")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MaTiec", "MaSanh");
@@ -439,38 +472,36 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.ToTable("LichSanhTiec");
                 });
 
-            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.LoaiMonAnEntity", b =>
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.LoaiDichVuEntity", b =>
                 {
-                    b.Property<string>("MaLoaiMon")
+                    b.Property<string>("MaLoaiDichVu")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Id")
+                    b.Property<string>("TenLoaiDichVu")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LastUpdatedBy")
+                    b.Property<string>("TrangThai")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
+                    b.HasKey("MaLoaiDichVu");
+
+                    b.ToTable("LoaiDichVu");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.LoaiMonAnEntity", b =>
+                {
+                    b.Property<string>("MaLoaiMonAn")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("TenLoaiMon")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("MaLoaiMon");
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MaLoaiMonAn");
 
                     b.ToTable("LoaiMonAn");
                 });
@@ -480,30 +511,11 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<string>("MaLoaiNuoc")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Id")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<string>("TenLoaiNuoc")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TrangThai")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MaLoaiNuoc");
@@ -516,30 +528,15 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<string>("MaMenu")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<double>("DonGiaMenu")
                         .HasColumnType("float");
 
-                    b.Property<string>("Id")
+                    b.Property<string>("TenMenu")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LastUpdatedBy")
+                    b.Property<string>("TrangThai")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
 
                     b.HasKey("MaMenu");
 
@@ -551,49 +548,27 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<string>("MaMonAn")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<string>("DVT")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<double>("DonGia")
                         .HasColumnType("float");
 
-                    b.Property<string>("Id")
+                    b.Property<string>("MaLoaiMonAn")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("LoaiMonAnsMaLoaiMon")
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("MaLoaiMon")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TenMonAn")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("MaMonAn");
 
-                    b.HasIndex("LoaiMonAnsMaLoaiMon");
+                    b.HasIndex("MaLoaiMonAn");
 
                     b.ToTable("MonAn");
                 });
@@ -606,32 +581,14 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<string>("MaMonAn")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<double>("DonGia")
                         .HasColumnType("float");
 
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<int>("SoLuongMon")
                         .HasColumnType("int");
+
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MaMenu", "MaMonAn");
 
@@ -645,27 +602,8 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<string>("userName")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("TrangThai")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Id")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("email")
                         .IsRequired()
@@ -692,74 +630,131 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.ToTable("NguoiDung");
                 });
 
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.NhanVienEntity", b =>
+                {
+                    b.Property<string>("MaNhanVien")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CCCD")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NgayNghiViec")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NgaySinh")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NgayVaoLam")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SoDienThoai")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TenNhanVien")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MaNhanVien");
+
+                    b.ToTable("NhanVien");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.NhanVienTrongTiecEntity", b =>
+                {
+                    b.Property<string>("MaTiec")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("MaNhanVien")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MaTiec", "MaNhanVien");
+
+                    b.HasIndex("MaNhanVien");
+
+                    b.ToTable("NhanVienTrongTiec");
+                });
+
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.NuocEntity", b =>
                 {
                     b.Property<string>("MaNuoc")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<string>("DVT")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<double>("DonGia")
                         .HasColumnType("float");
 
-                    b.Property<string>("Id")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("LoaiNuocsMaLoaiNuoc")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("MaLoaiNuoc")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("TenNuoc")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("MaNuoc");
 
-                    b.HasIndex("LoaiNuocsMaLoaiNuoc");
+                    b.HasIndex("MaLoaiNuoc");
 
                     b.ToTable("Nuoc");
                 });
 
-            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.RefreshTokenEntity", b =>
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.PhuThuEntity", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<string>("MaPhuThu")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CreatedBy")
+                    b.Property<string>("LoaiPhuThu")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
+                    b.Property<string>("MaHoaDon")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("DeletedBy")
+                    b.Property<string>("MoTaPhuThu")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
+                    b.Property<double>("TongTien")
+                        .HasColumnType("float");
+
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MaPhuThu");
+
+                    b.HasIndex("MaHoaDon");
+
+                    b.ToTable("PhuThu");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.RefreshTokenEntity", b =>
+                {
+                    b.Property<string>("Token")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("userName")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("ExpireAt")
                         .HasColumnType("datetime2");
@@ -774,26 +769,15 @@ namespace WeddingRestaurant.Repository.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("StrTokenId")
+                    b.Property<string>("StrTokenIDToken")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Token")
-                        .IsRequired()
+                    b.Property<string>("TrangThai")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("userName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.HasKey("Token", "userName");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("StrTokenId");
+                    b.HasIndex("StrTokenIDToken");
 
                     b.HasIndex("userName");
 
@@ -805,36 +789,17 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<string>("MaSanh")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Id")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<int>("SucChucToiDa")
+                    b.Property<int>("SucChuaToiDa")
                         .HasColumnType("int");
 
-                    b.Property<int>("SucChucToiThieu")
+                    b.Property<int>("SucChuaToiThieu")
                         .HasColumnType("int");
 
                     b.Property<string>("TenSanh")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TrangThai")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MaSanh");
@@ -842,74 +807,23 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.ToTable("Sanh");
                 });
 
-            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.SuDungKhuyenMaiEntity", b =>
-                {
-                    b.Property<string>("MaTiec")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("MaKM")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.HasKey("MaTiec", "MaKM");
-
-                    b.HasIndex("MaKM");
-
-                    b.ToTable("SuDungKhuyenMai");
-                });
-
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.TokenEntity", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<string>("IDToken")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("AccessToken")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("CreatedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("DeletedTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("LastUpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTimeOffset?>("LastUpdatedTime")
-                        .HasColumnType("datetimeoffset");
-
                     b.Property<string>("RefreshToken")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IDToken");
 
                     b.ToTable("Token");
                 });
@@ -918,7 +832,7 @@ namespace WeddingRestaurant.Repository.Migrations
                 {
                     b.HasOne("WeddingRestaurant.Contract.Repository.Models.TokenEntity", "StrToken")
                         .WithMany()
-                        .HasForeignKey("StrTokenId");
+                        .HasForeignKey("StrTokenIDToken");
 
                     b.HasOne("WeddingRestaurant.Contract.Repository.Models.NguoiDungEntity", "NguoiDung")
                         .WithMany()
@@ -931,23 +845,42 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Navigation("StrToken");
                 });
 
-            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.ChiTietDichVuEntity", b =>
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.ChiTietDichVuTinhPhiEntity", b =>
                 {
-                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.DichVuEntity", "DichVus")
-                        .WithMany("ChiTietDichVus")
-                        .HasForeignKey("MaDichVu")
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.DichVuTinhPhiEntity", "DichVuTinhPhis")
+                        .WithMany("ChiTietDichVuTinhPhis")
+                        .HasForeignKey("MaDichVuTinhPhi")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("WeddingRestaurant.Contract.Repository.Models.DatTiecEntity", "DatTiecs")
-                        .WithMany("ChiTietDichVus")
+                        .WithMany("ChiTietDichVuTinhPhis")
                         .HasForeignKey("MaTiec")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("DatTiecs");
 
-                    b.Navigation("DichVus");
+                    b.Navigation("DichVuTinhPhis");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.ChiTietDichVuUuDaiEntity", b =>
+                {
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.DichVuUuDaiEntity", "DichVuUuDais")
+                        .WithMany("ChiTietDichVuUuDais")
+                        .HasForeignKey("MaDichVuUuDai")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.DatTiecEntity", "DatTiecs")
+                        .WithMany("ChiTietDichVuUuDais")
+                        .HasForeignKey("MaTiec")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DatTiecs");
+
+                    b.Navigation("DichVuUuDais");
                 });
 
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.ChiTietMenuEntity", b =>
@@ -988,13 +921,113 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Navigation("Nuocs");
                 });
 
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.ChiTietPhuThuDichVuEntity", b =>
+                {
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.DichVuTinhPhiEntity", "DichVuTinhPhis")
+                        .WithMany("ChiTietPhuThuDichVus")
+                        .HasForeignKey("MaDichVuTinhPhi")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.PhuThuEntity", "PhuThus")
+                        .WithMany("ChiTietPhuThuDichVus")
+                        .HasForeignKey("MaPhuThu")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DichVuTinhPhis");
+
+                    b.Navigation("PhuThus");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.ChiTietPhuThuMonAnEntity", b =>
+                {
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.MonAnEntity", "MonAns")
+                        .WithMany("ChiTietPhuThuMonAns")
+                        .HasForeignKey("MaMonAn")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.PhuThuEntity", "PhuThus")
+                        .WithMany("ChiTietPhuThuMonAns")
+                        .HasForeignKey("MaPhuThu")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("MonAns");
+
+                    b.Navigation("PhuThus");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.ChiTietPhuThuNuocEntity", b =>
+                {
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.NuocEntity", "Nuocs")
+                        .WithMany("ChiTietPhuThuNuocs")
+                        .HasForeignKey("MaNuoc")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.PhuThuEntity", "PhuThus")
+                        .WithMany("ChiTietPhuThuNuocs")
+                        .HasForeignKey("MaPhuThu")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Nuocs");
+
+                    b.Navigation("PhuThus");
+                });
+
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.DatTiecEntity", b =>
                 {
                     b.HasOne("WeddingRestaurant.Contract.Repository.Models.KhachHangEntity", "KhachHangs")
                         .WithMany("DatTiecs")
-                        .HasForeignKey("KhachHangsMaKhachHang");
+                        .HasForeignKey("MaKhachHang")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.HoaDonEntity", "HoaDons")
+                        .WithOne("DatTiecs")
+                        .HasForeignKey("WeddingRestaurant.Contract.Repository.Models.DatTiecEntity", "MaTiec")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("HoaDons");
 
                     b.Navigation("KhachHangs");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.DichVuEntity", b =>
+                {
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.LoaiDichVuEntity", "LoaiDichVus")
+                        .WithMany("DichVus")
+                        .HasForeignKey("MaLoaiDichVu")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("LoaiDichVus");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.DichVuTinhPhiEntity", b =>
+                {
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.DichVuEntity", "DichVus")
+                        .WithMany("DichVuTinhPhis")
+                        .HasForeignKey("MaDichVu")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DichVus");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.DichVuUuDaiEntity", b =>
+                {
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.DichVuEntity", "DichVus")
+                        .WithMany("DichVuUuDais")
+                        .HasForeignKey("MaDichVu")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DichVus");
                 });
 
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.LichSanhTiecEntity", b =>
@@ -1020,7 +1053,9 @@ namespace WeddingRestaurant.Repository.Migrations
                 {
                     b.HasOne("WeddingRestaurant.Contract.Repository.Models.LoaiMonAnEntity", "LoaiMonAns")
                         .WithMany("MonAns")
-                        .HasForeignKey("LoaiMonAnsMaLoaiMon");
+                        .HasForeignKey("MaLoaiMonAn")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("LoaiMonAns");
                 });
@@ -1044,20 +1079,52 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Navigation("MonAns");
                 });
 
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.NhanVienTrongTiecEntity", b =>
+                {
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.NhanVienEntity", "NhanViens")
+                        .WithMany("NhanVienTrongTiecs")
+                        .HasForeignKey("MaNhanVien")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.DatTiecEntity", "DatTiecs")
+                        .WithMany("NhanVienTrongTiecs")
+                        .HasForeignKey("MaTiec")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DatTiecs");
+
+                    b.Navigation("NhanViens");
+                });
+
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.NuocEntity", b =>
                 {
                     b.HasOne("WeddingRestaurant.Contract.Repository.Models.LoaiNuocEntity", "LoaiNuocs")
                         .WithMany("Nuocs")
-                        .HasForeignKey("LoaiNuocsMaLoaiNuoc");
+                        .HasForeignKey("MaLoaiNuoc")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("LoaiNuocs");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.PhuThuEntity", b =>
+                {
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.HoaDonEntity", "HoaDons")
+                        .WithMany("PhuThus")
+                        .HasForeignKey("MaHoaDon")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("HoaDons");
                 });
 
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.RefreshTokenEntity", b =>
                 {
                     b.HasOne("WeddingRestaurant.Contract.Repository.Models.TokenEntity", "StrToken")
                         .WithMany("RefreshTokens")
-                        .HasForeignKey("StrTokenId");
+                        .HasForeignKey("StrTokenIDToken");
 
                     b.HasOne("WeddingRestaurant.Contract.Repository.Models.NguoiDungEntity", "NguoiDung")
                         .WithMany()
@@ -1070,28 +1137,11 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Navigation("StrToken");
                 });
 
-            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.SuDungKhuyenMaiEntity", b =>
-                {
-                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.KhuyenMaiEntity", "KhuyenMais")
-                        .WithMany("SuDungKhuyenMais")
-                        .HasForeignKey("MaKM")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.DatTiecEntity", "DatTiecs")
-                        .WithMany("SuDungKhuyenMais")
-                        .HasForeignKey("MaTiec")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DatTiecs");
-
-                    b.Navigation("KhuyenMais");
-                });
-
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.DatTiecEntity", b =>
                 {
-                    b.Navigation("ChiTietDichVus");
+                    b.Navigation("ChiTietDichVuTinhPhis");
+
+                    b.Navigation("ChiTietDichVuUuDais");
 
                     b.Navigation("ChiTietMenus");
 
@@ -1099,12 +1149,34 @@ namespace WeddingRestaurant.Repository.Migrations
 
                     b.Navigation("LichSanhTiecs");
 
-                    b.Navigation("SuDungKhuyenMais");
+                    b.Navigation("NhanVienTrongTiecs");
                 });
 
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.DichVuEntity", b =>
                 {
-                    b.Navigation("ChiTietDichVus");
+                    b.Navigation("DichVuTinhPhis");
+
+                    b.Navigation("DichVuUuDais");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.DichVuTinhPhiEntity", b =>
+                {
+                    b.Navigation("ChiTietDichVuTinhPhis");
+
+                    b.Navigation("ChiTietPhuThuDichVus");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.DichVuUuDaiEntity", b =>
+                {
+                    b.Navigation("ChiTietDichVuUuDais");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.HoaDonEntity", b =>
+                {
+                    b.Navigation("DatTiecs")
+                        .IsRequired();
+
+                    b.Navigation("PhuThus");
                 });
 
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.KhachHangEntity", b =>
@@ -1112,9 +1184,9 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Navigation("DatTiecs");
                 });
 
-            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.KhuyenMaiEntity", b =>
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.LoaiDichVuEntity", b =>
                 {
-                    b.Navigation("SuDungKhuyenMais");
+                    b.Navigation("DichVus");
                 });
 
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.LoaiMonAnEntity", b =>
@@ -1136,12 +1208,30 @@ namespace WeddingRestaurant.Repository.Migrations
 
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.MonAnEntity", b =>
                 {
+                    b.Navigation("ChiTietPhuThuMonAns");
+
                     b.Navigation("MonAnTrongMenus");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.NhanVienEntity", b =>
+                {
+                    b.Navigation("NhanVienTrongTiecs");
                 });
 
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.NuocEntity", b =>
                 {
                     b.Navigation("ChiTietNuocUongs");
+
+                    b.Navigation("ChiTietPhuThuNuocs");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.PhuThuEntity", b =>
+                {
+                    b.Navigation("ChiTietPhuThuDichVus");
+
+                    b.Navigation("ChiTietPhuThuMonAns");
+
+                    b.Navigation("ChiTietPhuThuNuocs");
                 });
 
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.SanhEntity", b =>

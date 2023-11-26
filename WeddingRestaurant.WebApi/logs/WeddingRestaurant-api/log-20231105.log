@@ -1,0 +1,36 @@
+2023-11-05T13:38:25.4962354+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("53"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-05T13:38:25.7067847+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("50"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-05T13:38:25.7138276+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-05T13:38:25.7168447+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-05T13:38:25.7557181+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-11-05T13:38:25.7975318+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-11-05T13:38:27.0808760+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-11-05T13:38:27.0827054+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-11-05T13:38:27.0873591+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-11-05T13:38:27.0894579+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-11-05T13:38:27.0902939+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-11-05T13:41:58.7075008+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("50"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-05T13:41:58.8310479+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("46"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-05T13:41:58.8395935+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-05T13:41:58.8470369+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-05T13:41:58.8942615+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-11-05T13:41:58.9314785+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-11-05T13:41:59.3779276+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-11-05T13:41:59.3800876+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-11-05T13:41:59.3832087+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-11-05T13:41:59.3840577+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-11-05T13:41:59.3857188+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"

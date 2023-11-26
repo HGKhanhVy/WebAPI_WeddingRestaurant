@@ -7,6 +7,7 @@ using WeddingRestaurant.Core.Exceptions;
 using WeddingRestaurant.Core.Models.DatTiec;
 using WeddingRestaurant.Core.Models;
 using WeddingRestaurant.Core.Models.Sanh;
+using static WeddingRestaurant.Core.Constants.WebApiEndpoint;
 
 namespace WeddingRestaurant.WebApi.Controllers
 {
@@ -32,9 +33,9 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpGet]
         [Route(WebApiEndpoint.Sanh.GetSanh)]
-        public IActionResult GetSanhById(string keyId)
+        public IActionResult GetSanhById([FromRoute] string MaSanh)
         {
-            var data = _iSanhService.GetByKeyIdAsync(keyId);
+            var data = _iSanhService.GetByKeyIdAsync(MaSanh);
             if (data == null)
             {
                 var result = new BaseResponseModel<string>(
@@ -82,12 +83,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPut]
         [Route(WebApiEndpoint.Sanh.UpdateSanh)]
-        [Authorize]
-        public async Task<IActionResult> UpdateSanh(string keyId, SanhModel model)
+        public async Task<IActionResult> UpdateSanh([FromRoute] string MaSanh, SanhModel model)
         {
             try
             {
-                await _iSanhService.UpdateAsync(keyId, model);
+                await _iSanhService.UpdateAsync(MaSanh, model);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -115,12 +115,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpDelete]
         [Route(WebApiEndpoint.Sanh.DeleteSanh)]
-        [Authorize]
-        public async Task<IActionResult> DeleteSanh(string keyId)
+        public async Task<IActionResult> DeleteSanh([FromRoute] string MaSanh)
         {
             try
             {
-                await _iSanhService.DeleteAsync(keyId, false);
+                await _iSanhService.DeleteAsync(MaSanh, false);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -178,9 +177,9 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpGet]
         [Route(WebApiEndpoint.Sanh.PrintSucChua)]
-        public IActionResult GetSucChuaById(string keyId)
+        public IActionResult GetSucChuaById([FromRoute] string MaSanh)
         {
-            var data = _iSanhService.PrintSucChuaAsync(keyId);
+            var data = _iSanhService.PrintSucChuaAsync(MaSanh);
             if (data == null)
             {
                 var result = new BaseResponseModel<string>(

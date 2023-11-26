@@ -37,12 +37,13 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(LoaiNuocModel model, CancellationToken cancellationToken = default)
         {
-            if (_loaiNuocRepository.Get(_ => _.MaLoaiNuoc == model.MaLoaiNuoc && _.DeletedTime == null).Any())
+            if (_loaiNuocRepository.Get(_ => _.MaLoaiNuoc.Equals(model.MaLoaiNuoc) && _.TrangThai == null).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaLoaiNuoc);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsLoaiNuoc.LOAINUOC_EXISTED, statusCode: StatusCodes.Status400BadRequest);
             }
             var entity = _mapper.Map<LoaiNuocEntity>(model);
+            entity.MaLoaiNuoc = model.MaLoaiNuoc;
             _loaiNuocRepository.Add(entity);
             UnitOfWork.SaveChange();
             return Task.FromResult(entity.MaLoaiNuoc);
@@ -50,32 +51,33 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _loaiNuocRepository.GetTracking(x => x.MaLoaiNuoc == id && x.DeletedTime == null).FirstOrDefault();
+            var entity = _loaiNuocRepository.GetTracking(x => x.MaLoaiNuoc.Equals(id) && x.TrangThai == null).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id);
                 throw new CoreException(code: ResponseCodeConstants.NOT_FOUND, message: ReponseMessageConstantsLoaiNuoc.LOAINUOC_NOT_FOUND, statusCode: StatusCodes.Status404NotFound);
             }
             _loaiNuocRepository.Delete(entity, isPhysicalDelete: isPhysical);
+            entity.TrangThai = "Da xoa";
             UnitOfWork.SaveChange();
             return Task.CompletedTask;
         }
 
         public ICollection<LoaiNuocEntity> GetAllAsync()
         {
-            var entities = _loaiNuocRepository.Get(_ => _.DeletedTime == null).ToList();
+            var entities = _loaiNuocRepository.Get(_ => _.TrangThai == null).ToList();
             return (ICollection<LoaiNuocEntity>)entities;
         }
 
         public LoaiNuocEntity GetByKeyIdAsync(string id)
         {
-            var entity = _loaiNuocRepository.GetSingle(_ => _.MaLoaiNuoc == id && _.DeletedTime == null);
+            var entity = _loaiNuocRepository.GetSingle(_ => _.MaLoaiNuoc.Equals(id) && _.TrangThai == null);
             return entity;
         }
 
         public Task UpdateAsync(string Id, LoaiNuocModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _loaiNuocRepository.GetTracking(x => x.MaLoaiNuoc == Id && x.DeletedTime == null).FirstOrDefault();
+            var entity = _loaiNuocRepository.GetTracking(x => x.MaLoaiNuoc.Equals(Id) && x.TrangThai == null).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id);
@@ -83,7 +85,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaLoaiNuoc != Id)
             {
-                var isDuplicate = _loaiNuocRepository.GetTracking(x => x.MaLoaiNuoc == model.MaLoaiNuoc && x.DeletedTime == null).FirstOrDefault();
+                var isDuplicate = _loaiNuocRepository.Get(x => x.MaLoaiNuoc == model.MaLoaiNuoc && x.TrangThai == null).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);
@@ -100,7 +102,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _loaiNuocRepository.Get(_ => _.DeletedTime == null).ToList();
+            var entities = _loaiNuocRepository.Get(_ => _.TrangThai == null).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;
@@ -121,23 +123,12 @@ namespace WeddingRestaurant.Service
         {
             throw new NotImplementedException();
         }
-
-        ICollection<LoaiNuocEntity> IGetable<LoaiNuocEntity, string>.GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        LoaiNuocEntity IGetable<LoaiNuocEntity, string>.GetByKeyIdAsync(string keyId)
+        public LoaiNuocEntity GetBySDTAsync(string sdt)
         {
             throw new NotImplementedException();
         }
 
         LoaiNuocEntity IGetable<LoaiNuocEntity, string>.GetByLoginAsync(LoginModel model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public LoaiNuocEntity GetBySDTAsync(string sdt)
         {
             throw new NotImplementedException();
         }

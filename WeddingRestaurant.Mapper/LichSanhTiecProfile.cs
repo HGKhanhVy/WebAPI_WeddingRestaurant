@@ -15,7 +15,8 @@ namespace WeddingRestaurant.Mapper
         public LichSanhTiecProfile()
         {
             CreateMap<LichSanhTiecModel, LichSanhTiecEntity>()
-                .ForMember(x => x.Id, opt => opt.Ignore())
+                .ForMember(x => x.MaTiec, opt => opt.Ignore())
+                .ForMember(x => x.MaSanh, opt => opt.Ignore())
                 .ReverseMap();
         }
     }

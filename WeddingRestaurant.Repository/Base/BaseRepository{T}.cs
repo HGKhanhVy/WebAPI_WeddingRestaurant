@@ -40,7 +40,7 @@ namespace WeddingRestaurant.Repository.Base
 
         public virtual T Add(T entity)
         {
-            entity.DeletedTime = null;
+            entity.TrangThai = null;
             entity = DbSet.Add(entity).Entity;
             return entity;
         }
@@ -51,7 +51,6 @@ namespace WeddingRestaurant.Repository.Base
             List<T> list = new List<T>();
             foreach (T val in entities)
             {
-                val.CreatedTime = utcNow;
                 T item = Add(val);
                 list.Add(item);
             }
@@ -80,9 +79,8 @@ namespace WeddingRestaurant.Repository.Base
                 TryAttach(entity);
                 if (!isPhysicalDelete)
                 {
-                    entity.DeletedTime = ObjHelper.ReplaceNullOrDefault(entity.DeletedTime, DateTimeOffset.UtcNow);
-                    DbContext.Entry(entity).Property((x) => x.DeletedTime).IsModified = true;
-                    DbContext.Entry(entity).Property((x) => x.DeletedBy).IsModified = true;
+                    entity.TrangThai = ObjHelper.ReplaceNullOrDefault(entity.TrangThai, DateTimeOffset.UtcNow.ToString());
+                    DbContext.Entry(entity).Property((x) => x.TrangThai).IsModified = true;
                 }
                 else
                 {
@@ -106,7 +104,7 @@ namespace WeddingRestaurant.Repository.Base
                             }).ToList();
             foreach (T item in list)
             {
-                item.DeletedTime = utcNow;
+                item.TrangThai = utcNow.ToString();
                 Delete(item, isPhysicalDelete);
             }
         }
@@ -119,7 +117,7 @@ namespace WeddingRestaurant.Repository.Base
                 T entity = new T
                 {
                     Id = id,
-                    DeletedTime = utcNow
+                    TrangThai = utcNow.ToString()
                 };
                 Delete(entity, isPhysicalDelete);
             }
@@ -184,7 +182,7 @@ namespace WeddingRestaurant.Repository.Base
                 }
             }
 
-            return isIncludeDeleted ? source.IgnoreQueryFilters() : source.Where((x) => x.DeletedTime == null);
+            return isIncludeDeleted ? source.IgnoreQueryFilters() : source.Where((x) => x.TrangThai == null);
         }
 
         public virtual T GetSingle(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties)
@@ -228,10 +226,8 @@ namespace WeddingRestaurant.Repository.Base
 
         public virtual void Update(T entity)
         {
-            
-            TryAttach(entity);
 
-            entity.LastUpdatedTime = ObjHelper.ReplaceNullOrDefault(entity.LastUpdatedTime, DateTimeOffset.UtcNow);
+            TryAttach(entity);
             DbContext.Entry(entity).State = EntityState.Modified;
         }
 
@@ -265,7 +261,6 @@ namespace WeddingRestaurant.Repository.Base
             {
                 T val = entityNewData.Clone();
                 val.Id = item.Id;
-                val.LastUpdatedTime = utcNow;
                 Update(val, changedProperties);
             }
         }
@@ -282,7 +277,6 @@ namespace WeddingRestaurant.Repository.Base
             {
                 T val = entityNewData.Clone();
                 val.Id = item.Id;
-                val.LastUpdatedTime = utcNow;
                 Update(val, changedProperties);
             }
         }

@@ -10,13 +10,13 @@ namespace WeddingRestaurant.Contract.Repository.Models
     [Table("MonAnTrongMenu")]
     public class MonAnTrongMenuEntity : Entity
     {
-        [ForeignKey("Menu")]
+        // Khóa ngoại Menu
         public string MaMenu { get; set; }
-        public virtual MenuEntity? Menus { get; set; }
+        public virtual MenuEntity Menus { get; set; }
 
-        [ForeignKey("MonAn")]
+        // Khóa ngoại Mon An
         public string MaMonAn { get; set; }
-        public virtual MonAnEntity? MonAns { get; set; }
+        public virtual MonAnEntity MonAns { get; set; }
 
         public int SoLuongMon { get; set; }
         public double DonGia { get; set; }

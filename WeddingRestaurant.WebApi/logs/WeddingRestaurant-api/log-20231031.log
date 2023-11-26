@@ -1,0 +1,18 @@
+2023-10-31T09:34:42.2418374+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("125"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-31T09:34:42.3314172+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("40"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-31T09:34:42.3346306+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-10-31T09:34:42.3355547+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-10-31T09:34:42.3665920+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-10-31T09:34:42.3807166+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) Applying migration '"20231031023435_UpdtateGiaSanh"'.
+2023-10-31T09:34:42.5118205+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("65"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""ALTER TABLE [Sanh] ADD [DonGiaSanh] float NOT NULL DEFAULT 0.0E0;"
+2023-10-31T09:34:42.5392983+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("27"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20231031023435_UpdtateGiaSanh', N'7.0.9');"

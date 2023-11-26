@@ -1,3 +1,9 @@
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\WeddingRestaurant.WebApi.csproj.AssemblyReference.cache
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\WeddingRestaurant.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\WeddingRestaurant.WebApi.AssemblyInfoInputs.cache
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\WeddingRestaurant.WebApi.AssemblyInfo.cs
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\WeddingRestaurant.WebApi.csproj.CoreCompileInputs.cache
+D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\WeddingRestaurant.WebApi.MvcApplicationPartsAssemblyInfo.cache
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\bin\Debug\net6.0\appsettings.Development.json
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\bin\Debug\net6.0\appsettings.json
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\bin\Debug\net6.0\WeddingRestaurant.WebApi.exe
@@ -158,13 +164,6 @@ D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\bin\Debug\net6.0\W
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\bin\Debug\net6.0\WeddingRestaurant.Mapper.pdb
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\bin\Debug\net6.0\WeddingRestaurant.Repository.pdb
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\bin\Debug\net6.0\WeddingRestaurant.Service.pdb
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\WeddingRestaurant.WebApi.csproj.AssemblyReference.cache
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\WeddingRestaurant.WebApi.GeneratedMSBuildEditorConfig.editorconfig
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\WeddingRestaurant.WebApi.AssemblyInfoInputs.cache
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\WeddingRestaurant.WebApi.AssemblyInfo.cs
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\WeddingRestaurant.WebApi.csproj.CoreCompileInputs.cache
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\WeddingRestaurant.WebApi.MvcApplicationPartsAssemblyInfo.cs
-D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\WeddingRestaurant.WebApi.MvcApplicationPartsAssemblyInfo.cache
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\staticwebassets\msbuild.WeddingRestaurant.WebApi.Microsoft.AspNetCore.StaticWebAssets.props
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\staticwebassets\msbuild.build.WeddingRestaurant.WebApi.props
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WeddingRestaurant.WebApi.props

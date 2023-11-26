@@ -15,7 +15,7 @@ namespace WeddingRestaurant.Mapper
         public MonAnProfile()
         {
             CreateMap<MonAnModel, MonAnEntity>()
-                .ForMember(x => x.Id, opt => opt.Ignore())
+                .ForMember(x => x.MaMonAn, opt => opt.Ignore())
                 .ReverseMap();
         }
     }

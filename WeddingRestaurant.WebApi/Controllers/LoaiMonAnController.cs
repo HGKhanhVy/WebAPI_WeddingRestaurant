@@ -32,9 +32,9 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpGet]
         [Route(WebApiEndpoint.LoaiMonAn.GetLoaiMonAn)]
-        public IActionResult GetLoaiMonAnById(string keyId)
+        public IActionResult GetLoaiMonAnById([FromRoute] string MaLoaiMonAn)
         {
-            var data = _iLoaiMonAnService.GetByKeyIdAsync(keyId);
+            var data = _iLoaiMonAnService.GetByKeyIdAsync(MaLoaiMonAn);
             if (data == null)
             {
                 var result = new BaseResponseModel<string>(
@@ -51,7 +51,6 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPost]
         [Route(WebApiEndpoint.LoaiMonAn.AddLoaiMonAn)]
-        [Authorize]
         public async Task<IActionResult> CreateLoaiMonAn(LoaiMonAnModel model)
         {
             try
@@ -83,12 +82,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPut]
         [Route(WebApiEndpoint.LoaiMonAn.UpdateLoaiMonAn)]
-        [Authorize]
-        public async Task<IActionResult> UpdateLoaiMonAn(string keyId, LoaiMonAnModel model)
+        public async Task<IActionResult> UpdateLoaiMonAn([FromRoute] string MaLoaiMonAn, LoaiMonAnModel model)
         {
             try
             {
-                await _iLoaiMonAnService.UpdateAsync(keyId, model);
+                await _iLoaiMonAnService.UpdateAsync(MaLoaiMonAn, model);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -116,12 +114,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpDelete]
         [Route(WebApiEndpoint.LoaiMonAn.DeleteLoaiMonAn)]
-        [Authorize]
-        public async Task<IActionResult> DeleteLoaiMonAn(string keyId)
+        public async Task<IActionResult> DeleteLoaiMonAn([FromRoute] string MaLoaiMonAn)
         {
             try
             {
-                await _iLoaiMonAnService.DeleteAsync(keyId, false);
+                await _iLoaiMonAnService.DeleteAsync(MaLoaiMonAn, false);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,

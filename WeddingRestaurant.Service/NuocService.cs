@@ -37,12 +37,13 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(NuocModel model, CancellationToken cancellationToken = default)
         {
-            if (_nuocRepository.Get(_ => _.MaNuoc == model.MaNuoc && _.DeletedTime == null).Any())
+            if (_nuocRepository.Get(_ => _.MaNuoc.Equals(model.MaNuoc) && _.TrangThai == null).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaNuoc);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsNuoc.NUOC_EXISTED, statusCode: StatusCodes.Status400BadRequest);
             }
             var entity = _mapper.Map<NuocEntity>(model);
+            entity.MaNuoc = model.MaNuoc;
             _nuocRepository.Add(entity);
             UnitOfWork.SaveChange();
             return Task.FromResult(entity.MaNuoc);
@@ -50,32 +51,33 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _nuocRepository.GetTracking(x => x.MaNuoc == id && x.DeletedTime == null).FirstOrDefault();
+            var entity = _nuocRepository.GetTracking(x => x.MaNuoc.Equals(id) && x.TrangThai == null).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id);
                 throw new CoreException(code: ResponseCodeConstants.NOT_FOUND, message: ReponseMessageConstantsNuoc.NUOC_NOT_FOUND, statusCode: StatusCodes.Status404NotFound);
             }
             _nuocRepository.Delete(entity, isPhysicalDelete: isPhysical);
+            entity.TrangThai = "Da xoa";
             UnitOfWork.SaveChange();
             return Task.CompletedTask;
         }
 
         public ICollection<NuocEntity> GetAllAsync()
         {
-            var entities = _nuocRepository.Get(_ => _.DeletedTime == null).ToList();
+            var entities = _nuocRepository.Get(_ => _.TrangThai == null).ToList();
             return (ICollection<NuocEntity>)entities;
         }
 
         public NuocEntity GetByKeyIdAsync(string id)
         {
-            var entity = _nuocRepository.GetSingle(_ => _.MaNuoc == id && _.DeletedTime == null);
+            var entity = _nuocRepository.GetSingle(_ => _.MaNuoc.Equals(id) && _.TrangThai == null);
             return entity;
         }
 
         public Task UpdateAsync(string Id, NuocModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _nuocRepository.GetTracking(x => x.MaNuoc == Id && x.DeletedTime == null).FirstOrDefault();
+            var entity = _nuocRepository.GetTracking(x => x.MaNuoc.Equals(Id) && x.TrangThai == null).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id);
@@ -83,7 +85,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaNuoc != Id)
             {
-                var isDuplicate = _nuocRepository.GetTracking(x => x.MaNuoc == model.MaNuoc && x.DeletedTime == null).FirstOrDefault();
+                var isDuplicate = _nuocRepository.GetTracking(x => x.MaNuoc.Equals(model.MaNuoc) && x.TrangThai == null).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);
@@ -100,7 +102,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _nuocRepository.Get(_ => _.DeletedTime == null).ToList();
+            var entities = _nuocRepository.Get(_ => _.TrangThai == null).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;

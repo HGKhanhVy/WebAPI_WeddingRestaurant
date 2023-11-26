@@ -32,9 +32,9 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpGet]
         [Route(WebApiEndpoint.Nuoc.GetNuoc)]
-        public IActionResult GetNuocById(string keyId)
+        public IActionResult GetNuocById([FromRoute] string MaNuoc)
         {
-            var data = _iNuocService.GetByKeyIdAsync(keyId);
+            var data = _iNuocService.GetByKeyIdAsync(MaNuoc);
             if (data == null)
             {
                 var result = new BaseResponseModel<string>(
@@ -51,7 +51,6 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPost]
         [Route(WebApiEndpoint.Nuoc.AddNuoc)]
-        [Authorize]
         public async Task<IActionResult> CreateNuoc(NuocModel model)
         {
             try
@@ -83,12 +82,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPut]
         [Route(WebApiEndpoint.Nuoc.UpdateNuoc)]
-        [Authorize]
-        public async Task<IActionResult> UpdateNuoc(string keyId, NuocModel model)
+        public async Task<IActionResult> UpdateNuoc([FromRoute] string MaNuoc, NuocModel model)
         {
             try
             {
-                await _iNuocService.UpdateAsync(keyId, model);
+                await _iNuocService.UpdateAsync(MaNuoc, model);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -116,12 +114,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpDelete]
         [Route(WebApiEndpoint.Nuoc.DeleteNuoc)]
-        [Authorize]
-        public async Task<IActionResult> DeleteNuoc(string keyId)
+        public async Task<IActionResult> DeleteNuoc([FromRoute] string MaNuoc)
         {
             try
             {
-                await _iNuocService.DeleteAsync(keyId, false);
+                await _iNuocService.DeleteAsync(MaNuoc, false);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,

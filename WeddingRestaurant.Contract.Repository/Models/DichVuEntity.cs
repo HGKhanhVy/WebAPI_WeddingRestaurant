@@ -12,10 +12,14 @@ namespace WeddingRestaurant.Contract.Repository.Models
     [Table("DichVu")]
     public class DichVuEntity : Entity
     {
-        [Key]
         public string MaDichVu { get; set; }    
         public string TenDichVu { get; set; }
-        public double DonGiaDichVu { get; set; }
-        public virtual ICollection<ChiTietDichVuEntity>? ChiTietDichVus { get; set; }
+
+        // Khóa ngoại bảng LoaiDichVu
+        public string MaLoaiDichVu { get; set; }
+        public virtual LoaiDichVuEntity LoaiDichVus { get; set; }
+
+        public virtual ICollection<DichVuTinhPhiEntity>? DichVuTinhPhis { get; set; }
+        public virtual ICollection<DichVuUuDaiEntity>? DichVuUuDais { get; set; }
     }
 }

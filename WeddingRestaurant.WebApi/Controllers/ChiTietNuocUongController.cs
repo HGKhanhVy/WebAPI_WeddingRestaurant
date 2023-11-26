@@ -6,6 +6,7 @@ using WeddingRestaurant.Core.Constants;
 using WeddingRestaurant.Core.Exceptions;
 using WeddingRestaurant.Core.Models.ChiTietNuocUong;
 using WeddingRestaurant.Core.Models;
+using WeddingRestaurant.Service;
 
 namespace WeddingRestaurant.WebApi.Controllers
 {
@@ -31,9 +32,9 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpGet]
         [Route(WebApiEndpoint.ChiTietNuocUong.GetChiTietNuocUong)]
-        public IActionResult GetChiTietNuocUongById(string keyId, string id_Tiec)
+        public IActionResult GetChiTietNuocUongById([FromRoute] string MaNuoc, [FromRoute] string MaTiec)
         {
-            var data = _iChiTietNuocUongService.GetByKeyIdAsync(keyId, id_Tiec);
+            var data = _iChiTietNuocUongService.GetByKeyIdAsync(MaNuoc, MaTiec);
             if (data == null)
             {
                 var result = new BaseResponseModel<string>(
@@ -50,7 +51,6 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPost]
         [Route(WebApiEndpoint.ChiTietNuocUong.AddChiTietNuocUong)]
-        [Authorize]
         public async Task<IActionResult> CreateChiTietNuocUong(ChiTietNuocUongModel model)
         {
             try
@@ -82,12 +82,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPut]
         [Route(WebApiEndpoint.ChiTietNuocUong.UpdateChiTietNuocUong)]
-        [Authorize]
-        public async Task<IActionResult> UpdateChiTietNuocUong(string keyId, string id_Tiec, ChiTietNuocUongModel model)
+        public async Task<IActionResult> UpdateChiTietNuocUong([FromRoute] string MaNuoc, [FromRoute] string MaTiec, ChiTietNuocUongModel model)
         {
             try
             {
-                await _iChiTietNuocUongService.UpdateAsync(keyId, id_Tiec, model);
+                await _iChiTietNuocUongService.UpdateAsync(MaNuoc, MaTiec, model);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -115,12 +114,11 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpDelete]
         [Route(WebApiEndpoint.ChiTietNuocUong.DeleteChiTietNuocUong)]
-        [Authorize]
-        public async Task<IActionResult> DeleteChiTietNuocUong(string keyId, string id_Tiec)
+        public async Task<IActionResult> DeleteChiTietNuocUong([FromRoute] string MaNuoc, [FromRoute] string MaTiec)
         {
             try
             {
-                await _iChiTietNuocUongService.DeleteAsync(keyId, id_Tiec, false);
+                await _iChiTietNuocUongService.DeleteAsync(MaNuoc, MaTiec, false);
                 return Ok(new BaseResponseModel<string>(
                     statusCode: StatusCodes.Status200OK,
                     code: ResponseCodeConstants.SUCCESS,
@@ -174,6 +172,44 @@ namespace WeddingRestaurant.WebApi.Controllers
                     message: e.Message);
                 return BadRequest(result);
             }
+        }
+
+        [HttpGet]
+        [Route(WebApiEndpoint.ChiTietNuocUong.PrintAllChiTietNuocForTiec)]
+        public IActionResult GetChiTietMenuByIdTiec([FromRoute] string MaTiec)
+        {
+            var data = _iChiTietNuocUongService.GetAllByKey1Async(MaTiec);
+            if (data == null)
+            {
+                var result = new BaseResponseModel<string>(
+                    statusCode: StatusCodes.Status400BadRequest,
+                    code: ResponseCodeConstants.NOT_FOUND,
+                    message: ReponseMessageConstantsChiTietNuocUong.CHITIETNUOCUONG_NOT_FOUND);
+                return BadRequest(result);
+            }
+
+            return Ok(new BaseResponseModel<ICollection<ChiTietNuocUongEntity>?>(
+                statusCode: StatusCodes.Status200OK,
+                code: ResponseCodeConstants.SUCCESS, data: data));
+        }
+
+        [HttpGet]
+        [Route(WebApiEndpoint.ChiTietNuocUong.PrintAllChiTietNuocForNuoc)]
+        public IActionResult GetChiTietMenuByIdNuoc([FromRoute] string MaNuoc)
+        {
+            var data = _iChiTietNuocUongService.GetAllByKey2Async(MaNuoc);
+            if (data == null)
+            {
+                var result = new BaseResponseModel<string>(
+                    statusCode: StatusCodes.Status400BadRequest,
+                    code: ResponseCodeConstants.NOT_FOUND,
+                    message: ReponseMessageConstantsChiTietNuocUong.CHITIETNUOCUONG_NOT_FOUND);
+                return BadRequest(result);
+            }
+
+            return Ok(new BaseResponseModel<ICollection<ChiTietNuocUongEntity>?>(
+                statusCode: StatusCodes.Status200OK,
+                code: ResponseCodeConstants.SUCCESS, data: data));
         }
     }
 }

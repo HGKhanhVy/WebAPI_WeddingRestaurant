@@ -12,5 +12,7 @@ namespace WeddingRestaurant.Contract.Service.Base
     {
         ICollection<T> GetAllAsync();
         T GetByKeyIdAsync(TKey keyId, T2Key id);
+        ICollection<T> GetAllByKey1Async(TKey id);
+        ICollection<T> GetAllByKey2Async(T2Key id);
     }
 }
