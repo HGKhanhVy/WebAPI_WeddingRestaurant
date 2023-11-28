@@ -213,6 +213,29 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.ToTable("ChiTietPhuThuNuoc");
                 });
 
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.DanhGiaEntity", b =>
+                {
+                    b.Property<string>("MaDanhGia")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("MaKhachHang")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("NoiDungDanhGia")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MaDanhGia");
+
+                    b.HasIndex("MaKhachHang");
+
+                    b.ToTable("DanhGia");
+                });
+
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.DatTiecEntity", b =>
                 {
                     b.Property<string>("MaTiec")
@@ -294,6 +317,10 @@ namespace WeddingRestaurant.Repository.Migrations
                 {
                     b.Property<string>("MaDichVu")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("HinhAnh")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MaLoaiDichVu")
                         .IsRequired()
@@ -555,6 +582,10 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<double>("DonGia")
                         .HasColumnType("float");
 
+                    b.Property<string>("HinhAnh")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("MaLoaiMonAn")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -700,6 +731,10 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<double>("DonGia")
                         .HasColumnType("float");
 
+                    b.Property<string>("HinhAnh")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("MaLoaiNuoc")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -788,6 +823,10 @@ namespace WeddingRestaurant.Repository.Migrations
                 {
                     b.Property<string>("MaSanh")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("HinhAnh")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SucChuaToiDa")
                         .HasColumnType("int");
@@ -976,6 +1015,17 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Navigation("Nuocs");
 
                     b.Navigation("PhuThus");
+                });
+
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.DanhGiaEntity", b =>
+                {
+                    b.HasOne("WeddingRestaurant.Contract.Repository.Models.KhachHangEntity", "KhachHangs")
+                        .WithMany("DanhGias")
+                        .HasForeignKey("MaKhachHang")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("KhachHangs");
                 });
 
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.DatTiecEntity", b =>
@@ -1181,6 +1231,8 @@ namespace WeddingRestaurant.Repository.Migrations
 
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.KhachHangEntity", b =>
                 {
+                    b.Navigation("DanhGias");
+
                     b.Navigation("DatTiecs");
                 });
 

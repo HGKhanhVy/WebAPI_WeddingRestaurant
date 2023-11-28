@@ -13,6 +13,7 @@ namespace WeddingRestaurant.Contract.Repository.Models
     {
         public string MaSanh { get; set; }
         public string TenSanh { get; set; }
+        public string HinhAnh { get; set; }
         public int SucChuaToiThieu { get; set;}
         public int SucChuaToiDa { get; set; }
 

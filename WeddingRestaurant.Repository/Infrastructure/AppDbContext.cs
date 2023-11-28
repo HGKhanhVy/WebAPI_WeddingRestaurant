@@ -163,6 +163,14 @@ namespace WeddingRestaurant.Repository.Infrastructure
                 .HasForeignKey(c => c.MaNuoc)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            // Danh Gia
+            modelBuilder.Entity<DanhGiaEntity>()
+                .HasKey(d => d.MaDanhGia);
+            modelBuilder.Entity<DanhGiaEntity>()
+                .HasOne(d => d.KhachHangs)
+                .WithMany(k => k.DanhGias) // 1-n
+                .HasForeignKey(d => d.MaKhachHang);
+
             // Dat Tiec
             modelBuilder.Entity<DatTiecEntity>()
                 .HasKey(d => d.MaTiec);

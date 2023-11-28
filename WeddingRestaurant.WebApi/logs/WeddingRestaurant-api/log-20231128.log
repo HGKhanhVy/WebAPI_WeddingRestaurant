@@ -1,0 +1,435 @@
+2023-11-28T21:15:54.6746479+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-28T21:15:54.7323466+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-28T21:15:54.7352019+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-28T21:15:54.7356750+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-28T21:15:54.7818963+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("33"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-11-28T21:15:54.7958031+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) Applying migration '"20231128141545_UpdateImg"'.
+2023-11-28T21:16:05.1278722+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("10,244"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""ALTER TABLE [Sanh] ADD [HinhAnh] nvarchar(max) NOT NULL DEFAULT N'';"
+2023-11-28T21:16:05.1908954+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("62"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""ALTER TABLE [Nuoc] ADD [HinhAnh] nvarchar(max) NOT NULL DEFAULT N'';"
+2023-11-28T21:16:05.3474516+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("156"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""ALTER TABLE [MonAn] ADD [HinhAnh] nvarchar(max) NOT NULL DEFAULT N'';"
+2023-11-28T21:16:05.3490436+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""ALTER TABLE [DichVu] ADD [HinhAnh] nvarchar(max) NOT NULL DEFAULT N'';"
+2023-11-28T21:16:06.6396224+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1,290"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [DanhGia] (
+    [MaDanhGia] nvarchar(450) NOT NULL,
+    [NoiDungDanhGia] nvarchar(max) NOT NULL,
+    [MaKhachHang] nvarchar(450) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_DanhGia] PRIMARY KEY ([MaDanhGia]),
+    CONSTRAINT [FK_DanhGia_KhachHang_MaKhachHang] FOREIGN KEY ([MaKhachHang]) REFERENCES [KhachHang] ([MaKhachHang]) ON DELETE CASCADE
+);"
+2023-11-28T21:16:06.6450079+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_DanhGia_MaKhachHang] ON [DanhGia] ([MaKhachHang]);"
+2023-11-28T21:16:06.6491519+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20231128141545_UpdateImg', N'7.0.9');"
+2023-11-28T21:19:42.1278448+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("263"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE DATABASE [DB_WeddingRestaurant];"
+2023-11-28T21:19:42.2190351+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("59"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [DB_WeddingRestaurant] SET READ_COMMITTED_SNAPSHOT ON;
+END;"
+2023-11-28T21:19:42.4104873+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-28T21:19:42.5917855+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("103"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);"
+2023-11-28T21:19:42.5942465+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-28T21:19:42.6238074+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("22"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-28T21:19:42.6282176+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-11-28T21:19:42.6454403+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) Applying migration '"20231128141931_UpdateImg"'.
+2023-11-28T21:19:42.8348603+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("98"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [HoaDon] (
+    [MaHoaDon] nvarchar(450) NOT NULL,
+    [NgayLap] nvarchar(max) NOT NULL,
+    [TongTienPhuThu] decimal(18,2) NOT NULL,
+    [TongTienThanhToan] decimal(18,2) NOT NULL,
+    [MaTiec] nvarchar(max) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_HoaDon] PRIMARY KEY ([MaHoaDon])
+);"
+2023-11-28T21:19:42.8984455+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("63"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [KhachHang] (
+    [MaKhachHang] nvarchar(450) NOT NULL,
+    [TenKhachHang] nvarchar(max) NOT NULL,
+    [SoDienThoai] nvarchar(max) NOT NULL,
+    [NgaySinh] nvarchar(max) NOT NULL,
+    [CCCD] nvarchar(max) NOT NULL,
+    [Gmail] nvarchar(max) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_KhachHang] PRIMARY KEY ([MaKhachHang])
+);"
+2023-11-28T21:19:42.9450059+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("46"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [LoaiDichVu] (
+    [MaLoaiDichVu] nvarchar(450) NOT NULL,
+    [TenLoaiDichVu] nvarchar(max) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_LoaiDichVu] PRIMARY KEY ([MaLoaiDichVu])
+);"
+2023-11-28T21:19:42.9470896+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [LoaiMonAn] (
+    [MaLoaiMonAn] nvarchar(450) NOT NULL,
+    [TenLoaiMon] nvarchar(max) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_LoaiMonAn] PRIMARY KEY ([MaLoaiMonAn])
+);"
+2023-11-28T21:19:42.9488701+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [LoaiNuoc] (
+    [MaLoaiNuoc] nvarchar(450) NOT NULL,
+    [TenLoaiNuoc] nvarchar(max) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_LoaiNuoc] PRIMARY KEY ([MaLoaiNuoc])
+);"
+2023-11-28T21:19:43.0224427+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("73"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [Menu] (
+    [MaMenu] nvarchar(450) NOT NULL,
+    [TenMenu] nvarchar(max) NOT NULL,
+    [DonGiaMenu] float NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_Menu] PRIMARY KEY ([MaMenu])
+);"
+2023-11-28T21:19:43.0241671+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [NguoiDung] (
+    [userName] nvarchar(450) NOT NULL,
+    [password] nvarchar(max) NOT NULL,
+    [quyen] nvarchar(max) NOT NULL,
+    [hoTen] nvarchar(max) NOT NULL,
+    [sdt] nvarchar(max) NOT NULL,
+    [email] nvarchar(max) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_NguoiDung] PRIMARY KEY ([userName])
+);"
+2023-11-28T21:19:43.0256754+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [NhanVien] (
+    [MaNhanVien] nvarchar(450) NOT NULL,
+    [TenNhanVien] nvarchar(max) NOT NULL,
+    [SoDienThoai] nvarchar(max) NOT NULL,
+    [NgaySinh] nvarchar(max) NOT NULL,
+    [CCCD] nvarchar(max) NOT NULL,
+    [Gmail] nvarchar(max) NOT NULL,
+    [NgayVaoLam] nvarchar(max) NOT NULL,
+    [NgayNghiViec] nvarchar(max) NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_NhanVien] PRIMARY KEY ([MaNhanVien])
+);"
+2023-11-28T21:19:43.0268761+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [Sanh] (
+    [MaSanh] nvarchar(450) NOT NULL,
+    [TenSanh] nvarchar(max) NOT NULL,
+    [HinhAnh] nvarchar(max) NOT NULL,
+    [SucChuaToiThieu] int NOT NULL,
+    [SucChuaToiDa] int NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_Sanh] PRIMARY KEY ([MaSanh])
+);"
+2023-11-28T21:19:43.0548301+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("28"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [Token] (
+    [IDToken] nvarchar(450) NOT NULL,
+    [AccessToken] nvarchar(max) NOT NULL,
+    [RefreshToken] nvarchar(max) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_Token] PRIMARY KEY ([IDToken])
+);"
+2023-11-28T21:19:43.0839278+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [PhuThu] (
+    [MaPhuThu] nvarchar(450) NOT NULL,
+    [LoaiPhuThu] nvarchar(max) NOT NULL,
+    [MoTaPhuThu] nvarchar(max) NOT NULL,
+    [TongTien] float NOT NULL,
+    [MaHoaDon] nvarchar(450) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_PhuThu] PRIMARY KEY ([MaPhuThu]),
+    CONSTRAINT [FK_PhuThu_HoaDon_MaHoaDon] FOREIGN KEY ([MaHoaDon]) REFERENCES [HoaDon] ([MaHoaDon]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:43.1773759+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("93"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [DanhGia] (
+    [MaDanhGia] nvarchar(450) NOT NULL,
+    [NoiDungDanhGia] nvarchar(max) NOT NULL,
+    [MaKhachHang] nvarchar(450) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_DanhGia] PRIMARY KEY ([MaDanhGia]),
+    CONSTRAINT [FK_DanhGia_KhachHang_MaKhachHang] FOREIGN KEY ([MaKhachHang]) REFERENCES [KhachHang] ([MaKhachHang]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:43.1811815+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [DatTiec] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [LoaiHinhTiec] nvarchar(max) NOT NULL,
+    [NgayDatTiec] datetime2 NOT NULL,
+    [NgayToChuc] datetime2 NOT NULL,
+    [ThoiGianToChuc] datetime2 NOT NULL,
+    [SoLuongBanChinhThuc] int NOT NULL,
+    [SoLuongBanTang] int NOT NULL,
+    [SoLuongBanChay] int NOT NULL,
+    [SoLuongBanDuPhong] int NOT NULL,
+    [TongBanSetup] int NOT NULL,
+    [LoaiBan] nvarchar(max) NOT NULL,
+    [PhiDichVu] float NOT NULL,
+    [TongTienDuKien] float NOT NULL,
+    [TongTienGiam] float NOT NULL,
+    [TongTienPhaiTra] float NOT NULL,
+    [TienCocLan1] float NOT NULL,
+    [TienCocLan2] float NOT NULL,
+    [GhiChu] nvarchar(max) NOT NULL,
+    [MaKhachHang] nvarchar(450) NOT NULL,
+    [MaHoaDon] nvarchar(max) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_DatTiec] PRIMARY KEY ([MaTiec]),
+    CONSTRAINT [FK_DatTiec_HoaDon_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [HoaDon] ([MaHoaDon]) ON DELETE CASCADE,
+    CONSTRAINT [FK_DatTiec_KhachHang_MaKhachHang] FOREIGN KEY ([MaKhachHang]) REFERENCES [KhachHang] ([MaKhachHang]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:43.1825905+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [DichVu] (
+    [MaDichVu] nvarchar(450) NOT NULL,
+    [TenDichVu] nvarchar(max) NOT NULL,
+    [HinhAnh] nvarchar(max) NOT NULL,
+    [MaLoaiDichVu] nvarchar(450) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_DichVu] PRIMARY KEY ([MaDichVu]),
+    CONSTRAINT [FK_DichVu_LoaiDichVu_MaLoaiDichVu] FOREIGN KEY ([MaLoaiDichVu]) REFERENCES [LoaiDichVu] ([MaLoaiDichVu]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:43.1838781+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [MonAn] (
+    [MaMonAn] nvarchar(450) NOT NULL,
+    [TenMonAn] nvarchar(max) NOT NULL,
+    [DonGia] float NOT NULL,
+    [HinhAnh] nvarchar(max) NOT NULL,
+    [DVT] nvarchar(max) NOT NULL,
+    [MaLoaiMonAn] nvarchar(450) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_MonAn] PRIMARY KEY ([MaMonAn]),
+    CONSTRAINT [FK_MonAn_LoaiMonAn_MaLoaiMonAn] FOREIGN KEY ([MaLoaiMonAn]) REFERENCES [LoaiMonAn] ([MaLoaiMonAn]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:43.1857812+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [Nuoc] (
+    [MaNuoc] nvarchar(450) NOT NULL,
+    [TenNuoc] nvarchar(max) NOT NULL,
+    [DVT] nvarchar(max) NOT NULL,
+    [HinhAnh] nvarchar(max) NOT NULL,
+    [DonGia] float NOT NULL,
+    [MaLoaiNuoc] nvarchar(450) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_Nuoc] PRIMARY KEY ([MaNuoc]),
+    CONSTRAINT [FK_Nuoc_LoaiNuoc_MaLoaiNuoc] FOREIGN KEY ([MaLoaiNuoc]) REFERENCES [LoaiNuoc] ([MaLoaiNuoc]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:46.6195673+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [AccessToken] (
+    [Token] nvarchar(max) NOT NULL,
+    [StrTokenIDToken] nvarchar(450) NULL,
+    [userName] nvarchar(450) NOT NULL,
+    [IsUsed] bit NOT NULL,
+    [IsRevoked] bit NOT NULL,
+    [ExpireAt] datetime2 NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [FK_AccessToken_NguoiDung_userName] FOREIGN KEY ([userName]) REFERENCES [NguoiDung] ([userName]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AccessToken_Token_StrTokenIDToken] FOREIGN KEY ([StrTokenIDToken]) REFERENCES [Token] ([IDToken])
+);"
+2023-11-28T21:19:47.2589887+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("639"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [RefreshToken] (
+    [Token] nvarchar(450) NOT NULL,
+    [userName] nvarchar(450) NOT NULL,
+    [StrTokenIDToken] nvarchar(450) NULL,
+    [JwtID] nvarchar(max) NOT NULL,
+    [IsUsed] bit NOT NULL,
+    [IsRevoked] bit NOT NULL,
+    [ExpireAt] datetime2 NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_RefreshToken] PRIMARY KEY ([Token], [userName]),
+    CONSTRAINT [FK_RefreshToken_NguoiDung_userName] FOREIGN KEY ([userName]) REFERENCES [NguoiDung] ([userName]) ON DELETE CASCADE,
+    CONSTRAINT [FK_RefreshToken_Token_StrTokenIDToken] FOREIGN KEY ([StrTokenIDToken]) REFERENCES [Token] ([IDToken])
+);"
+2023-11-28T21:19:47.2618464+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [ChiTietMenu] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaMenu] nvarchar(450) NOT NULL,
+    [SoLuongMenuCuaTiec] int NOT NULL,
+    [TongTien] float NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_ChiTietMenu] PRIMARY KEY ([MaTiec], [MaMenu]),
+    CONSTRAINT [FK_ChiTietMenu_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ChiTietMenu_Menu_MaMenu] FOREIGN KEY ([MaMenu]) REFERENCES [Menu] ([MaMenu]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:47.2759617+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [LichSanhTiec] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaSanh] nvarchar(450) NOT NULL,
+    [NgayDienRa] datetime2 NOT NULL,
+    [Ca] nvarchar(max) NOT NULL,
+    [TienPhuThu] float NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_LichSanhTiec] PRIMARY KEY ([MaTiec], [MaSanh]),
+    CONSTRAINT [FK_LichSanhTiec_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_LichSanhTiec_Sanh_MaSanh] FOREIGN KEY ([MaSanh]) REFERENCES [Sanh] ([MaSanh]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:47.2792978+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [NhanVienTrongTiec] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaNhanVien] nvarchar(450) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_NhanVienTrongTiec] PRIMARY KEY ([MaTiec], [MaNhanVien]),
+    CONSTRAINT [FK_NhanVienTrongTiec_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_NhanVienTrongTiec_NhanVien_MaNhanVien] FOREIGN KEY ([MaNhanVien]) REFERENCES [NhanVien] ([MaNhanVien]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:47.3201320+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("41"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [DichVuTinhPhi] (
+    [MaDichVuTinhPhi] nvarchar(450) NOT NULL,
+    [TenDichVu] nvarchar(max) NOT NULL,
+    [MoTa] nvarchar(max) NOT NULL,
+    [HinhAnh] nvarchar(max) NOT NULL,
+    [DonGiaDichVu] float NOT NULL,
+    [MaDichVu] nvarchar(450) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_DichVuTinhPhi] PRIMARY KEY ([MaDichVuTinhPhi]),
+    CONSTRAINT [FK_DichVuTinhPhi_DichVu_MaDichVu] FOREIGN KEY ([MaDichVu]) REFERENCES [DichVu] ([MaDichVu]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:47.3355163+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [DichVuUuDai] (
+    [MaDichVuUuDai] nvarchar(450) NOT NULL,
+    [TenDichVu] nvarchar(max) NOT NULL,
+    [DieuKienApDung] nvarchar(max) NOT NULL,
+    [MoTa] nvarchar(max) NOT NULL,
+    [HinhAnh] nvarchar(max) NOT NULL,
+    [MaDichVu] nvarchar(450) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_DichVuUuDai] PRIMARY KEY ([MaDichVuUuDai]),
+    CONSTRAINT [FK_DichVuUuDai_DichVu_MaDichVu] FOREIGN KEY ([MaDichVu]) REFERENCES [DichVu] ([MaDichVu]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:49.7154226+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("46"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [ChiTietPhuThuMonAn] (
+    [MaPhuThu] nvarchar(450) NOT NULL,
+    [MaMonAn] nvarchar(450) NOT NULL,
+    [SoLuong] int NOT NULL,
+    [DonGia] float NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_ChiTietPhuThuMonAn] PRIMARY KEY ([MaPhuThu], [MaMonAn]),
+    CONSTRAINT [FK_ChiTietPhuThuMonAn_MonAn_MaMonAn] FOREIGN KEY ([MaMonAn]) REFERENCES [MonAn] ([MaMonAn]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ChiTietPhuThuMonAn_PhuThu_MaPhuThu] FOREIGN KEY ([MaPhuThu]) REFERENCES [PhuThu] ([MaPhuThu]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:49.7176525+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [MonAnTrongMenu] (
+    [MaMenu] nvarchar(450) NOT NULL,
+    [MaMonAn] nvarchar(450) NOT NULL,
+    [SoLuongMon] int NOT NULL,
+    [DonGia] float NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_MonAnTrongMenu] PRIMARY KEY ([MaMenu], [MaMonAn]),
+    CONSTRAINT [FK_MonAnTrongMenu_Menu_MaMenu] FOREIGN KEY ([MaMenu]) REFERENCES [Menu] ([MaMenu]) ON DELETE CASCADE,
+    CONSTRAINT [FK_MonAnTrongMenu_MonAn_MaMonAn] FOREIGN KEY ([MaMonAn]) REFERENCES [MonAn] ([MaMonAn]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:49.9780553+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("260"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [ChiTietNuocUong] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaNuoc] nvarchar(450) NOT NULL,
+    [SoLuong] int NOT NULL,
+    [TongTien] float NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_ChiTietNuocUong] PRIMARY KEY ([MaTiec], [MaNuoc]),
+    CONSTRAINT [FK_ChiTietNuocUong_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ChiTietNuocUong_Nuoc_MaNuoc] FOREIGN KEY ([MaNuoc]) REFERENCES [Nuoc] ([MaNuoc]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:50.0065347+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("28"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [ChiTietPhuThuNuoc] (
+    [MaPhuThu] nvarchar(450) NOT NULL,
+    [MaNuoc] nvarchar(450) NOT NULL,
+    [SoLuong] int NOT NULL,
+    [DonGia] float NOT NULL,
+    [ThanhTien] float NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_ChiTietPhuThuNuoc] PRIMARY KEY ([MaPhuThu], [MaNuoc]),
+    CONSTRAINT [FK_ChiTietPhuThuNuoc_Nuoc_MaNuoc] FOREIGN KEY ([MaNuoc]) REFERENCES [Nuoc] ([MaNuoc]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ChiTietPhuThuNuoc_PhuThu_MaPhuThu] FOREIGN KEY ([MaPhuThu]) REFERENCES [PhuThu] ([MaPhuThu]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:50.0229424+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [ChiTietDichVuTinhPhi] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaDichVuTinhPhi] nvarchar(450) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_ChiTietDichVuTinhPhi] PRIMARY KEY ([MaTiec], [MaDichVuTinhPhi]),
+    CONSTRAINT [FK_ChiTietDichVuTinhPhi_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ChiTietDichVuTinhPhi_DichVuTinhPhi_MaDichVuTinhPhi] FOREIGN KEY ([MaDichVuTinhPhi]) REFERENCES [DichVuTinhPhi] ([MaDichVuTinhPhi]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:50.0261269+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [ChiTietPhuThuDichVu] (
+    [MaPhuThu] nvarchar(450) NOT NULL,
+    [MaDichVuTinhPhi] nvarchar(450) NOT NULL,
+    [SoLuong] int NOT NULL,
+    [DonGia] float NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_ChiTietPhuThuDichVu] PRIMARY KEY ([MaPhuThu], [MaDichVuTinhPhi]),
+    CONSTRAINT [FK_ChiTietPhuThuDichVu_DichVuTinhPhi_MaDichVuTinhPhi] FOREIGN KEY ([MaDichVuTinhPhi]) REFERENCES [DichVuTinhPhi] ([MaDichVuTinhPhi]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ChiTietPhuThuDichVu_PhuThu_MaPhuThu] FOREIGN KEY ([MaPhuThu]) REFERENCES [PhuThu] ([MaPhuThu]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:53.3180225+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("120"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [ChiTietDichVuUuDai] (
+    [MaTiec] nvarchar(450) NOT NULL,
+    [MaDichVuUuDai] nvarchar(450) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_ChiTietDichVuUuDai] PRIMARY KEY ([MaTiec], [MaDichVuUuDai]),
+    CONSTRAINT [FK_ChiTietDichVuUuDai_DatTiec_MaTiec] FOREIGN KEY ([MaTiec]) REFERENCES [DatTiec] ([MaTiec]) ON DELETE CASCADE,
+    CONSTRAINT [FK_ChiTietDichVuUuDai_DichVuUuDai_MaDichVuUuDai] FOREIGN KEY ([MaDichVuUuDai]) REFERENCES [DichVuUuDai] ([MaDichVuUuDai]) ON DELETE CASCADE
+);"
+2023-11-28T21:19:53.3200747+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_AccessToken_StrTokenIDToken] ON [AccessToken] ([StrTokenIDToken]);"
+2023-11-28T21:19:53.3210516+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_AccessToken_userName] ON [AccessToken] ([userName]);"
+2023-11-28T21:19:53.3218718+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_ChiTietDichVuTinhPhi_MaDichVuTinhPhi] ON [ChiTietDichVuTinhPhi] ([MaDichVuTinhPhi]);"
+2023-11-28T21:19:53.3226754+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_ChiTietDichVuUuDai_MaDichVuUuDai] ON [ChiTietDichVuUuDai] ([MaDichVuUuDai]);"
+2023-11-28T21:19:53.3234561+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_ChiTietMenu_MaMenu] ON [ChiTietMenu] ([MaMenu]);"
+2023-11-28T21:19:53.3242754+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_ChiTietNuocUong_MaNuoc] ON [ChiTietNuocUong] ([MaNuoc]);"
+2023-11-28T21:19:53.3250297+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_ChiTietPhuThuDichVu_MaDichVuTinhPhi] ON [ChiTietPhuThuDichVu] ([MaDichVuTinhPhi]);"
+2023-11-28T21:19:53.3257165+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_ChiTietPhuThuMonAn_MaMonAn] ON [ChiTietPhuThuMonAn] ([MaMonAn]);"
+2023-11-28T21:19:53.3266987+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_ChiTietPhuThuNuoc_MaNuoc] ON [ChiTietPhuThuNuoc] ([MaNuoc]);"
+2023-11-28T21:19:53.3283619+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_DanhGia_MaKhachHang] ON [DanhGia] ([MaKhachHang]);"
+2023-11-28T21:19:53.3295663+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_DatTiec_MaKhachHang] ON [DatTiec] ([MaKhachHang]);"
+2023-11-28T21:19:53.3308104+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_DichVu_MaLoaiDichVu] ON [DichVu] ([MaLoaiDichVu]);"
+2023-11-28T21:19:53.3317309+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_DichVuTinhPhi_MaDichVu] ON [DichVuTinhPhi] ([MaDichVu]);"
+2023-11-28T21:19:53.3330009+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_DichVuUuDai_MaDichVu] ON [DichVuUuDai] ([MaDichVu]);"
+2023-11-28T21:19:53.3338948+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_LichSanhTiec_MaSanh] ON [LichSanhTiec] ([MaSanh]);"
+2023-11-28T21:19:53.3347106+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_MonAn_MaLoaiMonAn] ON [MonAn] ([MaLoaiMonAn]);"
+2023-11-28T21:19:53.3375029+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_MonAnTrongMenu_MaMonAn] ON [MonAnTrongMenu] ([MaMonAn]);"
+2023-11-28T21:19:53.3384750+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_NhanVienTrongTiec_MaNhanVien] ON [NhanVienTrongTiec] ([MaNhanVien]);"
+2023-11-28T21:19:59.3913382+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3,271"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_Nuoc_MaLoaiNuoc] ON [Nuoc] ([MaLoaiNuoc]);"
+2023-11-28T21:19:59.3930853+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_PhuThu_MaHoaDon] ON [PhuThu] ([MaHoaDon]);"
+2023-11-28T21:19:59.3940006+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_RefreshToken_StrTokenIDToken] ON [RefreshToken] ([StrTokenIDToken]);"
+2023-11-28T21:19:59.3986854+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE INDEX [IX_RefreshToken_userName] ON [RefreshToken] ([userName]);"
+2023-11-28T21:19:59.4085406+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20231128141931_UpdateImg', N'7.0.9');"

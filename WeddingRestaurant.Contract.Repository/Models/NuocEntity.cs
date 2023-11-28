@@ -14,6 +14,7 @@ namespace WeddingRestaurant.Contract.Repository.Models
         public string MaNuoc{ get; set; }
         public string TenNuoc { get; set; }
         public string DVT { get; set; }
+        public string HinhAnh { get; set; }
         public double DonGia { get; set; }
 
         // Khóa ngoại bảng LoaiNuoc

@@ -58,7 +58,7 @@ namespace WeddingRestaurant.Service
                 throw new CoreException(code: ResponseCodeConstants.NOT_FOUND, message: ReponseMessageConstantsKhachHang.KHACHHANG_NOT_FOUND, statusCode: StatusCodes.Status404NotFound);
             }
             _khRepository.Delete(entity, isPhysicalDelete: isPhysical);
-            entity.TrangThai = "Da xoa";s
+            entity.TrangThai = "Da xoa";
             UnitOfWork.SaveChange();
             return Task.CompletedTask;
         }

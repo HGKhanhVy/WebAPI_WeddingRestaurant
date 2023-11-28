@@ -19,5 +19,6 @@ namespace WeddingRestaurant.Contract.Repository.Models
         public string Gmail { get; set; }
         ///public string? LoaiKH { get; set; }
         public virtual ICollection<DatTiecEntity>? DatTiecs { get; set; }
+        public virtual ICollection<DanhGiaEntity>? DanhGias { get; set; }
     }
 }
