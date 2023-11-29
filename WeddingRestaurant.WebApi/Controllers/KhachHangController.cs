@@ -173,5 +173,36 @@ namespace WeddingRestaurant.WebApi.Controllers
                 return BadRequest(result);
             }
         }
+
+        [HttpPost]
+        [Route(WebApiEndpoint.KhachHang.KhachHangLogin)]
+        public async Task<IActionResult> Login([FromRoute] string SoDienThoai, [FromRoute] string MatKhau)
+        {
+            try
+            {
+                var result = _iKhachHangService.KhachHangLogin(SoDienThoai, MatKhau);
+                return Ok(new BaseResponseModel<KhachHangEntity>(
+                    statusCode: StatusCodes.Status201Created,
+                    code: ResponseCodeConstants.SUCCESS,
+                    data: result));
+            }
+            catch (Exception e)
+            {
+                dynamic result;
+                if (e is CoreException error)
+                {
+                    result = new BaseResponseModel<string>(
+                        statusCode: error.StatusCode,
+                        code: error.Code,
+                        message: error.Message);
+                    return BadRequest(result);
+                }
+                result = new BaseResponseModel<string>(
+                    statusCode: StatusCodes.Status500InternalServerError,
+                    code: ResponseCodeConstants.FAILED,
+                    message: e.Message);
+                return BadRequest(result);
+            }
+        }
     }
 }

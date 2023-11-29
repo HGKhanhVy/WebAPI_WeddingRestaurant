@@ -14,5 +14,6 @@ namespace WeddingRestaurant.Core.Models.KhachHang
         public string NgaySinh { get; set; }
         public string CCCD { get; set; }
         public string Gmail { get; set; }
+        public string MatKhau { get; set; }
     }
 }

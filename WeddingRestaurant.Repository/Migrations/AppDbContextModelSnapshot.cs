@@ -451,6 +451,10 @@ namespace WeddingRestaurant.Repository.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("MatKhau")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NgaySinh")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

@@ -13,7 +13,8 @@ namespace WeddingRestaurant.Contract.Service
        Base.IUpdateable<KhachHangModel, string>,
        Base.IDeleteable<string, bool>,
        Base.IGetable<KhachHangEntity, string>,
-       Base.ICounteable<KhachHangModel, int>
+       Base.ICounteable<KhachHangModel, int>,
+       Base.ILogin<KhachHangEntity, string, string>
     {
     }
 }

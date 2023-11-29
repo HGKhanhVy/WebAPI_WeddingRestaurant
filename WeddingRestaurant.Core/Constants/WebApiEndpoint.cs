@@ -163,6 +163,7 @@
             public const string UpdateKhachHang = BaseEndpoint + "/update" + "/{MaKhachHang}";
             public const string DeleteKhachHang = BaseEndpoint + "/delete" + "/{MaKhachHang}";
             public const string CountKhachHang = BaseEndpoint + "/count-kh" + "/{MaKhachHang}";
+            public const string KhachHangLogin = BaseEndpoint + "/kh-login" + "/{SoDienThoai}-{MatKhau}";
         }
 
         public static class LichSanhTiec
