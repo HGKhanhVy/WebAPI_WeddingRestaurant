@@ -16,15 +16,14 @@ namespace WeddingRestaurant.Contract.Repository.Models
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Column(TypeName = "decimal(18,2)")]
-        public double TongTienPhuThu { get; set; }
+        public double? TongTienPhuThu { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Column(TypeName = "decimal(18,2)")]
-        public double TongTienThanhToan { get; set; }
+        public double? TongTienThanhToan { get; set; }
 
-        // Khóa ngoại bảng DatTiec
         public string MaTiec { get; set; }
-        public virtual DatTiecEntity DatTiecs { get; set; }
+        public DatTiecEntity DatTiecs { get; set; }
         public virtual ICollection<PhuThuEntity>? PhuThus { get; set; }
     }
 }

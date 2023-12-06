@@ -5,14 +5,18 @@
 namespace WeddingRestaurant.Repository.Migrations
 {
     /// <inheritdoc />
-    public partial class AddPass : Migration
+    public partial class UpdateDB1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropColumn(
+                name: "MatKhau",
+                table: "KhachHang");
+
             migrationBuilder.AddColumn<string>(
                 name: "MatKhau",
-                table: "KhachHang",
+                table: "NhanVien",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "");
@@ -23,7 +27,14 @@ namespace WeddingRestaurant.Repository.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "MatKhau",
-                table: "KhachHang");
+                table: "NhanVien");
+
+            migrationBuilder.AddColumn<string>(
+                name: "MatKhau",
+                table: "KhachHang",
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "");
         }
     }
 }

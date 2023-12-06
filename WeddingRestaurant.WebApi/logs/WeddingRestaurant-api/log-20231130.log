@@ -112,3 +112,281 @@ WHERE [k].[SoDienThoai] = @__sdt_0 AND [k].[MatKhau] = @__mk_1"
 FROM [KhachHang] AS [k]
 WHERE [k].[SoDienThoai] = @__sdt_0 AND [k].[MatKhau] = @__mk_1"
 2023-11-30T03:14:23.7095126+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/khach-hang/kh-login/0963852741-12345" responded 200 in 10.6186 ms
+2023-11-30T15:29:56.6517724+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("77"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-30T15:29:56.8405988+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("71"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-30T15:29:56.8513271+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-30T15:29:56.8611373+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-30T15:29:56.9224887+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-11-30T15:29:56.9751172+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-11-30T15:29:58.3339076+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-11-30T15:29:58.3350821+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-11-30T15:29:58.3400975+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-11-30T15:29:58.3416525+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-11-30T15:29:58.3430021+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-11-30T15:30:30.3154766+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[TrangThai] IS NULL"
+2023-11-30T15:30:30.3841216+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/get-all" responded 200 in 1301.8283 ms
+2023-11-30T15:30:42.0994307+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/khach-hang/kh-login/" responded 404 in 10.5459 ms
+2023-11-30T15:31:35.9426024+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("144"ms) [Parameters=["@__sdt_0='?' (Size = 4000), @__mk_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[SoDienThoai] = @__sdt_0 AND [k].[MatKhau] = @__mk_1"
+2023-11-30T15:31:35.9514031+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/khach-hang/kh-login/0963852741-12345" responded 200 in 527.3005 ms
+2023-11-30T15:34:45.1743915+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/-465987" responded 405 in 0.3134 ms
+2023-11-30T15:39:28.5166832+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/-7777" responded 405 in 1.0830 ms
+2023-11-30T15:40:28.4227846+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/-12345" responded 405 in 0.0565 ms
+2023-11-30T15:46:39.8009902+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/-12345" responded 405 in 0.0424 ms
+2023-11-30T15:47:32.9462580+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/-12345" responded 405 in 0.0384 ms
+2023-11-30T15:47:44.9942519+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/-789" responded 405 in 0.0297 ms
+2023-11-30T15:55:14.9897932+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/-n" responded 405 in 0.0843 ms
+2023-11-30T15:55:25.3214902+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/-12345" responded 405 in 0.0463 ms
+2023-11-30T22:21:50.7129262+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("55"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-30T22:21:50.8689020+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("53"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-30T22:21:50.8769691+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-30T22:21:50.8876357+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-30T22:21:50.9337440+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-11-30T22:21:50.9733939+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-11-30T22:21:52.0465589+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-11-30T22:21:52.0486018+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-11-30T22:21:52.0520664+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-11-30T22:21:52.0535822+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-11-30T22:21:52.0543220+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-11-30T22:22:19.8096822+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[TrangThai] IS NULL"
+2023-11-30T22:22:19.8743932+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/get-all" responded 200 in 1320.3427 ms
+2023-11-30T22:22:30.8833463+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("481"ms) [Parameters=["@__sdt_0='?' (Size = 4000), @__mk_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[SoDienThoai] = @__sdt_0 AND [k].[MatKhau] = @__mk_1"
+2023-11-30T22:22:30.8910280+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/khach-hang/kh-login/0963852741-12345" responded 200 in 821.6956 ms
+2023-11-30T22:26:11.4500989+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/-12345" responded 405 in 0.7854 ms
+2023-11-30T22:26:19.7142178+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/-1" responded 405 in 0.1878 ms
+2023-11-30T22:28:06.5377194+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("99"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-30T22:28:06.8345178+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("136"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-30T22:28:06.8469188+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-30T22:28:06.8818628+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("26"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-30T22:28:06.9634433+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("28"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-11-30T22:28:07.0280618+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-11-30T22:28:08.0187724+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-11-30T22:28:08.0199709+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-11-30T22:28:08.0245943+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-11-30T22:28:08.0260863+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-11-30T22:28:08.0273653+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-11-30T22:29:01.9458554+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3,646"ms) [Parameters=["@__model_MaLoaiDichVu_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [LoaiDichVu] AS [l]
+        WHERE [l].[MaLoaiDichVu] = @__model_MaLoaiDichVu_0 AND ([l].[TrangThai] IS NULL)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-11-30T22:29:02.2966454+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("31"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [LoaiDichVu] ([MaLoaiDichVu], [TenLoaiDichVu], [TrangThai])
+VALUES (@p0, @p1, @p2);"
+2023-11-30T22:29:02.3403621+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/loai-dich-vu/add" responded 200 in 5273.9368 ms
+2023-11-30T22:29:10.6120189+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/dich-vu/add" responded 401 in 22.3406 ms
+2023-11-30T22:31:06.9630755+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2,241"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-30T22:31:08.2142922+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1,105"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-30T22:31:08.5728288+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("347"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-30T22:31:08.5884340+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-30T22:31:08.6433907+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-11-30T22:31:08.7037976+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-11-30T22:31:09.1871671+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-11-30T22:31:09.1892332+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-11-30T22:31:09.1944097+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-11-30T22:31:09.1964073+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-11-30T22:31:09.1987583+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-11-30T22:31:45.1307305+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/dich-vu/add" responded 401 in 56.1674 ms
+2023-11-30T22:38:16.2989929+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("106"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-30T22:38:16.7404193+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("278"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-30T22:38:16.7526785+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-30T22:38:16.7717089+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-30T22:38:16.9022250+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("80"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-11-30T22:38:16.9846170+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-11-30T22:38:17.6185814+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-11-30T22:38:17.6235931+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-11-30T22:38:17.6318293+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-11-30T22:38:17.6342936+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-11-30T22:38:17.6364551+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-11-30T22:38:44.0504084+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/-12345" responded 405 in 61.5441 ms
+2023-11-30T22:39:44.9002046+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/-12345" responded 405 in 8.4751 ms
+2023-11-30T22:44:34.3012314+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/-12345" responded 405 in 1.0979 ms
+2023-11-30T22:46:09.8705903+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/{0963852741}-{12345}" responded 405 in 0.1151 ms
+2023-11-30T22:46:46.2102928+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/0963852741-12345" responded 405 in 0.0282 ms
+2023-11-30T22:47:05.9382025+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("87"ms) [Parameters=["@__sdt_0='?' (Size = 4000), @__mk_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[SoDienThoai] = @__sdt_0 AND [k].[MatKhau] = @__mk_1"
+2023-11-30T22:47:06.0176477+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/khach-hang/kh-login/0963852741-12345" responded 200 in 1653.0435 ms
+2023-11-30T22:47:12.2979977+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/0963852741-12345" responded 405 in 0.0244 ms
+2023-11-30T22:47:14.3033371+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/0963852741-12345" responded 405 in 0.0350 ms
+2023-11-30T22:48:13.9141005+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/soDienThoai-matKhau" responded 405 in 0.0230 ms
+2023-11-30T22:54:14.5507857+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("60"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-30T22:54:14.9455579+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("276"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-30T22:54:14.9586066+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-11-30T22:54:14.9731580+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-11-30T22:54:15.7833659+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("760"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-11-30T22:54:15.8627859+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-11-30T22:54:16.4538554+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-11-30T22:54:16.4557698+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-11-30T22:54:16.4600818+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-11-30T22:54:16.4612012+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-11-30T22:54:16.4621233+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-11-30T22:55:07.4996766+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/-12345" responded 405 in 55.8887 ms
+2023-11-30T22:55:49.8588750+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/-12345" responded 405 in 5.5060 ms
+2023-11-30T23:00:22.1228955+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/kh-login/0963852741-12345" responded 405 in 3.5610 ms
+2023-11-30T23:07:22.9363180+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("7,104"ms) [Parameters=["@__sdt_0='?' (Size = 4000), @__mk_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[SoDienThoai] = @__sdt_0 AND [k].[MatKhau] = @__mk_1"
+2023-11-30T23:07:23.0506092+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/khach-hang/kh-login/0963852741-12345" responded 200 in 12630.7934 ms
+2023-11-30T23:08:50.6694101+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("66,923"ms) [Parameters=["@__sdt_0='?' (Size = 4000), @__mk_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[SoDienThoai] = @__sdt_0 AND [k].[MatKhau] = @__mk_1"
+2023-11-30T23:08:50.6765880+07:00 [INF] () Not Found
+2023-11-30T23:08:51.4203434+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/khach-hang/kh-login/0963852741-98" responded 400 in 78799.1903 ms
+2023-11-30T23:17:58.5384163+07:00 [ERR] (Microsoft.EntityFrameworkCore.Database.Connection) An error occurred using the connection to database '"DB_WeddingRestaurant"' on server '"(local)\SQLEXPRESS"'.
+2023-11-30T23:17:59.0363181+07:00 [ERR] (Microsoft.EntityFrameworkCore.Query) An exception occurred while iterating over the results of a query for context type '"WeddingRestaurant.Repository.Infrastructure.AppDbContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Connection Timeout Expired.  The timeout period elapsed during the post-login phase.  The connection could have timed out while waiting for server to complete the login process and respond; Or it could have timed out while attempting to create multiple active connections.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=5; handshake=9; [Login] initialization=0; authentication=2; [Post-Login] complete=14050; 
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:c85e408f-dba3-49e9-a15b-31fe8cc1c53b
+Error Number:-2,State:0,Class:11"
+Microsoft.Data.SqlClient.SqlException (0x80131904): Connection Timeout Expired.  The timeout period elapsed during the post-login phase.  The connection could have timed out while waiting for server to complete the login process and respond; Or it could have timed out while attempting to create multiple active connections.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=5; handshake=9; [Login] initialization=0; authentication=2; [Post-Login] complete=14050; 
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:c85e408f-dba3-49e9-a15b-31fe8cc1c53b
+Error Number:-2,State:0,Class:11
+2023-11-30T23:17:59.2671262+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/khach-hang/kh-login/0963852741-789" responded 400 in 14929.3707 ms
+2023-11-30T23:20:45.3110821+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("40,511"ms) [Parameters=["@__sdt_0='?' (Size = 4000), @__mk_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[SoDienThoai] = @__sdt_0 AND [k].[MatKhau] = @__mk_1"
+2023-11-30T23:20:45.3178835+07:00 [INF] () Not Found
+2023-11-30T23:20:45.3977121+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/khach-hang/kh-login/0963852741-147" responded 400 in 46010.6289 ms
+2023-11-30T23:22:31.5358804+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("45"ms) [Parameters=["@__sdt_0='?' (Size = 4000), @__mk_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[SoDienThoai] = @__sdt_0 AND [k].[MatKhau] = @__mk_1"
+2023-11-30T23:22:31.5406924+07:00 [INF] () Not Found
+2023-11-30T23:22:31.6123917+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/khach-hang/kh-login/0963852741-3" responded 400 in 123.5547 ms
+2023-11-30T23:36:07.0763934+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("45"ms) [Parameters=["@__sdt_0='?' (Size = 4000), @__mk_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[SoDienThoai] = @__sdt_0 AND [k].[MatKhau] = @__mk_1"
+2023-11-30T23:36:07.0920506+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/khach-hang/kh-login/0963852741-12345" responded 200 in 1789.8624 ms
+2023-11-30T23:38:15.0701674+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__sdt_0='?' (Size = 4000), @__mk_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[SoDienThoai] = @__sdt_0 AND [k].[MatKhau] = @__mk_1"
+2023-11-30T23:38:15.0745675+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/khach-hang/kh-login/0963852741-12345" responded 200 in 8.9645 ms
+2023-11-30T23:40:57.7215454+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__sdt_0='?' (Size = 4000), @__mk_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[SoDienThoai] = @__sdt_0 AND [k].[MatKhau] = @__mk_1"
+2023-11-30T23:40:57.7271932+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/khach-hang/kh-login/0963852741-12345" responded 200 in 9.7921 ms

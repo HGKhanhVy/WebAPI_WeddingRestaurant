@@ -16,5 +16,6 @@ namespace WeddingRestaurant.Core.Models.NhanVien
         public string Gmail { get; set; }
         public string NgayVaoLam { get; set; }
         public string? NgayNghiViec { get; set; }
+        public string MatKhau { get; set; }
     }
 }

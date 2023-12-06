@@ -110,17 +110,6 @@ namespace WeddingRestaurant.Service
             return Task.FromResult(count);
         }
 
-        public KhachHangEntity KhachHangLogin(string sdt, string mk)
-        {
-            var entities = _khRepository.Get(_ => _.SoDienThoai.Equals(sdt) && _.MatKhau.Equals(mk)).FirstOrDefault(); ;
-            if (entities == null)
-            {
-                _logger.Information(ErrorCode.NotFound, sdt + " - " + mk);
-                throw new CoreException(code: ResponseCodeConstants.NOT_FOUND, message: ReponseMessageConstantsKhachHang.KHACHHANG_NOT_FOUND, statusCode: StatusCodes.Status404NotFound);
-            }
-            return (KhachHangEntity)entities;
-        }
-
         public Task<int> CountByKeyIdAsync(int keyId)
         {
             throw new NotImplementedException();

@@ -51,7 +51,6 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPost]
         [Route(WebApiEndpoint.DichVu.AddDichVu)]
-        [Authorize]
         public async Task<IActionResult> CreateDichVu(DichVuModel model)
         {
             try
@@ -83,7 +82,6 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPut]
         [Route(WebApiEndpoint.DichVu.UpdateDichVu)]
-        [Authorize]
         public async Task<IActionResult> UpdateDichVu([FromRoute] string MaDichVu, DichVuModel model)
         {
             try
@@ -116,7 +114,6 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpDelete]
         [Route(WebApiEndpoint.DichVu.DeleteDichVu)]
-        [Authorize]
         public async Task<IActionResult> DeleteDichVu([FromRoute] string MaDichVu)
         {
             try

@@ -6,27 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WeddingRestaurant.Repository.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdateImg : Migration
+    public partial class UpdateDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "HoaDon",
-                columns: table => new
-                {
-                    MaHoaDon = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    NgayLap = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TongTienPhuThu = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    TongTienThanhToan = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    MaTiec = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_HoaDon", x => x.MaHoaDon);
-                });
-
             migrationBuilder.CreateTable(
                 name: "KhachHang",
                 columns: table => new
@@ -37,6 +21,7 @@ namespace WeddingRestaurant.Repository.Migrations
                     NgaySinh = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CCCD = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Gmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MatKhau = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -164,28 +149,6 @@ namespace WeddingRestaurant.Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PhuThu",
-                columns: table => new
-                {
-                    MaPhuThu = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoaiPhuThu = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MoTaPhuThu = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TongTien = table.Column<double>(type: "float", nullable: false),
-                    MaHoaDon = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_PhuThu", x => x.MaPhuThu);
-                    table.ForeignKey(
-                        name: "FK_PhuThu_HoaDon_MaHoaDon",
-                        column: x => x.MaHoaDon,
-                        principalTable: "HoaDon",
-                        principalColumn: "MaHoaDon",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "DanhGia",
                 columns: table => new
                 {
@@ -212,8 +175,8 @@ namespace WeddingRestaurant.Repository.Migrations
                     MaTiec = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     LoaiHinhTiec = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NgayDatTiec = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    NgayToChuc = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ThoiGianToChuc = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    NgayToChuc = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ThoiGianToChuc = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SoLuongBanChinhThuc = table.Column<int>(type: "int", nullable: false),
                     SoLuongBanTang = table.Column<int>(type: "int", nullable: false),
                     SoLuongBanChay = table.Column<int>(type: "int", nullable: false),
@@ -221,25 +184,18 @@ namespace WeddingRestaurant.Repository.Migrations
                     TongBanSetup = table.Column<int>(type: "int", nullable: false),
                     LoaiBan = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhiDichVu = table.Column<double>(type: "float", nullable: false),
-                    TongTienDuKien = table.Column<double>(type: "float", nullable: false),
-                    TongTienGiam = table.Column<double>(type: "float", nullable: false),
-                    TongTienPhaiTra = table.Column<double>(type: "float", nullable: false),
-                    TienCocLan1 = table.Column<double>(type: "float", nullable: false),
-                    TienCocLan2 = table.Column<double>(type: "float", nullable: false),
-                    GhiChu = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TongTienDuKien = table.Column<double>(type: "float", nullable: true),
+                    TongTienGiam = table.Column<double>(type: "float", nullable: true),
+                    TongTienPhaiTra = table.Column<double>(type: "float", nullable: true),
+                    TienCocLan1 = table.Column<double>(type: "float", nullable: true),
+                    TienCocLan2 = table.Column<double>(type: "float", nullable: true),
+                    GhiChu = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MaKhachHang = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    MaHoaDon = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DatTiec", x => x.MaTiec);
-                    table.ForeignKey(
-                        name: "FK_DatTiec_HoaDon_MaTiec",
-                        column: x => x.MaTiec,
-                        principalTable: "HoaDon",
-                        principalColumn: "MaHoaDon",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_DatTiec_KhachHang_MaKhachHang",
                         column: x => x.MaKhachHang,
@@ -255,6 +211,7 @@ namespace WeddingRestaurant.Repository.Migrations
                     MaDichVu = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     TenDichVu = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     HinhAnh = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MoTa = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     MaLoaiDichVu = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -399,6 +356,28 @@ namespace WeddingRestaurant.Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "HoaDon",
+                columns: table => new
+                {
+                    MaHoaDon = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    NgayLap = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TongTienPhuThu = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    TongTienThanhToan = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    MaTiec = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HoaDon", x => x.MaHoaDon);
+                    table.ForeignKey(
+                        name: "FK_HoaDon_DatTiec_MaTiec",
+                        column: x => x.MaTiec,
+                        principalTable: "DatTiec",
+                        principalColumn: "MaTiec",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "LichSanhTiec",
                 columns: table => new
                 {
@@ -498,33 +477,6 @@ namespace WeddingRestaurant.Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ChiTietPhuThuMonAn",
-                columns: table => new
-                {
-                    MaPhuThu = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    MaMonAn = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    SoLuong = table.Column<int>(type: "int", nullable: false),
-                    DonGia = table.Column<double>(type: "float", nullable: false),
-                    TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ChiTietPhuThuMonAn", x => new { x.MaPhuThu, x.MaMonAn });
-                    table.ForeignKey(
-                        name: "FK_ChiTietPhuThuMonAn_MonAn_MaMonAn",
-                        column: x => x.MaMonAn,
-                        principalTable: "MonAn",
-                        principalColumn: "MaMonAn",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ChiTietPhuThuMonAn_PhuThu_MaPhuThu",
-                        column: x => x.MaPhuThu,
-                        principalTable: "PhuThu",
-                        principalColumn: "MaPhuThu",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "MonAnTrongMenu",
                 columns: table => new
                 {
@@ -579,30 +531,24 @@ namespace WeddingRestaurant.Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ChiTietPhuThuNuoc",
+                name: "PhuThu",
                 columns: table => new
                 {
                     MaPhuThu = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    MaNuoc = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    SoLuong = table.Column<int>(type: "int", nullable: false),
-                    DonGia = table.Column<double>(type: "float", nullable: false),
-                    ThanhTien = table.Column<double>(type: "float", nullable: false),
+                    LoaiPhuThu = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MoTaPhuThu = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TongTien = table.Column<double>(type: "float", nullable: false),
+                    MaHoaDon = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ChiTietPhuThuNuoc", x => new { x.MaPhuThu, x.MaNuoc });
+                    table.PrimaryKey("PK_PhuThu", x => x.MaPhuThu);
                     table.ForeignKey(
-                        name: "FK_ChiTietPhuThuNuoc_Nuoc_MaNuoc",
-                        column: x => x.MaNuoc,
-                        principalTable: "Nuoc",
-                        principalColumn: "MaNuoc",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ChiTietPhuThuNuoc_PhuThu_MaPhuThu",
-                        column: x => x.MaPhuThu,
-                        principalTable: "PhuThu",
-                        principalColumn: "MaPhuThu",
+                        name: "FK_PhuThu_HoaDon_MaHoaDon",
+                        column: x => x.MaHoaDon,
+                        principalTable: "HoaDon",
+                        principalColumn: "MaHoaDon",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -628,6 +574,31 @@ namespace WeddingRestaurant.Repository.Migrations
                         column: x => x.MaDichVuTinhPhi,
                         principalTable: "DichVuTinhPhi",
                         principalColumn: "MaDichVuTinhPhi",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ChiTietDichVuUuDai",
+                columns: table => new
+                {
+                    MaTiec = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    MaDichVuUuDai = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ChiTietDichVuUuDai", x => new { x.MaTiec, x.MaDichVuUuDai });
+                    table.ForeignKey(
+                        name: "FK_ChiTietDichVuUuDai_DatTiec_MaTiec",
+                        column: x => x.MaTiec,
+                        principalTable: "DatTiec",
+                        principalColumn: "MaTiec",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ChiTietDichVuUuDai_DichVuUuDai_MaDichVuUuDai",
+                        column: x => x.MaDichVuUuDai,
+                        principalTable: "DichVuUuDai",
+                        principalColumn: "MaDichVuUuDai",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -659,27 +630,57 @@ namespace WeddingRestaurant.Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ChiTietDichVuUuDai",
+                name: "ChiTietPhuThuMonAn",
                 columns: table => new
                 {
-                    MaTiec = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    MaDichVuUuDai = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    MaPhuThu = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    MaMonAn = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    SoLuong = table.Column<int>(type: "int", nullable: false),
+                    DonGia = table.Column<double>(type: "float", nullable: false),
                     TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ChiTietDichVuUuDai", x => new { x.MaTiec, x.MaDichVuUuDai });
+                    table.PrimaryKey("PK_ChiTietPhuThuMonAn", x => new { x.MaPhuThu, x.MaMonAn });
                     table.ForeignKey(
-                        name: "FK_ChiTietDichVuUuDai_DatTiec_MaTiec",
-                        column: x => x.MaTiec,
-                        principalTable: "DatTiec",
-                        principalColumn: "MaTiec",
+                        name: "FK_ChiTietPhuThuMonAn_MonAn_MaMonAn",
+                        column: x => x.MaMonAn,
+                        principalTable: "MonAn",
+                        principalColumn: "MaMonAn",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ChiTietDichVuUuDai_DichVuUuDai_MaDichVuUuDai",
-                        column: x => x.MaDichVuUuDai,
-                        principalTable: "DichVuUuDai",
-                        principalColumn: "MaDichVuUuDai",
+                        name: "FK_ChiTietPhuThuMonAn_PhuThu_MaPhuThu",
+                        column: x => x.MaPhuThu,
+                        principalTable: "PhuThu",
+                        principalColumn: "MaPhuThu",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ChiTietPhuThuNuoc",
+                columns: table => new
+                {
+                    MaPhuThu = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    MaNuoc = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    SoLuong = table.Column<int>(type: "int", nullable: false),
+                    DonGia = table.Column<double>(type: "float", nullable: false),
+                    ThanhTien = table.Column<double>(type: "float", nullable: false),
+                    TrangThai = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ChiTietPhuThuNuoc", x => new { x.MaPhuThu, x.MaNuoc });
+                    table.ForeignKey(
+                        name: "FK_ChiTietPhuThuNuoc_Nuoc_MaNuoc",
+                        column: x => x.MaNuoc,
+                        principalTable: "Nuoc",
+                        principalColumn: "MaNuoc",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ChiTietPhuThuNuoc_PhuThu_MaPhuThu",
+                        column: x => x.MaPhuThu,
+                        principalTable: "PhuThu",
+                        principalColumn: "MaPhuThu",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -752,6 +753,12 @@ namespace WeddingRestaurant.Repository.Migrations
                 name: "IX_DichVuUuDai_MaDichVu",
                 table: "DichVuUuDai",
                 column: "MaDichVu");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HoaDon_MaTiec",
+                table: "HoaDon",
+                column: "MaTiec",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_LichSanhTiec_MaSanh",
@@ -858,9 +865,6 @@ namespace WeddingRestaurant.Repository.Migrations
                 name: "MonAn");
 
             migrationBuilder.DropTable(
-                name: "DatTiec");
-
-            migrationBuilder.DropTable(
                 name: "NhanVien");
 
             migrationBuilder.DropTable(
@@ -876,16 +880,19 @@ namespace WeddingRestaurant.Repository.Migrations
                 name: "LoaiNuoc");
 
             migrationBuilder.DropTable(
-                name: "LoaiMonAn");
-
-            migrationBuilder.DropTable(
                 name: "HoaDon");
 
             migrationBuilder.DropTable(
-                name: "KhachHang");
+                name: "LoaiMonAn");
 
             migrationBuilder.DropTable(
                 name: "LoaiDichVu");
+
+            migrationBuilder.DropTable(
+                name: "DatTiec");
+
+            migrationBuilder.DropTable(
+                name: "KhachHang");
         }
     }
 }

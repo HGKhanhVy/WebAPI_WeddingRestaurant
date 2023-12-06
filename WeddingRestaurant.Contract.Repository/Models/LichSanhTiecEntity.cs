@@ -20,7 +20,7 @@ namespace WeddingRestaurant.Contract.Repository.Models
 
         public DateTime NgayDienRa { get; set; }
         public string Ca { get; set; } 
-        public double TienPhuThu { get; set; }
+        public double? TienPhuThu { get; set; }
 
     }
 }

@@ -1,0 +1,108 @@
+2023-12-03T20:29:27.3824274+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("78"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-03T20:29:27.7054433+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("187"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-03T20:29:27.7164464+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-03T20:29:27.7207484+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-03T20:29:27.8238459+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("52"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-03T20:29:27.8860664+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-12-03T20:29:29.7698490+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-12-03T20:29:29.7711023+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-12-03T20:29:29.7794955+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-12-03T20:29:29.7811052+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-12-03T20:29:29.7822082+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-12-03T20:39:56.5091256+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/dat-tiec/add" responded 400 in 385.5687 ms
+2023-12-03T20:45:13.0551011+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("81"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-03T20:45:13.3645895+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("194"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-03T20:45:13.3761841+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-03T20:45:13.3910584+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-03T20:45:13.4832536+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("48"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-03T20:45:13.5429786+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-12-03T20:45:14.0734518+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-12-03T20:45:14.0748739+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-12-03T20:45:14.0823290+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-12-03T20:45:14.0840436+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-12-03T20:45:14.0851231+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-12-03T21:06:43.5398777+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("56"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-03T21:06:46.2546576+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2,612"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-03T21:06:46.2633901+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-03T21:06:46.2661698+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-03T21:06:46.3056227+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-03T21:06:46.3404998+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-12-03T21:06:46.8066782+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-12-03T21:06:46.8085598+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-12-03T21:06:46.8130570+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-12-03T21:06:46.8142728+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-12-03T21:06:46.8156211+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-12-03T21:09:51.2474591+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("195"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[TrangThai] IS NULL"
+2023-12-03T21:09:51.3003871+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/get-all" responded 200 in 1366.0068 ms
+2023-12-03T21:12:07.4898203+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("386"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[TrangThai] IS NULL"
+2023-12-03T21:12:07.4927865+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/get-all" responded 200 in 465.9116 ms
+2023-12-03T21:12:18.8980463+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("135"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[TrangThai] IS NULL"
+2023-12-03T21:12:18.9017627+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/get-all" responded 200 in 141.1367 ms
+2023-12-03T21:15:17.6715429+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[TrangThai] IS NULL"
+2023-12-03T21:15:17.6742129+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/get-all" responded 200 in 29.2555 ms
+2023-12-03T21:21:47.2354677+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("103"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-03T21:21:47.4612783+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("80"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-03T21:21:47.4732791+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-03T21:21:47.4868427+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-03T21:21:47.5427697+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-03T21:21:47.5967943+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-12-03T21:21:48.2041285+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-12-03T21:21:48.2065709+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-12-03T21:21:48.2158718+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-12-03T21:21:48.2186015+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-12-03T21:21:48.2203742+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-12-03T21:25:37.9042467+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[TrangThai] IS NULL"
+2023-12-03T21:25:37.9486095+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/get-all" responded 200 in 887.7918 ms
+2023-12-03T21:33:36.9993601+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[TrangThai] IS NULL"
+2023-12-03T21:33:37.0040426+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/get-all" responded 200 in 179.5328 ms
+2023-12-03T21:33:48.6063253+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[MatKhau], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[TrangThai] IS NULL"
+2023-12-03T21:33:48.6249547+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/get-all" responded 200 in 25.0729 ms

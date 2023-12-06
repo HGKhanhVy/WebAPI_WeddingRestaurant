@@ -179,11 +179,6 @@ namespace WeddingRestaurant.Repository.Infrastructure
                 .WithMany(k => k.DatTiecs) // 1-n
                 .HasForeignKey(d => d.MaKhachHang) 
                 .OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<DatTiecEntity>()
-                .HasOne(d => d.HoaDons)
-                .WithOne(k => k.DatTiecs) // 1-1
-                .HasForeignKey<HoaDonEntity>(k => k.MaHoaDon) 
-                .OnDelete(DeleteBehavior.Cascade);
 
             // Dich Vu
             modelBuilder.Entity<DichVuEntity>()
@@ -219,10 +214,11 @@ namespace WeddingRestaurant.Repository.Infrastructure
             // Hoa Don
             modelBuilder.Entity<HoaDonEntity>()
                 .HasKey(d => d.MaHoaDon);
-            modelBuilder.Entity<HoaDonEntity>()
-                .HasOne(h => h.DatTiecs)
-                .WithOne(d => d.HoaDons)
-                .HasForeignKey<DatTiecEntity>(h => h.MaTiec);
+             modelBuilder.Entity<DatTiecEntity>()
+                .HasOne(d => d.HoaDons)
+                .WithOne(h => h.DatTiecs)
+                .HasForeignKey<HoaDonEntity>(h => h.MaTiec)
+                .OnDelete(DeleteBehavior.Cascade);
 
             // Lich Sanh Tiec
             modelBuilder.Entity<LichSanhTiecEntity>()

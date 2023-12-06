@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WeddingRestaurant.Contract.Repository.Models;
 using WeddingRestaurant.Core.Models.DatTiec;
+using WeddingRestaurant.Core.Models.LoaiDichVu;
 using WeddingRestaurant.Core.Models.Token;
 
 namespace WeddingRestaurant.Mapper

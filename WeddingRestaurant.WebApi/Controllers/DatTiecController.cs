@@ -52,7 +52,7 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPost]
         [Route(WebApiEndpoint.DatTiec.AddDatTiec)]
-        public async Task<IActionResult> CreateDatTiec(DatTiecModel model)
+        public async Task<IActionResult> CreateLoaiDichVu(DatTiecModel model)
         {
             try
             {
@@ -83,7 +83,6 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpPut]
         [Route(WebApiEndpoint.DatTiec.UpdateDatTiec)]
-        [Authorize]
         public async Task<IActionResult> UpdateDatTiec([FromRoute] string MaTiec, DatTiecModel model)
         {
             try
@@ -115,7 +114,6 @@ namespace WeddingRestaurant.WebApi.Controllers
 
         [HttpDelete]
         [Route(WebApiEndpoint.DatTiec.DeleteDatTiec)]
-        [Authorize]
         public async Task<IActionResult> DeleteDatTiec([FromRoute] string MaTiec)
         {
             try
@@ -193,37 +191,6 @@ namespace WeddingRestaurant.WebApi.Controllers
             return Ok(new BaseResponseModel<List<DatTiecEntity>?>(
                 statusCode: StatusCodes.Status200OK,
                 code: ResponseCodeConstants.SUCCESS, data: result));
-        }
-
-        [HttpPut]
-        [Route(WebApiEndpoint.DatTiec.UpdateStatus)]
-        public async Task<IActionResult> UpdateSatus()
-        {
-            try
-            {
-                await _iDatTiecService.UpdateStatusAsync();
-                return Ok(new BaseResponseModel<string>(
-                    statusCode: StatusCodes.Status200OK,
-                    code: ResponseCodeConstants.SUCCESS,
-                    data: ReponseMessageConstantsDatTiec.UPDATE_TIEC_SUCCESS));
-            }
-            catch (Exception e)
-            {
-                dynamic result;
-                if (e is CoreException error)
-                {
-                    result = new BaseResponseModel<string>(
-                        statusCode: error.StatusCode,
-                        code: error.Code,
-                        message: error.Message);
-                    return BadRequest(result);
-                }
-                result = new BaseResponseModel<string>(
-                    statusCode: StatusCodes.Status500InternalServerError,
-                    code: ResponseCodeConstants.FAILED,
-                    message: e.Message);
-                return BadRequest(result);
-            }
         }
     }
 }
