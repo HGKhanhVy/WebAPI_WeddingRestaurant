@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static WeddingRestaurant.Core.Constants.WebApiEndpoint;
 
 namespace WeddingRestaurant.Contract.Repository.Models
 {
@@ -14,7 +15,7 @@ namespace WeddingRestaurant.Contract.Repository.Models
         public string MaDichVuUuDai { get; set; }
         public string TenDichVu { get; set; }
         public string DieuKienApDung { get; set; }
-        public string MoTa { get; set; }
+        public string? MoTa { get; set; }
         public string HinhAnh { get; set; }
 
         // Khóa ngoại bảng DichVu
@@ -22,5 +23,6 @@ namespace WeddingRestaurant.Contract.Repository.Models
         public virtual DichVuEntity DichVus { get; set; }
 
         public virtual ICollection<ChiTietDichVuUuDaiEntity>? ChiTietDichVuUuDais { get; set; }
+
     }
 }

@@ -315,6 +315,19 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<string>("MaDichVu")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("DieuKienApDung")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("GiaGiam30")
+                        .HasColumnType("float");
+
+                    b.Property<double>("GiaLe")
+                        .HasColumnType("float");
+
+                    b.Property<double>("GiaTronGoi")
+                        .HasColumnType("float");
+
                     b.Property<string>("HinhAnh")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -324,7 +337,6 @@ namespace WeddingRestaurant.Repository.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("MoTa")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TenDichVu")
@@ -346,7 +358,17 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<string>("MaDichVuTinhPhi")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<double>("DonGiaDichVu")
+                    b.Property<string>("DieuKienApDung")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("GiaGiam30")
+                        .HasColumnType("float");
+
+                    b.Property<double>("GiaLe")
+                        .HasColumnType("float");
+
+                    b.Property<double>("GiaTronGoi")
                         .HasColumnType("float");
 
                     b.Property<string>("HinhAnh")
@@ -358,7 +380,6 @@ namespace WeddingRestaurant.Repository.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("MoTa")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TenDichVu")
@@ -393,7 +414,6 @@ namespace WeddingRestaurant.Repository.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("MoTa")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TenDichVu")

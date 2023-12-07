@@ -11,7 +11,11 @@ namespace WeddingRestaurant.Core.Models.DichVu
         public string MaDichVu { get; set; }
         public string TenDichVu { get; set; }
         public string HinhAnh { get; set; }
-        public string MoTa { get; set; }
+        public string? MoTa { get; set; }
         public string MaLoaiDichVu { get; set; }
+        public string DieuKienApDung { get; set; }
+        public double GiaTronGoi { get; set; }
+        public double GiaGiam30 { get; set; }
+        public double GiaLe { get; set; }
     }
 }

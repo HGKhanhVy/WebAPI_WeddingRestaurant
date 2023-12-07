@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static WeddingRestaurant.Core.Constants.WebApiEndpoint;
 
 namespace WeddingRestaurant.Contract.Repository.Models
 {
@@ -13,9 +14,12 @@ namespace WeddingRestaurant.Contract.Repository.Models
     {
         public string MaDichVuTinhPhi { get; set; }
         public string TenDichVu { get; set; }
-        public string MoTa { get; set; }
         public string HinhAnh { get; set; }
-        public double DonGiaDichVu { get; set; }
+        public string? MoTa { get; set; }
+        public string DieuKienApDung { get; set; }
+        public double GiaTronGoi { get; set; }
+        public double GiaGiam30 { get; set; }
+        public double GiaLe { get; set; }
 
         // Khóa ngoại bảng DichVu
         public string MaDichVu { get; set; }
@@ -23,5 +27,6 @@ namespace WeddingRestaurant.Contract.Repository.Models
 
         public virtual ICollection<ChiTietDichVuTinhPhiEntity>? ChiTietDichVuTinhPhis { get; set; }
         public virtual ICollection<ChiTietPhuThuDichVuEntity>? ChiTietPhuThuDichVus { get; set; }
+
     }
 }
