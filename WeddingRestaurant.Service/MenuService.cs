@@ -108,17 +108,6 @@ namespace WeddingRestaurant.Service
                 count++;
             return Task.FromResult(count);
         }
-
-        ICollection<MenuEntity> IGetable<MenuEntity, string>.GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        MenuEntity IGetable<MenuEntity, string>.GetByKeyIdAsync(string keyId)
-        {
-            throw new NotImplementedException();
-        }
-
         public MenuEntity GetByLoginAsync(LoginModel model)
         {
             throw new NotImplementedException();

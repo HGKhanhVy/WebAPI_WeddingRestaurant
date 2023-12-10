@@ -15,13 +15,14 @@ namespace WeddingRestaurant.Contract.Repository.Models
     {
         public string MaDichVu { get; set; }    
         public string TenDichVu { get; set; }
-        public string HinhAnh { get; set; }
+        public string? HinhAnh { get; set; }
         public string? MoTa { get; set; }
 
         // Khóa ngoại bảng LoaiDichVu
         public string MaLoaiDichVu { get; set; }
         public virtual LoaiDichVuEntity LoaiDichVus { get; set; }
-        public string DieuKienApDung { get; set; }
+        public int DieuKienBanToiThieu { get; set; }
+        public int DieuKienBanToiDa { get; set; }
         public double GiaTronGoi { get; set; }
         public double GiaGiam30 { get; set; }
         public double GiaLe { get; set; }
@@ -31,3 +32,4 @@ namespace WeddingRestaurant.Contract.Repository.Models
         
     }
 }
+

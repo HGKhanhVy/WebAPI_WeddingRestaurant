@@ -14,9 +14,10 @@ namespace WeddingRestaurant.Contract.Repository.Models
     {
         public string MaDichVuUuDai { get; set; }
         public string TenDichVu { get; set; }
-        public string DieuKienApDung { get; set; }
+        public int DieuKienBanToiThieu { get; set; }
+        public int DieuKienBanToiDa { get; set; }
         public string? MoTa { get; set; }
-        public string HinhAnh { get; set; }
+        public string? HinhAnh { get; set; }
 
         // Khóa ngoại bảng DichVu
         public string MaDichVu { get; set; }

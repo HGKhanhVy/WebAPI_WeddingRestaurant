@@ -315,9 +315,11 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<string>("MaDichVu")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("DieuKienApDung")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("DieuKienBanToiDa")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DieuKienBanToiThieu")
+                        .HasColumnType("int");
 
                     b.Property<double>("GiaGiam30")
                         .HasColumnType("float");
@@ -329,7 +331,6 @@ namespace WeddingRestaurant.Repository.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("HinhAnh")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MaLoaiDichVu")
@@ -358,9 +359,11 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<string>("MaDichVuTinhPhi")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("DieuKienApDung")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("DieuKienBanToiDa")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DieuKienBanToiThieu")
+                        .HasColumnType("int");
 
                     b.Property<double>("GiaGiam30")
                         .HasColumnType("float");
@@ -372,7 +375,6 @@ namespace WeddingRestaurant.Repository.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("HinhAnh")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MaDichVu")
@@ -401,12 +403,13 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.Property<string>("MaDichVuUuDai")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("DieuKienApDung")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("DieuKienBanToiDa")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DieuKienBanToiThieu")
+                        .HasColumnType("int");
 
                     b.Property<string>("HinhAnh")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MaDichVu")
