@@ -10,3 +10,15 @@ D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Core\obj\Debug\net6.0\Wed
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Core\obj\Debug\net6.0\refint\WeddingRestaurant.Core.dll
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Core\obj\Debug\net6.0\WeddingRestaurant.Core.pdb
 D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.Core\obj\Debug\net6.0\ref\WeddingRestaurant.Core.dll
+D:\NhaHangTiecCuoi\QuanLyDatTiecNhaHangTiecCuoi\Code\WeddingRestaurant\WeddingRestaurant.Core\bin\Debug\net6.0\WeddingRestaurant.Core.deps.json
+D:\NhaHangTiecCuoi\QuanLyDatTiecNhaHangTiecCuoi\Code\WeddingRestaurant\WeddingRestaurant.Core\bin\Debug\net6.0\WeddingRestaurant.Core.dll
+D:\NhaHangTiecCuoi\QuanLyDatTiecNhaHangTiecCuoi\Code\WeddingRestaurant\WeddingRestaurant.Core\bin\Debug\net6.0\WeddingRestaurant.Core.pdb
+D:\NhaHangTiecCuoi\QuanLyDatTiecNhaHangTiecCuoi\Code\WeddingRestaurant\WeddingRestaurant.Core\obj\Debug\net6.0\WeddingRestaurant.Core.csproj.AssemblyReference.cache
+D:\NhaHangTiecCuoi\QuanLyDatTiecNhaHangTiecCuoi\Code\WeddingRestaurant\WeddingRestaurant.Core\obj\Debug\net6.0\WeddingRestaurant.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\NhaHangTiecCuoi\QuanLyDatTiecNhaHangTiecCuoi\Code\WeddingRestaurant\WeddingRestaurant.Core\obj\Debug\net6.0\WeddingRestaurant.Core.AssemblyInfoInputs.cache
+D:\NhaHangTiecCuoi\QuanLyDatTiecNhaHangTiecCuoi\Code\WeddingRestaurant\WeddingRestaurant.Core\obj\Debug\net6.0\WeddingRestaurant.Core.AssemblyInfo.cs
+D:\NhaHangTiecCuoi\QuanLyDatTiecNhaHangTiecCuoi\Code\WeddingRestaurant\WeddingRestaurant.Core\obj\Debug\net6.0\WeddingRestaurant.Core.csproj.CoreCompileInputs.cache
+D:\NhaHangTiecCuoi\QuanLyDatTiecNhaHangTiecCuoi\Code\WeddingRestaurant\WeddingRestaurant.Core\obj\Debug\net6.0\WeddingRestaurant.Core.dll
+D:\NhaHangTiecCuoi\QuanLyDatTiecNhaHangTiecCuoi\Code\WeddingRestaurant\WeddingRestaurant.Core\obj\Debug\net6.0\refint\WeddingRestaurant.Core.dll
+D:\NhaHangTiecCuoi\QuanLyDatTiecNhaHangTiecCuoi\Code\WeddingRestaurant\WeddingRestaurant.Core\obj\Debug\net6.0\WeddingRestaurant.Core.pdb
+D:\NhaHangTiecCuoi\QuanLyDatTiecNhaHangTiecCuoi\Code\WeddingRestaurant\WeddingRestaurant.Core\obj\Debug\net6.0\ref\WeddingRestaurant.Core.dll

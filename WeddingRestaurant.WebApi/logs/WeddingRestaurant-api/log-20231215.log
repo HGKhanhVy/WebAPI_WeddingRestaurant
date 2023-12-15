@@ -1,0 +1,23 @@
+2023-12-15T16:26:09.8389140+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("378"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-15T16:26:09.9857920+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("55"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-15T16:26:09.9949228+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-15T16:26:10.0037971+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-15T16:26:10.0537871+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-15T16:26:10.0969080+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-12-15T16:26:11.3037036+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-12-15T16:26:11.3043328+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-12-15T16:26:11.3078931+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-12-15T16:26:11.3086836+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-12-15T16:26:11.3094817+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-12-15T16:26:28.3195807+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("961"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [d].[MaTiec], [d].[GhiChu], [d].[LoaiBan], [d].[LoaiHinhTiec], [d].[MaKhachHang], [d].[NgayDatTiec], [d].[NgayToChuc], [d].[PhiDichVu], [d].[SoLuongBanChay], [d].[SoLuongBanChinhThuc], [d].[SoLuongBanDuPhong], [d].[SoLuongBanTang], [d].[ThoiGianToChuc], [d].[TienCocLan1], [d].[TienCocLan2], [d].[TongBanSetup], [d].[TongTienDuKien], [d].[TongTienGiam], [d].[TongTienPhaiTra], [d].[TrangThai]
+FROM [DatTiec] AS [d]
+WHERE [d].[TrangThai] <> N'Đã hủy' OR ([d].[TrangThai] IS NULL)"
+2023-12-15T16:26:28.3970361+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dat-tiec/get-all" responded 200 in 1888.9623 ms
