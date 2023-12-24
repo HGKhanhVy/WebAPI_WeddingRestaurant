@@ -36,7 +36,7 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(SanhModel model, CancellationToken cancellationToken = default)
         {
-            if (_sanhRepository.Get(_ => _.MaSanh.Equals(model.MaSanh) && _.TrangThai == null).Any())
+            if (_sanhRepository.Get(_ => _.MaSanh.Equals(model.MaSanh) && !_.TrangThai.Equals("Da xoa")).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaSanh);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsSanh.SANH_EXISTED, statusCode: StatusCodes.Status400BadRequest);
@@ -50,7 +50,7 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _sanhRepository.GetTracking(x => x.MaSanh.Equals(id) && x.TrangThai == null).FirstOrDefault();
+            var entity = _sanhRepository.GetTracking(x => x.MaSanh.Equals(id) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id);
@@ -64,19 +64,19 @@ namespace WeddingRestaurant.Service
 
         public ICollection<SanhEntity> GetAllAsync()
         {
-            var entities = _sanhRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _sanhRepository.Get(_ => !_.TrangThai.Equals("Da xoa")).ToList();
             return (ICollection<SanhEntity>)entities;
         }
 
         public SanhEntity GetByKeyIdAsync(string id)
         {
-            var entity = _sanhRepository.GetSingle(_ => _.MaSanh.Equals(id) && _.TrangThai == null);
+            var entity = _sanhRepository.GetSingle(_ => _.MaSanh.Equals(id) && !_.TrangThai.Equals("Da xoa"));
             return entity;
         }
 
         public Task UpdateAsync(string Id, SanhModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _sanhRepository.GetTracking(x => x.MaSanh.Equals(Id) && x.TrangThai == null).FirstOrDefault();
+            var entity = _sanhRepository.GetTracking(x => x.MaSanh.Equals(Id) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id);
@@ -84,7 +84,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaSanh != Id)
             {
-                var isDuplicate = _sanhRepository.GetTracking(x => x.MaSanh.Equals(model.MaSanh) && x.TrangThai == null).FirstOrDefault();
+                var isDuplicate = _sanhRepository.GetTracking(x => x.MaSanh.Equals(model.MaSanh) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);
@@ -101,7 +101,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _sanhRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _sanhRepository.Get(_ => !_.TrangThai.Equals("Da xoa")).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;
@@ -111,7 +111,7 @@ namespace WeddingRestaurant.Service
         public string PrintSucChuaAsync(string id)
         {
             string sucChua = "";
-            var entity = _sanhRepository.GetSingle(_ => _.MaSanh.Equals(id) && _.TrangThai == null);
+            var entity = _sanhRepository.GetSingle(_ => _.MaSanh.Equals(id) && !_.TrangThai.Equals("Da xoa"));
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id);

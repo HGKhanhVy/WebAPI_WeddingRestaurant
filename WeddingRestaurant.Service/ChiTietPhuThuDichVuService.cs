@@ -34,7 +34,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _ctphuthudvRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _ctphuthudvRepository.Get(_ => !_.TrangThai.Equals("Da xoa")).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;
@@ -43,7 +43,7 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(ChiTietPhuThuDichVuModel model, CancellationToken cancellationToken = default)
         {
-            if (_ctphuthudvRepository.Get(_ => _.MaPhuThu.Equals(model.MaPhuThu) && _.MaDichVuTinhPhi.Equals(model.MaDichVuTinhPhi) && _.TrangThai == null).Any())
+            if (_ctphuthudvRepository.Get(_ => _.MaPhuThu.Equals(model.MaPhuThu) && _.MaDichVuTinhPhi.Equals(model.MaDichVuTinhPhi) && !_.TrangThai.Equals("Da xoa")).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaPhuThu + " - " + model.MaDichVuTinhPhi);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsChiTietPhuThuDichVu.CHITIETPHUTHUDV_EXISTED, statusCode: StatusCodes.Status400BadRequest);
@@ -58,7 +58,7 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id_PhuThu, string id, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _ctphuthudvRepository.GetTracking(x => x.MaDichVuTinhPhi.Equals(id) && x.MaPhuThu.Equals(id_PhuThu) && x.TrangThai == null).FirstOrDefault();
+            var entity = _ctphuthudvRepository.GetTracking(x => x.MaDichVuTinhPhi.Equals(id) && x.MaPhuThu.Equals(id_PhuThu) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id + " - " + id_PhuThu);
@@ -72,19 +72,19 @@ namespace WeddingRestaurant.Service
 
         public ICollection<ChiTietPhuThuDichVuEntity> GetAllAsync()
         {
-            var entities = _ctphuthudvRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _ctphuthudvRepository.Get(_ => !_.TrangThai.Equals("Da xoa")).ToList();
             return (ICollection<ChiTietPhuThuDichVuEntity>)entities;
         }
 
         public ChiTietPhuThuDichVuEntity GetByKeyIdAsync(string id_PhuThu, string id)
         {
-            var entity = _ctphuthudvRepository.GetSingle(_ => _.MaDichVuTinhPhi.Equals(id) && _.MaPhuThu.Equals(id_PhuThu) && _.TrangThai == null);
+            var entity = _ctphuthudvRepository.GetSingle(_ => _.MaDichVuTinhPhi.Equals(id) && _.MaPhuThu.Equals(id_PhuThu) && !_.TrangThai.Equals("Da xoa"));
             return entity;
         }
 
         public Task UpdateAsync(string id_PhuThu, string Id, ChiTietPhuThuDichVuModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _ctphuthudvRepository.GetTracking(x => x.MaDichVuTinhPhi.Equals(Id) && x.MaPhuThu.Equals(id_PhuThu) && x.TrangThai == null).FirstOrDefault();
+            var entity = _ctphuthudvRepository.GetTracking(x => x.MaDichVuTinhPhi.Equals(Id) && x.MaPhuThu.Equals(id_PhuThu) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id + " - " + id_PhuThu);
@@ -92,7 +92,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaDichVuTinhPhi != Id && model.MaPhuThu != id_PhuThu)
             {
-                var isDuplicate = _ctphuthudvRepository.GetTracking(x => x.MaDichVuTinhPhi.Equals(model.MaDichVuTinhPhi) && x.MaPhuThu.Equals(model.MaPhuThu) && x.TrangThai == null).FirstOrDefault();
+                var isDuplicate = _ctphuthudvRepository.GetTracking(x => x.MaDichVuTinhPhi.Equals(model.MaDichVuTinhPhi) && x.MaPhuThu.Equals(model.MaPhuThu) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);

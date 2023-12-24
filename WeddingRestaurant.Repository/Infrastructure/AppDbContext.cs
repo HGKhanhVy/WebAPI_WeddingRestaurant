@@ -309,6 +309,10 @@ namespace WeddingRestaurant.Repository.Infrastructure
             modelBuilder.Entity<SanhEntity>()
                .HasKey(d => d.MaSanh);
 
+            // SoDienThoai
+            modelBuilder.Entity<SoDienThoaiEntity>()
+               .HasKey(d => d.DauSo);
+
             // Phân Quyền
             modelBuilder.Entity<AccessTokenEntity>().HasNoKey();
             modelBuilder.Entity<RefreshTokenEntity>()

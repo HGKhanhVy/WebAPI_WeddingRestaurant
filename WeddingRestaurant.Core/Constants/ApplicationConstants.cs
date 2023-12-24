@@ -215,4 +215,11 @@
         public const string UPDATE_NHANVIENTRONGTIEC_SUCCESS = "Cap nhat nhan vien trong tiec thanh cong.";
         public const string DELETE_NHANVIENTRONGTIEC_SUCCESS = "Xoa nhan vien trong tiec thanh cong.";
     }
+    public class ReponseMessageConstantsSoDienThoai
+    {
+        public const string DAUSO_NOT_FOUND = "Khong tim thay dau so.";
+        public const string DAUSO_EXISTED = "Dau so da ton tai.";
+        public const string UPDATE_DAUSO_SUCCESS = "Cap nhat dau so thanh cong.";
+        public const string DELETE_DAUSO_SUCCESS = "Xoa dau so thanh cong.";
+    }
 }

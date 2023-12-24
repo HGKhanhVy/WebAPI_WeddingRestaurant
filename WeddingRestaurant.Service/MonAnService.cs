@@ -37,7 +37,7 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(MonAnModel model, CancellationToken cancellationToken = default)
         {
-            if (_monAnRepository.Get(_ => _.MaMonAn.Equals(model.MaMonAn) && _.TrangThai == null).Any())
+            if (_monAnRepository.Get(_ => _.MaMonAn.Equals(model.MaMonAn) && !_.TrangThai.Equals("Da xoa")).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaMonAn);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsMonAn.MONAN_EXISTED, statusCode: StatusCodes.Status400BadRequest);
@@ -51,7 +51,7 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _monAnRepository.GetTracking(x => x.MaMonAn.Equals(id) && x.TrangThai == null).FirstOrDefault();
+            var entity = _monAnRepository.GetTracking(x => x.MaMonAn.Equals(id) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id);
@@ -65,19 +65,19 @@ namespace WeddingRestaurant.Service
 
         public ICollection<MonAnEntity> GetAllAsync()
         {
-            var entities = _monAnRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _monAnRepository.Get(_ => !_.TrangThai.Equals("Da xoa")).ToList();
             return (ICollection<MonAnEntity>)entities;
         }
 
         public MonAnEntity GetByKeyIdAsync(string id)
         {
-            var entity = _monAnRepository.GetSingle(_ => _.MaMonAn.Equals(id) && _.TrangThai == null);
+            var entity = _monAnRepository.GetSingle(_ => _.MaMonAn.Equals(id) && !_.TrangThai.Equals("Da xoa"));
             return entity;
         }
 
         public Task UpdateAsync(string Id, MonAnModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _monAnRepository.GetTracking(x => x.MaMonAn.Equals(Id) && x.TrangThai == null).FirstOrDefault();
+            var entity = _monAnRepository.GetTracking(x => x.MaMonAn.Equals(Id) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id);
@@ -85,7 +85,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaMonAn != Id)
             {
-                var isDuplicate = _monAnRepository.GetTracking(x => x.MaMonAn.Equals(model.MaMonAn) && x.TrangThai == null).FirstOrDefault();
+                var isDuplicate = _monAnRepository.GetTracking(x => x.MaMonAn.Equals(model.MaMonAn) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);
@@ -102,7 +102,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _monAnRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _monAnRepository.Get(_ => !_.TrangThai.Equals("Da xoa")).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;

@@ -103,6 +103,7 @@
             public const string AddDatTiec = BaseEndpoint + "/add";
             public const string UpdateDatTiec = BaseEndpoint + "/update" + "/{MaTiec}";
             public const string DeleteDatTiec = BaseEndpoint + "/delete" + "/{MaTiec}";
+            public const string DeleteDatTiecByMaKH = BaseEndpoint + "/deleteByAnotherID" + "/{MaKhachHang}";
             public const string CountDatTiec = BaseEndpoint + "/count-tiec";
             public const string SortByNgayToChuc = BaseEndpoint + "/sap-xep-ngay-to-chuc";
             public const string SortByDescendingNgayToChuc = BaseEndpoint + "/sap-xep-ngay-to-chuc-giam-dan";
@@ -280,6 +281,7 @@
             public const string UpdateNhanVien = BaseEndpoint + "/update" + "/{MaNhanVien}";
             public const string DeleteNhanVien = BaseEndpoint + "/delete" + "/{MaNhanVien}";
             public const string CountNhanVien = BaseEndpoint + "/count-nhan-vien" + "/{MaNhanVien}";
+            public const string NhanVienLogin = BaseEndpoint + "/nv-login" + "/{Gmail}-{MatKhau}";
         }
 
         public static class NhanVienTrongTiec
@@ -316,6 +318,16 @@
             public const string DeleteSanh = BaseEndpoint + "/delete" + "/{MaSanh}";
             public const string CountSanh = BaseEndpoint + "/count-sanh" + "/{MaSanh}";
             public const string PrintSucChua = BaseEndpoint + "/print-succhua" + "/{MaSanh}";
+        }
+
+        public static class SoDienThoai
+        {
+            private const string BaseEndpoint = "~/" + AreaName + "/dau-so";
+            public const string GetDauSo = BaseEndpoint + "/get-single" + "/{DauSo}";
+            public const string GetAllDauSo = BaseEndpoint + "/get-all";
+            public const string AddDauSo = BaseEndpoint + "/add";
+            public const string UpdateDauSo = BaseEndpoint + "/update" + "/{DauSo}";
+            public const string DeleteDauSo = BaseEndpoint + "/delete" + "/{DauSo}";
         }
 
         public static class Token

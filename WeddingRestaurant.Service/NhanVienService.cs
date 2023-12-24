@@ -36,7 +36,7 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(NhanVienModel model, CancellationToken cancellationToken = default)
         {
-            if (_nvRepository.Get(_ => _.MaNhanVien.Equals(model.MaNhanVien) && _.TrangThai == null).Any())
+            if (_nvRepository.Get(_ => _.MaNhanVien.Equals(model.MaNhanVien) && !_.TrangThai.Equals("Da nghi viec")).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaNhanVien);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsNhanVien.NHANVIEN_EXISTED, statusCode: StatusCodes.Status400BadRequest);
@@ -50,7 +50,7 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _nvRepository.GetTracking(x => x.MaNhanVien.Equals(id) && x.TrangThai == null).FirstOrDefault();
+            var entity = _nvRepository.GetTracking(x => x.MaNhanVien.Equals(id) && !x.TrangThai.Equals("Da nghi viec")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id);
@@ -65,19 +65,19 @@ namespace WeddingRestaurant.Service
 
         public ICollection<NhanVienEntity> GetAllAsync()
         {
-            var entities = _nvRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _nvRepository.Get(_ => !_.TrangThai.Equals("Da nghi viec")).ToList();
             return (ICollection<NhanVienEntity>)entities;
         }
 
         public NhanVienEntity GetByKeyIdAsync(string id)
         {
-            var entity = _nvRepository.GetSingle(_ => _.MaNhanVien.Equals(id) && _.TrangThai == null);
+            var entity = _nvRepository.GetSingle(_ => _.MaNhanVien.Equals(id) && !_.TrangThai.Equals("Da nghi viec"));
             return entity;
         }
 
         public Task UpdateAsync(string Id, NhanVienModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _nvRepository.GetTracking(x => x.MaNhanVien.Equals(Id) && x.TrangThai == null).FirstOrDefault();
+            var entity = _nvRepository.GetTracking(x => x.MaNhanVien.Equals(Id) && !x.TrangThai.Equals("Da nghi viec")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id);
@@ -85,7 +85,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaNhanVien != Id)
             {
-                var isDuplicate = _nvRepository.GetTracking(x => x.MaNhanVien.Equals(model.MaNhanVien) && x.TrangThai == null).FirstOrDefault();
+                var isDuplicate = _nvRepository.GetTracking(x => x.MaNhanVien.Equals(model.MaNhanVien) && !x.TrangThai.Equals("Da nghi viec")).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);
@@ -102,11 +102,17 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _nvRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _nvRepository.Get(_ => !_.TrangThai.Equals("Da nghi viec")).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;
             return Task.FromResult(count);
+        }
+
+        public NhanVienEntity NhanVienLogin(string gmail, string mk)
+        {
+            var entity = _nvRepository.GetSingle(_ => _.Gmail.Equals(gmail) && _.MatKhau.Equals(mk) && !_.TrangThai.Equals("Da nghi viec"));
+            return entity;
         }
 
         public Task<int> CountByKeyIdAsync(int keyId)

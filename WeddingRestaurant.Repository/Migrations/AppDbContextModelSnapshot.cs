@@ -877,6 +877,19 @@ namespace WeddingRestaurant.Repository.Migrations
                     b.ToTable("Sanh");
                 });
 
+            modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.SoDienThoaiEntity", b =>
+                {
+                    b.Property<string>("DauSo")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("TrangThai")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DauSo");
+
+                    b.ToTable("SoDienThoai");
+                });
+
             modelBuilder.Entity("WeddingRestaurant.Contract.Repository.Models.TokenEntity", b =>
                 {
                     b.Property<string>("IDToken")

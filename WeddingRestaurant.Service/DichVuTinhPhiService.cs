@@ -36,7 +36,7 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(DichVuTinhPhiModel model, CancellationToken cancellationToken = default)
         {
-            if (_dvRepository.Get(_ => _.MaDichVuTinhPhi.Equals(model.MaDichVuTinhPhi) && _.TrangThai == null).Any())
+            if (_dvRepository.Get(_ => _.MaDichVuTinhPhi.Equals(model.MaDichVuTinhPhi) && !_.TrangThai.Equals("Da xoa")).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaDichVuTinhPhi);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsDichVuTinhPhi.DICHVUTINHPHI_EXISTED, statusCode: StatusCodes.Status400BadRequest);
@@ -50,7 +50,7 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _dvRepository.GetTracking(x => x.MaDichVuTinhPhi.Equals(id) && x.TrangThai == null).FirstOrDefault();
+            var entity = _dvRepository.GetTracking(x => x.MaDichVuTinhPhi.Equals(id) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id);
@@ -64,19 +64,19 @@ namespace WeddingRestaurant.Service
 
         public ICollection<DichVuTinhPhiEntity> GetAllAsync()
         {
-            var entities = _dvRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _dvRepository.Get(_ => !_.TrangThai.Equals("Da xoa")).ToList();
             return (ICollection<DichVuTinhPhiEntity>)entities;
         }
 
         public DichVuTinhPhiEntity GetByKeyIdAsync(string id)
         {
-            var entity = _dvRepository.GetSingle(_ => _.MaDichVuTinhPhi.Equals(id) && _.TrangThai == null);
+            var entity = _dvRepository.GetSingle(_ => _.MaDichVuTinhPhi.Equals(id) && !_.TrangThai.Equals("Da xoa"));
             return entity;
         }
 
         public Task UpdateAsync(string Id, DichVuTinhPhiModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _dvRepository.GetTracking(x => x.MaDichVuTinhPhi.Equals(Id) && x.TrangThai == null).FirstOrDefault();
+            var entity = _dvRepository.GetTracking(x => x.MaDichVuTinhPhi.Equals(Id) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id);
@@ -84,7 +84,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaDichVuTinhPhi != Id)
             {
-                var isDuplicate = _dvRepository.GetTracking(x => x.MaDichVuTinhPhi.Equals(model.MaDichVuTinhPhi) && x.TrangThai == null).FirstOrDefault();
+                var isDuplicate = _dvRepository.GetTracking(x => x.MaDichVuTinhPhi.Equals(model.MaDichVuTinhPhi) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);
@@ -101,7 +101,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _dvRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _dvRepository.Get(_ => !_.TrangThai.Equals("Da xoa")).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;

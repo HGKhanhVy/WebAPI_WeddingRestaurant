@@ -34,7 +34,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _ctphuthumaRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _ctphuthumaRepository.Get(_ => !_.TrangThai.Equals("Da xoa")).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;
@@ -43,7 +43,7 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(ChiTietPhuThuMonAnModel model, CancellationToken cancellationToken = default)
         {
-            if (_ctphuthumaRepository.Get(_ => _.MaPhuThu.Equals(model.MaPhuThu) && _.MaMonAn.Equals(model.MaMonAn) && _.TrangThai == null).Any())
+            if (_ctphuthumaRepository.Get(_ => _.MaPhuThu.Equals(model.MaPhuThu) && _.MaMonAn.Equals(model.MaMonAn) && !_.TrangThai.Equals("Da xoa")).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaPhuThu + " - " + model.MaMonAn);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsChiTietPhuThuMonAn.CHITIETPHUTHUMA_EXISTED, statusCode: StatusCodes.Status400BadRequest);
@@ -58,7 +58,7 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, string id_MonAn, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _ctphuthumaRepository.GetTracking(x => x.MaPhuThu.Equals(id) && x.MaMonAn.Equals(id_MonAn) && x.TrangThai == null).FirstOrDefault();
+            var entity = _ctphuthumaRepository.GetTracking(x => x.MaPhuThu.Equals(id) && x.MaMonAn.Equals(id_MonAn) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id + " - " + id_MonAn);
@@ -72,19 +72,19 @@ namespace WeddingRestaurant.Service
 
         public ICollection<ChiTietPhuThuMonAnEntity> GetAllAsync()
         {
-            var entities = _ctphuthumaRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _ctphuthumaRepository.Get(_ => !_.TrangThai.Equals("Da xoa")).ToList();
             return (ICollection<ChiTietPhuThuMonAnEntity>)entities;
         }
 
         public ChiTietPhuThuMonAnEntity GetByKeyIdAsync(string id_PhuThu, string id)
         {
-            var entity = _ctphuthumaRepository.GetSingle(_ => _.MaMonAn.Equals(id) && _.MaPhuThu.Equals(id_PhuThu) && _.TrangThai == null);
+            var entity = _ctphuthumaRepository.GetSingle(_ => _.MaMonAn.Equals(id) && _.MaPhuThu.Equals(id_PhuThu) && !_.TrangThai.Equals("Da xoa"));
             return entity;
         }
 
         public Task UpdateAsync(string id_PhuThu, string Id, ChiTietPhuThuMonAnModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _ctphuthumaRepository.GetTracking(x => x.MaMonAn.Equals(Id) && x.MaPhuThu.Equals(id_PhuThu) && x.TrangThai == null).FirstOrDefault();
+            var entity = _ctphuthumaRepository.GetTracking(x => x.MaMonAn.Equals(Id) && x.MaPhuThu.Equals(id_PhuThu) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id + " - " + id_PhuThu);
@@ -92,7 +92,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaMonAn != Id && model.MaPhuThu != id_PhuThu)
             {
-                var isDuplicate = _ctphuthumaRepository.GetTracking(x => x.MaMonAn.Equals(model.MaMonAn) && x.MaPhuThu.Equals(model.MaPhuThu) && x.TrangThai == null).FirstOrDefault();
+                var isDuplicate = _ctphuthumaRepository.GetTracking(x => x.MaMonAn.Equals(model.MaMonAn) && x.MaPhuThu.Equals(model.MaPhuThu) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);

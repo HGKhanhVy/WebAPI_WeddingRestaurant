@@ -1,0 +1,1609 @@
+2023-12-23T02:13:45.1346970+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("48"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T02:13:45.4326749+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("191"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T02:13:45.4401454+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T02:13:45.4424783+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T02:13:49.5772819+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4,104"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-23T02:13:49.6228104+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-12-23T02:13:50.7850996+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-12-23T02:13:50.7867367+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-12-23T02:13:50.7902822+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-12-23T02:13:50.7917937+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-12-23T02:13:50.7924920+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-12-23T02:14:27.4644129+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("920"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] IS NULL"
+2023-12-23T02:14:27.5651049+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 1935.5129 ms
+2023-12-23T02:14:37.8129155+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("879"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[TrangThai] IS NULL)"
+2023-12-23T02:14:37.8222391+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-single/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 1073.4563 ms
+2023-12-23T02:15:04.4818385+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "PUT" "/api/sanh/update/Sffab33ce82894afe84a08f372f53bee4" responded 400 in 104.5936 ms
+2023-12-23T02:16:15.3028197+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] IS NULL"
+2023-12-23T02:16:15.3070567+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 11.1738 ms
+2023-12-23T02:16:20.6522570+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[TrangThai] IS NULL)"
+2023-12-23T02:16:20.6543949+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-single/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 4.8665 ms
+2023-12-23T02:17:03.4317279+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("675"ms) [Parameters=["@__Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__Id_0 AND ([s].[TrangThai] IS NULL)"
+2023-12-23T02:17:19.5806728+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("15,917"ms) [Parameters=["@p5='?' (Size = 450), @p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Sanh] SET [HinhAnh] = @p0, [SucChuaToiDa] = @p1, [SucChuaToiThieu] = @p2, [TenSanh] = @p3, [TrangThai] = @p4
+OUTPUT 1
+WHERE [MaSanh] = @p5;"
+2023-12-23T02:17:19.5980856+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "PUT" "/api/sanh/update/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 17085.5000 ms
+2023-12-23T02:17:32.5630555+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("828"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] IS NULL"
+2023-12-23T02:17:32.5654615+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 830.8346 ms
+2023-12-23T02:17:45.4982630+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5,760"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] IS NULL"
+2023-12-23T02:17:45.5015989+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 5764.8152 ms
+2023-12-23T02:18:01.6688747+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] IS NULL"
+2023-12-23T02:18:01.6710313+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 4.6915 ms
+2023-12-23T02:18:18.3344323+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] IS NULL"
+2023-12-23T02:18:18.3420183+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 9.9912 ms
+2023-12-23T02:21:23.9094748+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("51"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T02:21:24.0955618+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("79"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T02:21:24.1038023+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T02:21:24.1166600+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T02:21:24.2180654+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("70"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-23T02:21:24.2601531+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-12-23T02:21:25.4141861+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-12-23T02:21:25.4150989+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-12-23T02:21:25.4183547+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-12-23T02:21:25.4192725+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-12-23T02:21:25.4199947+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-12-23T02:21:41.4414656+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] IS NULL"
+2023-12-23T02:21:41.5249489+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 883.1035 ms
+2023-12-23T02:22:28.6995570+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] IS NULL"
+2023-12-23T02:22:28.7028648+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 76.7270 ms
+2023-12-23T02:22:32.7891342+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("634"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[TrangThai] IS NULL)"
+2023-12-23T02:22:32.7951213+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-single/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 728.2742 ms
+2023-12-23T02:22:57.1799295+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("711"ms) [Parameters=["@__Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__Id_0 AND ([s].[TrangThai] IS NULL)"
+2023-12-23T02:22:57.5203607+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("130"ms) [Parameters=["@p5='?' (Size = 450), @p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Sanh] SET [HinhAnh] = @p0, [SucChuaToiDa] = @p1, [SucChuaToiThieu] = @p2, [TenSanh] = @p3, [TrangThai] = @p4
+OUTPUT 1
+WHERE [MaSanh] = @p5;"
+2023-12-23T02:22:57.5432483+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "PUT" "/api/sanh/update/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 1184.9443 ms
+2023-12-23T02:22:57.5822494+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] IS NULL"
+2023-12-23T02:22:57.5847427+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 4.8338 ms
+2023-12-23T02:53:57.0617217+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("54"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T02:53:57.2328444+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("76"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T02:53:57.2416270+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T02:53:57.2517335+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T02:53:57.3097555+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("29"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-23T02:53:57.3449444+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-12-23T02:53:57.8631146+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-12-23T02:53:57.8647315+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-12-23T02:53:57.8700368+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-12-23T02:53:57.8720537+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-12-23T02:53:57.8726425+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-12-23T02:54:17.8372443+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1,329"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL)"
+2023-12-23T02:54:17.8892446+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 2445.5470 ms
+2023-12-23T02:54:21.4855606+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("251"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T02:54:21.4930290+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-single/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 378.0681 ms
+2023-12-23T02:55:29.1250961+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL)"
+2023-12-23T02:55:29.1278733+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 12.4556 ms
+2023-12-23T02:55:36.8054508+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T02:55:36.8087378+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-single/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 10.0144 ms
+2023-12-23T02:56:02.6244440+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("86"ms) [Parameters=["@__Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__Id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T02:56:03.0896505+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("165"ms) [Parameters=["@p5='?' (Size = 450), @p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Sanh] SET [HinhAnh] = @p0, [SucChuaToiDa] = @p1, [SucChuaToiThieu] = @p2, [TenSanh] = @p3, [TrangThai] = @p4
+OUTPUT 1
+WHERE [MaSanh] = @p5;"
+2023-12-23T02:56:03.1094266+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "PUT" "/api/sanh/update/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 711.2556 ms
+2023-12-23T02:56:03.1410142+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL)"
+2023-12-23T02:56:03.1436015+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 8.5937 ms
+2023-12-23T02:56:08.9863841+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1,664"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T02:56:08.9899900+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-single/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 1668.4116 ms
+2023-12-23T02:57:39.7340613+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("168"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL)"
+2023-12-23T02:57:39.7392306+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 174.5871 ms
+2023-12-23T02:57:47.0414152+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T02:57:47.0452525+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-single/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 9.5040 ms
+2023-12-23T02:57:51.6598365+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__Id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T02:57:54.8965614+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3,233"ms) [Parameters=["@p5='?' (Size = 450), @p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Sanh] SET [HinhAnh] = @p0, [SucChuaToiDa] = @p1, [SucChuaToiThieu] = @p2, [TenSanh] = @p3, [TrangThai] = @p4
+OUTPUT 1
+WHERE [MaSanh] = @p5;"
+2023-12-23T02:57:54.8991749+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "PUT" "/api/sanh/update/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 3246.0037 ms
+2023-12-23T02:57:54.9256919+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL)"
+2023-12-23T02:57:54.9286850+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 5.6071 ms
+2023-12-23T02:57:56.9128711+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T02:57:56.9149146+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-single/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 5.4700 ms
+2023-12-23T02:58:16.2663953+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T02:58:16.2813796+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=["@p1='?' (Size = 450), @p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Sanh] SET [TrangThai] = @p0
+OUTPUT 1
+WHERE [MaSanh] = @p1;"
+2023-12-23T02:58:16.2848810+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "DELETE" "/api/sanh/delete/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 376.1879 ms
+2023-12-23T02:58:16.3002464+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("394"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL)"
+2023-12-23T02:58:16.3027652+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 398.6506 ms
+2023-12-23T03:01:42.6230516+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("56"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T03:01:42.7688647+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("54"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T03:01:42.7774596+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T03:01:42.7841757+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T03:01:42.8294457+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-23T03:01:42.8701335+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-12-23T03:01:43.3451328+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-12-23T03:01:43.3465410+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-12-23T03:01:43.3501196+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-12-23T03:01:43.3512875+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-12-23T03:01:43.3521838+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-12-23T03:04:18.8969224+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("50"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T03:04:19.0357651+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("48"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T03:04:19.0461847+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T03:04:19.0536960+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T03:04:19.0965707+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-23T03:04:19.1312776+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-12-23T03:04:19.6302556+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-12-23T03:04:19.6322863+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-12-23T03:04:19.6358999+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-12-23T03:04:19.6367347+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-12-23T03:04:19.6375940+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-12-23T03:19:37.2253862+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("23"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T03:19:37.3174959+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-all" responded 200 in 1500.6321 ms
+2023-12-23T03:20:40.4932017+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("79"ms) [Parameters=["@__model_MaNhanVien_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [NhanVien] AS [n]
+        WHERE [n].[MaNhanVien] = @__model_MaNhanVien_0 AND ([n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL))) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-12-23T03:20:40.8554219+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("13"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [NhanVien] ([MaNhanVien], [CCCD], [Gmail], [MatKhau], [NgayNghiViec], [NgaySinh], [NgayVaoLam], [SoDienThoai], [TenNhanVien], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);"
+2023-12-23T03:20:40.8847976+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/nhan-vien/add" responded 200 in 852.6564 ms
+2023-12-23T03:20:40.9362844+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T03:20:40.9415006+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-all" responded 200 in 15.9647 ms
+2023-12-23T03:24:47.7599536+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T03:24:47.7629905+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-all" responded 200 in 9.0778 ms
+2023-12-23T03:24:47.7770608+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[MaNhanVien] = @__id_0 AND ([n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL))"
+2023-12-23T03:24:47.9882559+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("154"ms) [Parameters=["@p2='?' (Size = 450), @p0='?' (Size = 4000), @p1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [NhanVien] SET [NgayNghiViec] = @p0, [TrangThai] = @p1
+OUTPUT 1
+WHERE [MaNhanVien] = @p2;"
+2023-12-23T03:24:47.9937038+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "DELETE" "/api/nhan-vien/delete/NV-f5e8381bfd9c40e882672e900f8cc701" responded 200 in 239.7927 ms
+2023-12-23T03:25:36.9712217+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("65"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T03:25:37.1132319+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("49"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T03:25:37.1220383+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T03:25:37.1303043+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T03:25:37.1707052+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-23T03:25:37.2107545+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-12-23T03:25:37.6883084+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-12-23T03:25:37.6901285+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-12-23T03:25:37.6936443+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-12-23T03:25:37.6946429+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-12-23T03:25:37.6954399+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-12-23T03:30:50.0374578+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("35"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T03:30:50.1664833+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-all" responded 200 in 1413.0795 ms
+2023-12-23T03:31:21.4824905+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("84"ms) [Parameters=["@__model_MaNhanVien_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [NhanVien] AS [n]
+        WHERE [n].[MaNhanVien] = @__model_MaNhanVien_0 AND ([n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL))) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-12-23T03:31:21.6941781+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [NhanVien] ([MaNhanVien], [CCCD], [Gmail], [MatKhau], [NgayNghiViec], [NgaySinh], [NgayVaoLam], [SoDienThoai], [TenNhanVien], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);"
+2023-12-23T03:31:21.7106466+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/nhan-vien/add" responded 200 in 562.2471 ms
+2023-12-23T03:31:21.7415776+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T03:31:21.7451246+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-all" responded 200 in 9.1305 ms
+2023-12-23T03:31:31.6469236+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[MaNhanVien] = @__id_0 AND ([n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL))"
+2023-12-23T03:31:31.6522276+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-single/NV-cf6b70563e7b472e80dce190ff777fd0" responded 200 in 18.8587 ms
+2023-12-23T03:31:58.1148591+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[MaNhanVien] = @__id_0 AND ([n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL))"
+2023-12-23T03:31:58.1167761+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-single/NV-cf6b70563e7b472e80dce190ff777fd0" responded 200 in 6.8392 ms
+2023-12-23T03:32:05.7393620+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("170"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[MaNhanVien] = @__id_0 AND ([n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL))"
+2023-12-23T03:32:05.7431571+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-single/NV-cf6b70563e7b472e80dce190ff777fd0" responded 200 in 174.6337 ms
+2023-12-23T03:32:22.6555079+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "PUT" "/api/nhan-vien/update/" responded 404 in 0.1402 ms
+2023-12-23T03:34:24.3805641+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T03:34:24.3837306+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-all" responded 200 in 6.7375 ms
+2023-12-23T03:34:26.7926235+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[MaNhanVien] = @__id_0 AND ([n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL))"
+2023-12-23T03:34:26.7956989+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-single/NV-cf6b70563e7b472e80dce190ff777fd0" responded 200 in 9.0901 ms
+2023-12-23T03:34:57.8386059+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T03:34:57.8435196+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-all" responded 200 in 8.4680 ms
+2023-12-23T03:35:00.5064053+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[MaNhanVien] = @__id_0 AND ([n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL))"
+2023-12-23T03:35:00.5094308+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-single/NV-cf6b70563e7b472e80dce190ff777fd0" responded 200 in 6.3042 ms
+2023-12-23T03:36:20.5932064+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T03:36:20.5966154+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-all" responded 200 in 10.5171 ms
+2023-12-23T03:36:23.2391963+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[MaNhanVien] = @__id_0 AND ([n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL))"
+2023-12-23T03:36:23.2418129+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-single/NV-cf6b70563e7b472e80dce190ff777fd0" responded 200 in 5.6592 ms
+2023-12-23T03:36:40.5309947+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[MaNhanVien] = @__Id_0 AND ([n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL))"
+2023-12-23T03:36:41.3059188+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("743"ms) [Parameters=["@p9='?' (Size = 450), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [NhanVien] SET [CCCD] = @p0, [Gmail] = @p1, [MatKhau] = @p2, [NgayNghiViec] = @p3, [NgaySinh] = @p4, [NgayVaoLam] = @p5, [SoDienThoai] = @p6, [TenNhanVien] = @p7, [TrangThai] = @p8
+OUTPUT 1
+WHERE [MaNhanVien] = @p9;"
+2023-12-23T03:36:41.3193044+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "PUT" "/api/nhan-vien/update/NV-cf6b70563e7b472e80dce190ff777fd0" responded 200 in 818.4262 ms
+2023-12-23T03:36:41.3483572+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T03:36:41.3508281+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-all" responded 200 in 4.5771 ms
+2023-12-23T03:37:03.3061076+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL)"
+2023-12-23T03:37:03.3417783+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-all" responded 200 in 59.6191 ms
+2023-12-23T04:18:52.1538195+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiMonAn], [l].[TenLoaiMon], [l].[TrangThai]
+FROM [LoaiMonAn] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T04:18:52.2066062+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-mon-an/get-all" responded 200 in 282.9748 ms
+2023-12-23T04:25:50.3729309+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiMonAn], [l].[TenLoaiMon], [l].[TrangThai]
+FROM [LoaiMonAn] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T04:25:50.3825090+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-mon-an/get-all" responded 200 in 120.8499 ms
+2023-12-23T04:29:09.9017686+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiMonAn], [l].[TenLoaiMon], [l].[TrangThai]
+FROM [LoaiMonAn] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T04:29:09.9050541+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-mon-an/get-all" responded 200 in 19.3332 ms
+2023-12-23T04:29:25.9236599+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiMonAn], [l].[TenLoaiMon], [l].[TrangThai]
+FROM [LoaiMonAn] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T04:29:25.9271452+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-mon-an/get-all" responded 200 in 7.0818 ms
+2023-12-23T04:29:34.5415945+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiMonAn], [l].[TenLoaiMon], [l].[TrangThai]
+FROM [LoaiMonAn] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T04:29:34.5469692+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-mon-an/get-all" responded 200 in 8.5778 ms
+2023-12-23T04:30:39.6846384+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("41"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL)"
+2023-12-23T04:30:39.6970507+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-all" responded 200 in 102.5107 ms
+2023-12-23T04:30:56.6776538+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiMonAn], [l].[TenLoaiMon], [l].[TrangThai]
+FROM [LoaiMonAn] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T04:30:56.6808387+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-mon-an/get-all" responded 200 in 6.3148 ms
+2023-12-23T04:32:22.9885878+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=["@__model_MaMonAn_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MonAn] AS [m]
+        WHERE [m].[MaMonAn] = @__model_MaMonAn_0 AND ([m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL))) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-12-23T04:32:23.1990018+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("42"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (DbType = Double), @p3='?' (Size = 4000), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [MonAn] ([MaMonAn], [DVT], [DonGia], [HinhAnh], [MaLoaiMonAn], [TenMonAn], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);"
+2023-12-23T04:32:23.2063578+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/mon-an/add" responded 200 in 499.7493 ms
+2023-12-23T04:32:23.2384857+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL)"
+2023-12-23T04:32:23.2428249+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-all" responded 200 in 6.0961 ms
+2023-12-23T04:35:51.9661199+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("54"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T04:35:52.1310808+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("49"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T04:35:52.1416113+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T04:35:52.1516453+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T04:35:52.1853386+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-23T04:35:52.2199533+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-12-23T04:35:53.2716801+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-12-23T04:35:53.2734976+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-12-23T04:35:53.2768631+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-12-23T04:35:53.2777950+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-12-23T04:35:53.2785059+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-12-23T04:45:23.9203717+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL)"
+2023-12-23T04:45:24.2302671+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-all" responded 200 in 1921.0762 ms
+2023-12-23T04:45:34.2137794+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("103"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[MaMonAn] = @__id_0 AND ([m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL))"
+2023-12-23T04:45:34.2187683+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-single/MA-8354746321b14da0a043df709fa291e2" responded 200 in 241.6510 ms
+2023-12-23T04:45:34.2405991+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiMonAn], [l].[TenLoaiMon], [l].[TrangThai]
+FROM [LoaiMonAn] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T04:45:34.2454036+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-mon-an/get-all" responded 200 in 15.5753 ms
+2023-12-23T04:46:17.5497205+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL)"
+2023-12-23T04:46:17.5546844+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-all" responded 200 in 10.7866 ms
+2023-12-23T04:46:25.0064048+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[MaMonAn] = @__id_0 AND ([m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL))"
+2023-12-23T04:46:25.0097836+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-single/MA-8354746321b14da0a043df709fa291e2" responded 200 in 8.4419 ms
+2023-12-23T04:46:25.0220697+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiMonAn], [l].[TenLoaiMon], [l].[TrangThai]
+FROM [LoaiMonAn] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T04:46:25.0252043+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-mon-an/get-all" responded 200 in 6.3350 ms
+2023-12-23T04:47:01.8333618+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[MaMonAn] = @__Id_0 AND ([m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL))"
+2023-12-23T04:47:02.0936324+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("25"ms) [Parameters=["@p6='?' (Size = 450), @p0='?' (Size = 4000), @p1='?' (DbType = Double), @p2='?' (Size = 4000), @p3='?' (Size = 450), @p4='?' (Size = 4000), @p5='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [MonAn] SET [DVT] = @p0, [DonGia] = @p1, [HinhAnh] = @p2, [MaLoaiMonAn] = @p3, [TenMonAn] = @p4, [TrangThai] = @p5
+OUTPUT 1
+WHERE [MaMonAn] = @p6;"
+2023-12-23T04:47:02.1117653+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "PUT" "/api/mon-an/update/MA-8354746321b14da0a043df709fa291e2" responded 200 in 472.7064 ms
+2023-12-23T04:47:02.1375252+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL)"
+2023-12-23T04:47:02.1409710+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-all" responded 200 in 5.0850 ms
+2023-12-23T04:47:17.0211401+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[MaMonAn] = @__id_0 AND ([m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL))"
+2023-12-23T04:47:17.0241009+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-single/MA-8354746321b14da0a043df709fa291e2" responded 200 in 4.9726 ms
+2023-12-23T04:47:17.0340974+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiMonAn], [l].[TenLoaiMon], [l].[TrangThai]
+FROM [LoaiMonAn] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T04:47:17.0367701+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-mon-an/get-all" responded 200 in 5.3674 ms
+2023-12-23T04:47:28.9530047+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[MaMonAn] = @__Id_0 AND ([m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL))"
+2023-12-23T04:47:28.9596767+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@p6='?' (Size = 450), @p0='?' (Size = 4000), @p1='?' (DbType = Double), @p2='?' (Size = 4000), @p3='?' (Size = 450), @p4='?' (Size = 4000), @p5='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [MonAn] SET [DVT] = @p0, [DonGia] = @p1, [HinhAnh] = @p2, [MaLoaiMonAn] = @p3, [TenMonAn] = @p4, [TrangThai] = @p5
+OUTPUT 1
+WHERE [MaMonAn] = @p6;"
+2023-12-23T04:47:28.9623578+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "PUT" "/api/mon-an/update/MA-8354746321b14da0a043df709fa291e2" responded 200 in 17.0211 ms
+2023-12-23T04:47:28.9761834+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL)"
+2023-12-23T04:47:28.9808910+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-all" responded 200 in 6.7900 ms
+2023-12-23T04:47:34.2586725+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[MaMonAn] = @__id_0 AND ([m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL))"
+2023-12-23T04:47:34.2627778+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-single/MA-8354746321b14da0a043df709fa291e2" responded 200 in 7.8666 ms
+2023-12-23T04:47:34.2731809+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiMonAn], [l].[TenLoaiMon], [l].[TrangThai]
+FROM [LoaiMonAn] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T04:47:34.2749176+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-mon-an/get-all" responded 200 in 4.5283 ms
+2023-12-23T05:09:53.3952581+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiNuoc], [l].[TenLoaiNuoc], [l].[TrangThai]
+FROM [LoaiNuoc] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T05:09:53.4384986+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-nuoc/get-all" responded 200 in 312.2603 ms
+2023-12-23T05:10:04.7720372+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNuoc], [n].[DVT], [n].[DonGia], [n].[HinhAnh], [n].[MaLoaiNuoc], [n].[TenNuoc], [n].[TrangThai]
+FROM [Nuoc] AS [n]
+WHERE [n].[TrangThai] <> N'Da xoa' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T05:10:04.7917863+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nuoc-uong/get-all" responded 200 in 66.2744 ms
+2023-12-23T05:10:13.4698489+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiNuoc], [l].[TenLoaiNuoc], [l].[TrangThai]
+FROM [LoaiNuoc] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T05:10:13.4725042+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-nuoc/get-all" responded 200 in 12.6055 ms
+2023-12-23T05:11:02.4521042+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__model_MaNuoc_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Nuoc] AS [n]
+        WHERE [n].[MaNuoc] = @__model_MaNuoc_0 AND ([n].[TrangThai] <> N'Da xoa' OR ([n].[TrangThai] IS NULL))) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2023-12-23T05:11:02.5845706+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("8"ms) [Parameters=["@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (DbType = Double), @p3='?' (Size = 4000), @p4='?' (Size = 450), @p5='?' (Size = 4000), @p6='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Nuoc] ([MaNuoc], [DVT], [DonGia], [HinhAnh], [MaLoaiNuoc], [TenNuoc], [TrangThai])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);"
+2023-12-23T05:11:02.5877389+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "POST" "/api/nuoc-uong/add" responded 200 in 409.2169 ms
+2023-12-23T05:11:02.6293707+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNuoc], [n].[DVT], [n].[DonGia], [n].[HinhAnh], [n].[MaLoaiNuoc], [n].[TenNuoc], [n].[TrangThai]
+FROM [Nuoc] AS [n]
+WHERE [n].[TrangThai] <> N'Da xoa' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T05:11:02.6323209+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nuoc-uong/get-all" responded 200 in 8.5463 ms
+2023-12-23T05:14:19.0605984+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNuoc], [n].[DVT], [n].[DonGia], [n].[HinhAnh], [n].[MaLoaiNuoc], [n].[TenNuoc], [n].[TrangThai]
+FROM [Nuoc] AS [n]
+WHERE [n].[TrangThai] <> N'Da xoa' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T05:14:19.0640301+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nuoc-uong/get-all" responded 200 in 6.2781 ms
+2023-12-23T05:18:35.8736368+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNuoc], [n].[DVT], [n].[DonGia], [n].[HinhAnh], [n].[MaLoaiNuoc], [n].[TenNuoc], [n].[TrangThai]
+FROM [Nuoc] AS [n]
+WHERE [n].[TrangThai] <> N'Da xoa' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T05:18:35.8779252+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nuoc-uong/get-all" responded 200 in 26.4408 ms
+2023-12-23T05:18:42.8173827+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [n].[MaNuoc], [n].[DVT], [n].[DonGia], [n].[HinhAnh], [n].[MaLoaiNuoc], [n].[TenNuoc], [n].[TrangThai]
+FROM [Nuoc] AS [n]
+WHERE [n].[MaNuoc] = @__id_0 AND ([n].[TrangThai] <> N'Da xoa' OR ([n].[TrangThai] IS NULL))"
+2023-12-23T05:18:42.8338858+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nuoc-uong/get-single/NUOCd92c44fd3e0548b6a815d0403bcce133" responded 200 in 177.6025 ms
+2023-12-23T05:18:42.8683846+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiNuoc], [l].[TenLoaiNuoc], [l].[TrangThai]
+FROM [LoaiNuoc] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T05:18:42.8707820+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-nuoc/get-all" responded 200 in 15.5172 ms
+2023-12-23T05:18:52.7015303+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [n].[MaNuoc], [n].[DVT], [n].[DonGia], [n].[HinhAnh], [n].[MaLoaiNuoc], [n].[TenNuoc], [n].[TrangThai]
+FROM [Nuoc] AS [n]
+WHERE [n].[MaNuoc] = @__Id_0 AND ([n].[TrangThai] <> N'Da xoa' OR ([n].[TrangThai] IS NULL))"
+2023-12-23T05:18:52.7242813+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("12"ms) [Parameters=["@p6='?' (Size = 450), @p0='?' (Size = 4000), @p1='?' (DbType = Double), @p2='?' (Size = 4000), @p3='?' (Size = 450), @p4='?' (Size = 4000), @p5='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Nuoc] SET [DVT] = @p0, [DonGia] = @p1, [HinhAnh] = @p2, [MaLoaiNuoc] = @p3, [TenNuoc] = @p4, [TrangThai] = @p5
+OUTPUT 1
+WHERE [MaNuoc] = @p6;"
+2023-12-23T05:18:52.7283047+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "PUT" "/api/nuoc-uong/update/NUOCd92c44fd3e0548b6a815d0403bcce133" responded 200 in 58.8851 ms
+2023-12-23T05:18:52.7580833+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNuoc], [n].[DVT], [n].[DonGia], [n].[HinhAnh], [n].[MaLoaiNuoc], [n].[TenNuoc], [n].[TrangThai]
+FROM [Nuoc] AS [n]
+WHERE [n].[TrangThai] <> N'Da xoa' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T05:18:52.7607352+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nuoc-uong/get-all" responded 200 in 4.9288 ms
+2023-12-23T05:18:54.1172439+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [n].[MaNuoc], [n].[DVT], [n].[DonGia], [n].[HinhAnh], [n].[MaLoaiNuoc], [n].[TenNuoc], [n].[TrangThai]
+FROM [Nuoc] AS [n]
+WHERE [n].[MaNuoc] = @__id_0 AND ([n].[TrangThai] <> N'Da xoa' OR ([n].[TrangThai] IS NULL))"
+2023-12-23T05:18:54.1229197+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nuoc-uong/get-single/NUOCd92c44fd3e0548b6a815d0403bcce133" responded 200 in 9.9164 ms
+2023-12-23T05:18:54.1292686+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiNuoc], [l].[TenLoaiNuoc], [l].[TrangThai]
+FROM [LoaiNuoc] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T05:18:54.1305985+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-nuoc/get-all" responded 200 in 2.7500 ms
+2023-12-23T05:19:08.7506387+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [n].[MaNuoc], [n].[DVT], [n].[DonGia], [n].[HinhAnh], [n].[MaLoaiNuoc], [n].[TenNuoc], [n].[TrangThai]
+FROM [Nuoc] AS [n]
+WHERE [n].[MaNuoc] = @__Id_0 AND ([n].[TrangThai] <> N'Da xoa' OR ([n].[TrangThai] IS NULL))"
+2023-12-23T05:19:08.7571561+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=["@p6='?' (Size = 450), @p0='?' (Size = 4000), @p1='?' (DbType = Double), @p2='?' (Size = 4000), @p3='?' (Size = 450), @p4='?' (Size = 4000), @p5='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Nuoc] SET [DVT] = @p0, [DonGia] = @p1, [HinhAnh] = @p2, [MaLoaiNuoc] = @p3, [TenNuoc] = @p4, [TrangThai] = @p5
+OUTPUT 1
+WHERE [MaNuoc] = @p6;"
+2023-12-23T05:19:08.7594372+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "PUT" "/api/nuoc-uong/update/NUOCd92c44fd3e0548b6a815d0403bcce133" responded 200 in 12.7616 ms
+2023-12-23T05:19:08.7726787+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNuoc], [n].[DVT], [n].[DonGia], [n].[HinhAnh], [n].[MaLoaiNuoc], [n].[TenNuoc], [n].[TrangThai]
+FROM [Nuoc] AS [n]
+WHERE [n].[TrangThai] <> N'Da xoa' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T05:19:08.7753406+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nuoc-uong/get-all" responded 200 in 5.6291 ms
+2023-12-23T08:02:13.9016771+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("67"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T08:02:14.4267753+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("404"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T08:02:14.4527589+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T08:02:14.4738777+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T08:02:14.5626187+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("38"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-23T08:02:14.6048987+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-12-23T08:02:15.3472546+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-12-23T08:02:15.3481796+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-12-23T08:02:15.3539776+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-12-23T08:02:15.3558111+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-12-23T08:02:15.3580326+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-12-23T08:02:36.3071713+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("212"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [d].[MaDichVu], [d].[DieuKienBanToiDa], [d].[DieuKienBanToiThieu], [d].[GiaGiam30], [d].[GiaLe], [d].[GiaTronGoi], [d].[HinhAnh], [d].[MaLoaiDichVu], [d].[MoTa], [d].[TenDichVu], [d].[TrangThai]
+FROM [DichVu] AS [d]
+WHERE [d].[TrangThai] <> N'Da xoa' OR ([d].[TrangThai] IS NULL)"
+2023-12-23T08:02:36.3855344+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dich-vu/get-all" responded 200 in 1243.6456 ms
+2023-12-23T08:03:35.4635213+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("46"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL)"
+2023-12-23T08:03:35.4751958+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 127.4404 ms
+2023-12-23T08:04:08.4998655+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("98"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [d].[MaTiec], [d].[GhiChu], [d].[LoaiBan], [d].[LoaiHinhTiec], [d].[MaKhachHang], [d].[NgayDatTiec], [d].[NgayToChuc], [d].[PhiDichVu], [d].[SoLuongBanChay], [d].[SoLuongBanChinhThuc], [d].[SoLuongBanDuPhong], [d].[SoLuongBanTang], [d].[ThoiGianToChuc], [d].[TienCocLan1], [d].[TienCocLan2], [d].[TongBanSetup], [d].[TongTienDuKien], [d].[TongTienGiam], [d].[TongTienPhaiTra], [d].[TrangThai]
+FROM [DatTiec] AS [d]
+WHERE [d].[TrangThai] <> N'Da huy' OR ([d].[TrangThai] IS NULL)"
+2023-12-23T08:04:08.5425228+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dat-tiec/get-all" responded 200 in 156.2440 ms
+2023-12-23T08:04:08.6381493+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("80"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[TrangThai] <> N'Da xoa' OR ([k].[TrangThai] IS NULL)"
+2023-12-23T08:04:08.6428623+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/get-all" responded 200 in 89.7628 ms
+2023-12-23T08:04:27.8283748+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("22"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [n].[MaNhanVien], [n].[CCCD], [n].[Gmail], [n].[MatKhau], [n].[NgayNghiViec], [n].[NgaySinh], [n].[NgayVaoLam], [n].[SoDienThoai], [n].[TenNhanVien], [n].[TrangThai]
+FROM [NhanVien] AS [n]
+WHERE [n].[TrangThai] <> N'Da nghi viec' OR ([n].[TrangThai] IS NULL)"
+2023-12-23T08:04:27.8419162+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/nhan-vien/get-all" responded 200 in 46.0703 ms
+2023-12-23T08:04:28.3415521+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [d].[MaTiec], [d].[GhiChu], [d].[LoaiBan], [d].[LoaiHinhTiec], [d].[MaKhachHang], [d].[NgayDatTiec], [d].[NgayToChuc], [d].[PhiDichVu], [d].[SoLuongBanChay], [d].[SoLuongBanChinhThuc], [d].[SoLuongBanDuPhong], [d].[SoLuongBanTang], [d].[ThoiGianToChuc], [d].[TienCocLan1], [d].[TienCocLan2], [d].[TongBanSetup], [d].[TongTienDuKien], [d].[TongTienGiam], [d].[TongTienPhaiTra], [d].[TrangThai]
+FROM [DatTiec] AS [d]
+WHERE [d].[TrangThai] <> N'Da huy' OR ([d].[TrangThai] IS NULL)"
+2023-12-23T08:04:28.3499881+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dat-tiec/get-all" responded 200 in 29.9946 ms
+2023-12-23T08:04:28.3572830+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [k].[MaKhachHang], [k].[CCCD], [k].[Gmail], [k].[NgaySinh], [k].[SoDienThoai], [k].[TenKhachHang], [k].[TrangThai]
+FROM [KhachHang] AS [k]
+WHERE [k].[TrangThai] <> N'Da xoa' OR ([k].[TrangThai] IS NULL)"
+2023-12-23T08:04:28.3631200+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/khach-hang/get-all" responded 200 in 9.9536 ms
+2023-12-23T08:04:35.7139249+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL)"
+2023-12-23T08:04:35.7181101+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 10.3008 ms
+2023-12-23T08:04:37.1745466+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("77"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL)"
+2023-12-23T08:04:37.1864631+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-all" responded 200 in 95.1097 ms
+2023-12-23T08:04:39.0815759+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("25"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiMonAn], [l].[TenLoaiMon], [l].[TrangThai]
+FROM [LoaiMonAn] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T08:04:39.0945377+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-mon-an/get-all" responded 200 in 45.4159 ms
+2023-12-23T08:04:51.8501031+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [d].[MaDichVu], [d].[DieuKienBanToiDa], [d].[DieuKienBanToiThieu], [d].[GiaGiam30], [d].[GiaLe], [d].[GiaTronGoi], [d].[HinhAnh], [d].[MaLoaiDichVu], [d].[MoTa], [d].[TenDichVu], [d].[TrangThai]
+FROM [DichVu] AS [d]
+WHERE [d].[TrangThai] <> N'Da xoa' OR ([d].[TrangThai] IS NULL)"
+2023-12-23T08:04:51.8548088+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dich-vu/get-all" responded 200 in 10.3151 ms
+2023-12-23T08:04:54.9074211+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL)"
+2023-12-23T08:04:54.9144817+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-all" responded 200 in 13.3589 ms
+2023-12-23T08:05:13.7636715+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("54"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[MaMonAn] = @__id_0 AND ([m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL))"
+2023-12-23T08:05:13.7688421+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-single/MA-0211" responded 200 in 130.6022 ms
+2023-12-23T08:05:13.7844785+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiMonAn], [l].[TenLoaiMon], [l].[TrangThai]
+FROM [LoaiMonAn] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T08:05:13.7870516+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-mon-an/get-all" responded 200 in 6.7398 ms
+2023-12-23T08:05:38.8364911+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[MaMonAn] = @__id_0 AND ([m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL))"
+2023-12-23T08:05:38.8442514+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-single/MA-8354746321b14da0a043df709fa291e2" responded 200 in 15.3915 ms
+2023-12-23T08:05:38.8953102+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiMonAn], [l].[TenLoaiMon], [l].[TrangThai]
+FROM [LoaiMonAn] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T08:05:38.8992275+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-mon-an/get-all" responded 200 in 11.6823 ms
+2023-12-23T08:05:52.1515407+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[MaMonAn] = @__Id_0 AND ([m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL))"
+2023-12-23T08:05:52.4460752+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("26"ms) [Parameters=["@p6='?' (Size = 450), @p0='?' (Size = 4000), @p1='?' (DbType = Double), @p2='?' (Size = 4000), @p3='?' (Size = 450), @p4='?' (Size = 4000), @p5='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [MonAn] SET [DVT] = @p0, [DonGia] = @p1, [HinhAnh] = @p2, [MaLoaiMonAn] = @p3, [TenMonAn] = @p4, [TrangThai] = @p5
+OUTPUT 1
+WHERE [MaMonAn] = @p6;"
+2023-12-23T08:05:52.4639076+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "PUT" "/api/mon-an/update/MA-8354746321b14da0a043df709fa291e2" responded 200 in 457.4922 ms
+2023-12-23T08:05:52.5012505+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL)"
+2023-12-23T08:05:52.5053129+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-all" responded 200 in 6.6759 ms
+2023-12-23T08:05:58.5980128+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [m].[MaMonAn], [m].[DVT], [m].[DonGia], [m].[HinhAnh], [m].[MaLoaiMonAn], [m].[TenMonAn], [m].[TrangThai]
+FROM [MonAn] AS [m]
+WHERE [m].[MaMonAn] = @__id_0 AND ([m].[TrangThai] <> N'Da xoa' OR ([m].[TrangThai] IS NULL))"
+2023-12-23T08:05:58.6045130+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/mon-an/get-single/MA-8354746321b14da0a043df709fa291e2" responded 200 in 11.8938 ms
+2023-12-23T08:05:58.6129370+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaLoaiMonAn], [l].[TenLoaiMon], [l].[TrangThai]
+FROM [LoaiMonAn] AS [l]
+WHERE [l].[TrangThai] <> N'Da xoa' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T08:05:58.6171018+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/loai-mon-an/get-all" responded 200 in 6.3990 ms
+2023-12-23T08:06:09.2725091+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [d].[MaDichVu], [d].[DieuKienBanToiDa], [d].[DieuKienBanToiThieu], [d].[GiaGiam30], [d].[GiaLe], [d].[GiaTronGoi], [d].[HinhAnh], [d].[MaLoaiDichVu], [d].[MoTa], [d].[TenDichVu], [d].[TrangThai]
+FROM [DichVu] AS [d]
+WHERE [d].[TrangThai] <> N'Da xoa' OR ([d].[TrangThai] IS NULL)"
+2023-12-23T08:06:09.2770149+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dich-vu/get-all" responded 200 in 9.1226 ms
+2023-12-23T08:06:56.0851606+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL)"
+2023-12-23T08:06:56.0924134+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 12.0758 ms
+2023-12-23T08:13:10.6461044+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("154"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T08:13:10.6533998+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-single/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 599.4148 ms
+2023-12-23T08:13:18.8654164+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__Id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__Id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T08:13:19.0606369+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("166"ms) [Parameters=["@p5='?' (Size = 450), @p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000)"], CommandType='Text', CommandTimeout='1200']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Sanh] SET [HinhAnh] = @p0, [SucChuaToiDa] = @p1, [SucChuaToiThieu] = @p2, [TenSanh] = @p3, [TrangThai] = @p4
+OUTPUT 1
+WHERE [MaSanh] = @p5;"
+2023-12-23T08:13:19.0684964+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "PUT" "/api/sanh/update/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 223.9736 ms
+2023-12-23T08:13:19.1112528+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL)"
+2023-12-23T08:13:19.1191324+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 13.9369 ms
+2023-12-23T08:13:20.7610684+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[MaSanh] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T08:13:20.7699052+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-single/Sffab33ce82894afe84a08f372f53bee4" responded 200 in 12.9825 ms
+2023-12-23T08:14:23.4282889+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("40"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [d].[MaDichVu], [d].[DieuKienBanToiDa], [d].[DieuKienBanToiThieu], [d].[GiaGiam30], [d].[GiaLe], [d].[GiaTronGoi], [d].[HinhAnh], [d].[MaLoaiDichVu], [d].[MoTa], [d].[TenDichVu], [d].[TrangThai]
+FROM [DichVu] AS [d]
+WHERE [d].[TrangThai] <> N'Da xoa' OR ([d].[TrangThai] IS NULL)"
+2023-12-23T08:14:23.4355465+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dich-vu/get-all" responded 200 in 49.1142 ms
+2023-12-23T08:14:34.5569214+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL)"
+2023-12-23T08:14:34.5605351+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 5.9705 ms
+2023-12-23T08:19:03.3383726+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [l].[MaTiec], [l].[MaSanh], [l].[Ca], [l].[NgayDienRa], [l].[TienPhuThu], [l].[TrangThai]
+FROM [LichSanhTiec] AS [l]
+WHERE [l].[TrangThai] <> N'Da huy' OR ([l].[TrangThai] IS NULL)"
+2023-12-23T08:19:03.3517564+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/lich-sanh-tiec/get-all" responded 200 in 62.7207 ms
+2023-12-23T08:19:03.3641739+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[MaSanh], [s].[HinhAnh], [s].[SucChuaToiDa], [s].[SucChuaToiThieu], [s].[TenSanh], [s].[TrangThai]
+FROM [Sanh] AS [s]
+WHERE [s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL)"
+2023-12-23T08:19:03.3705512+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/sanh/get-all" responded 200 in 8.2425 ms
+2023-12-23T15:14:50.8239727+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T15:14:50.8885561+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T15:14:50.8919364+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T15:14:50.8927347+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T15:14:50.9221483+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-23T15:14:50.9526880+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) Applying migration '"20231223081434_UpdateDBAddSDT"'.
+2023-12-23T15:14:51.0751309+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""CREATE TABLE [SoDienThoai] (
+    [DauSo] nvarchar(450) NOT NULL,
+    [TrangThai] nvarchar(max) NULL,
+    CONSTRAINT [PK_SoDienThoai] PRIMARY KEY ([DauSo])
+);"
+2023-12-23T15:14:51.0874037+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20231223081434_UpdateDBAddSDT', N'7.0.9');"
+2023-12-23T15:28:05.0172470+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("54"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T15:28:05.1606606+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("53"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T15:28:05.1700524+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T15:28:05.1735756+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T15:28:05.2089661+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-23T15:28:05.2470762+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-12-23T15:28:06.4455263+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-12-23T15:28:06.4480385+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-12-23T15:28:06.4524428+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-12-23T15:28:06.4548703+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-12-23T15:28:06.4558830+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-12-23T15:28:27.1002836+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("27"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL)"
+2023-12-23T15:28:27.1361462+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-all" responded 200 in 883.9681 ms
+2023-12-23T15:28:48.5990163+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("92"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T15:28:48.6065090+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 286.6607 ms
+2023-12-23T16:44:36.6228239+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("53"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T16:44:36.7758430+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("57"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T16:44:36.7852547+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT 1"
+2023-12-23T16:44:36.7948790+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');"
+2023-12-23T16:44:36.8501390+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='1200']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];"
+2023-12-23T16:44:36.8866103+07:00 [INF] (Microsoft.EntityFrameworkCore.Migrations) No migrations were applied. The database is already up to date.
+2023-12-23T16:44:37.4188837+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "https://localhost:7267"
+2023-12-23T16:44:37.4251157+07:00 [INF] (Microsoft.Hosting.Lifetime) Now listening on: "http://localhost:5140"
+2023-12-23T16:44:37.4296295+07:00 [INF] (Microsoft.Hosting.Lifetime) Application started. Press Ctrl+C to shut down.
+2023-12-23T16:44:37.4310406+07:00 [INF] (Microsoft.Hosting.Lifetime) Hosting environment: "Development"
+2023-12-23T16:44:37.4323605+07:00 [INF] (Microsoft.Hosting.Lifetime) Content root path: "D:\NhaHangTiecCuoi\WeddingRestaurant\WeddingRestaurant.WebApi\"
+2023-12-23T16:48:17.9737980+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("75"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:48:18.0097082+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 918.8891 ms
+2023-12-23T16:51:41.2074717+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:51:41.2145655+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 84.8616 ms
+2023-12-23T16:51:41.3212116+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:51:41.3247386+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01" responded 400 in 8.7228 ms
+2023-12-23T16:51:41.6186245+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:51:41.6224262+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.2792 ms
+2023-12-23T16:51:42.2607684+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:51:42.2644542+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0123" responded 400 in 6.5578 ms
+2023-12-23T16:51:42.4753128+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:51:42.4798326+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01235" responded 400 in 8.3801 ms
+2023-12-23T16:51:42.8202581+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:51:42.8237437+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012356" responded 400 in 6.0246 ms
+2023-12-23T16:51:43.4811299+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:51:43.4860368+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0123568" responded 400 in 8.0145 ms
+2023-12-23T16:54:32.1663379+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:54:32.1682826+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 8.6814 ms
+2023-12-23T16:54:32.3216781+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:54:32.3265496+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01" responded 400 in 7.6287 ms
+2023-12-23T16:54:32.4466627+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:54:32.4520634+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.9574 ms
+2023-12-23T16:54:32.7171428+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:54:32.7203929+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 6.4178 ms
+2023-12-23T16:54:33.0485063+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:54:33.0514080+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 5.9933 ms
+2023-12-23T16:54:33.5416472+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:54:33.5471784+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 9.7072 ms
+2023-12-23T16:54:36.8580122+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:54:36.8623514+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 12.2979 ms
+2023-12-23T16:54:37.0393957+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:54:37.0431901+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.7447 ms
+2023-12-23T16:54:37.2598505+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:54:37.2649133+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 9.5051 ms
+2023-12-23T16:54:37.6537698+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:54:37.6577872+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 8.4887 ms
+2023-12-23T16:57:33.0012913+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:57:33.0052469+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 8.7412 ms
+2023-12-23T16:57:33.1719996+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:57:33.1786255+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01" responded 400 in 10.2637 ms
+2023-12-23T16:57:33.4336960+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:57:33.4376986+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 5.3974 ms
+2023-12-23T16:57:34.4820895+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:57:34.4874790+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 9.5462 ms
+2023-12-23T16:57:34.6405241+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:57:34.6463189+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 8.1369 ms
+2023-12-23T16:57:34.9460390+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:57:34.9537296+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 11.8254 ms
+2023-12-23T16:57:35.1307740+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:57:35.1348283+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 8.5500 ms
+2023-12-23T16:57:35.3465003+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:57:35.3522855+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 9.8558 ms
+2023-12-23T16:57:35.5220802+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:57:35.5249757+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 6.0003 ms
+2023-12-23T16:57:35.8607814+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:57:35.8656078+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 8.8433 ms
+2023-12-23T16:57:36.0630982+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:57:36.0664941+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 6.5332 ms
+2023-12-23T16:58:26.2031536+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:58:26.2072508+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 8.6900 ms
+2023-12-23T16:58:26.3559308+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:58:26.3592380+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01" responded 400 in 4.4335 ms
+2023-12-23T16:58:26.5586813+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T16:58:26.5629000+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.2841 ms
+2023-12-23T17:22:38.6276888+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:22:38.6451441+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 148.9965 ms
+2023-12-23T17:22:42.0132608+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:22:42.0158184+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 4.5270 ms
+2023-12-23T17:23:53.3026621+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:23:53.3104734+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/096" responded 200 in 14.9306 ms
+2023-12-23T17:24:00.9250587+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:24:00.9294656+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/096" responded 200 in 10.5328 ms
+2023-12-23T17:24:55.9367003+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:24:55.9392358+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 44.6875 ms
+2023-12-23T17:25:02.9414944+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:25:02.9446074+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 8.1953 ms
+2023-12-23T17:25:20.7592762+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:25:20.7624860+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 9.5300 ms
+2023-12-23T17:25:25.7941723+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:25:25.7964744+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 4.6792 ms
+2023-12-23T17:27:44.9502186+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:27:44.9538092+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/096" responded 200 in 37.0609 ms
+2023-12-23T17:27:50.9974110+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:27:50.9998142+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 5.7210 ms
+2023-12-23T17:30:01.8578411+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/" responded 404 in 31.7245 ms
+2023-12-23T17:30:08.4805527+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:30:08.4823622+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 5.0988 ms
+2023-12-23T17:30:14.2164631+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:30:14.2184182+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 6.6920 ms
+2023-12-23T17:30:25.6496298+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:30:25.6550092+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 10.3490 ms
+2023-12-23T17:31:01.7542904+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:31:01.7568452+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 11.4398 ms
+2023-12-23T17:31:49.9942056+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:31:49.9960404+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 8.8841 ms
+2023-12-23T17:33:15.9151986+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:33:15.9181456+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 13.9577 ms
+2023-12-23T17:34:48.1907252+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:48.1931455+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 16.4766 ms
+2023-12-23T17:34:48.2835156+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:48.2900201+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01" responded 400 in 9.8314 ms
+2023-12-23T17:34:49.1315299+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:49.1341398+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 8.1167 ms
+2023-12-23T17:34:50.3687052+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:50.3749270+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01" responded 400 in 12.4129 ms
+2023-12-23T17:34:50.5206454+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:50.5233118+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 4.5540 ms
+2023-12-23T17:34:51.3748882+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:51.3789849+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/03" responded 400 in 8.9334 ms
+2023-12-23T17:34:51.6533363+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:51.6561893+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 4.4580 ms
+2023-12-23T17:34:52.9049711+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:52.9104546+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/03" responded 400 in 9.5095 ms
+2023-12-23T17:34:53.0352941+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:53.0377561+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 6.8539 ms
+2023-12-23T17:34:53.4798330+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:53.4844090+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01" responded 400 in 9.0080 ms
+2023-12-23T17:34:53.6740960+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:53.6793858+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.7033 ms
+2023-12-23T17:34:54.3596601+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:54.3625831+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 5.4152 ms
+2023-12-23T17:34:54.6406847+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:54.6440040+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.6282 ms
+2023-12-23T17:34:54.8537392+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:54.8571239+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 8.7946 ms
+2023-12-23T17:34:55.2538898+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:55.2572775+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.1402 ms
+2023-12-23T17:34:55.7174086+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:55.7217721+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.9559 ms
+2023-12-23T17:34:56.4635576+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:34:56.4670528+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 6.3421 ms
+2023-12-23T17:38:00.6651122+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:38:00.6677591+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 9.7090 ms
+2023-12-23T17:38:00.7996823+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:38:00.8057256+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01" responded 400 in 9.1344 ms
+2023-12-23T17:38:01.1184504+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:38:01.1227897+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 8.9033 ms
+2023-12-23T17:38:01.4482145+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:38:01.4522513+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 8.1481 ms
+2023-12-23T17:38:01.6789916+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:38:01.6840115+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.7431 ms
+2023-12-23T17:38:01.8300630+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:38:01.8332339+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 6.8003 ms
+2023-12-23T17:38:02.0535937+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:38:02.0576010+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.4633 ms
+2023-12-23T17:38:02.3174051+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:38:02.3208434+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 6.5780 ms
+2023-12-23T17:38:02.4983569+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:38:02.5016732+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 6.0387 ms
+2023-12-23T17:38:02.7121091+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:38:02.7155215+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 6.8695 ms
+2023-12-23T17:38:02.9594559+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:38:02.9639040+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 9.2786 ms
+2023-12-23T17:39:39.0419159+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:39:39.0437129+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 9.9789 ms
+2023-12-23T17:39:39.2032172+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:39:39.2075437+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01" responded 400 in 6.9358 ms
+2023-12-23T17:39:39.3884713+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:39:39.3906581+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 4.1846 ms
+2023-12-23T17:39:39.6059202+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:39:39.6091706+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 6.9218 ms
+2023-12-23T17:39:39.8148172+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:39:39.8191670+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 9.9282 ms
+2023-12-23T17:39:39.9215797+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:39:39.9252919+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 6.6880 ms
+2023-12-23T17:39:40.1231071+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:39:40.1264856+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.7479 ms
+2023-12-23T17:39:40.3652145+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:39:40.3681853+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 5.9226 ms
+2023-12-23T17:39:40.6006327+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:39:40.6033281+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 5.6024 ms
+2023-12-23T17:39:40.8710416+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:39:40.8757853+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 8.4535 ms
+2023-12-23T17:39:41.0971645+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:39:41.1037514+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 11.7620 ms
+2023-12-23T17:40:50.9837772+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:40:50.9913010+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 20.6097 ms
+2023-12-23T17:40:51.2628909+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:40:51.2665588+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01" responded 400 in 8.7944 ms
+2023-12-23T17:40:51.6110890+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:40:51.6150837+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 8.2962 ms
+2023-12-23T17:40:52.3979573+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:40:52.4020689+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.6446 ms
+2023-12-23T17:40:52.6753785+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:40:52.6826467+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 11.6950 ms
+2023-12-23T17:40:52.9058348+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:40:52.9086148+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 6.2572 ms
+2023-12-23T17:40:53.1942349+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:40:53.1975174+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 6.7326 ms
+2023-12-23T17:40:53.4712020+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:40:53.4747094+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.5595 ms
+2023-12-23T17:40:53.6861167+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:40:53.6894976+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.5520 ms
+2023-12-23T17:40:53.9536096+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:40:53.9563984+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.5250 ms
+2023-12-23T17:40:54.2271633+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:40:54.2301478+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 6.2392 ms
+2023-12-23T17:43:17.4524556+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:43:17.4545973+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 29.1848 ms
+2023-12-23T17:43:17.5909732+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:43:17.5954507+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01" responded 400 in 8.9600 ms
+2023-12-23T17:43:17.7579589+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:43:17.7627621+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.5861 ms
+2023-12-23T17:43:18.0102900+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:43:18.0170997+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 12.4751 ms
+2023-12-23T17:43:19.9149089+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:43:19.9189995+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 10.9937 ms
+2023-12-23T17:43:20.3200112+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:43:20.3222612+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 9.9557 ms
+2023-12-23T17:43:20.5383462+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:43:20.5416378+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.0124 ms
+2023-12-23T17:44:59.3288870+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:44:59.3375594+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 20.9957 ms
+2023-12-23T17:45:00.3746763+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:45:00.3798876+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01" responded 400 in 11.6514 ms
+2023-12-23T17:45:01.4189235+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:45:01.4239458+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 9.9238 ms
+2023-12-23T17:45:01.8888523+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:45:01.8921512+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/03" responded 400 in 7.7215 ms
+2023-12-23T17:45:02.1332688+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:45:02.1371950+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 8.5670 ms
+2023-12-23T17:45:04.6152601+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:45:04.6191036+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 7.7101 ms
+2023-12-23T17:45:05.6447899+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:45:05.6477734+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 11.2427 ms
+2023-12-23T17:45:06.9765775+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:45:06.9819877+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 9.2970 ms
+2023-12-23T17:45:07.1935607+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:45:07.2001845+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 13.0878 ms
+2023-12-23T17:45:07.3733649+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:45:07.3780529+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/03" responded 400 in 8.4837 ms
+2023-12-23T17:45:07.5729884+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:45:07.5775983+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 9.6788 ms
+2023-12-23T17:45:08.6554496+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:45:08.6605858+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01" responded 400 in 10.9916 ms
+2023-12-23T17:45:08.8143512+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("0"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T17:45:08.8178362+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.4249 ms
+2023-12-23T18:01:23.7116435+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:23.7154517+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 55.3738 ms
+2023-12-23T18:01:23.8358777+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:23.8389360+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01" responded 400 in 7.0084 ms
+2023-12-23T18:01:24.1366078+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:24.1392170+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 7.4899 ms
+2023-12-23T18:01:27.9774057+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:27.9805214+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/01" responded 400 in 6.4501 ms
+2023-12-23T18:01:28.0521339+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:28.0547924+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 5.2469 ms
+2023-12-23T18:01:28.5727638+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:28.5810582+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/03" responded 400 in 11.1406 ms
+2023-12-23T18:01:28.8897175+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:28.8925651+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 5.7598 ms
+2023-12-23T18:01:30.9833330+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:30.9876418+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 9.5779 ms
+2023-12-23T18:01:31.2252084+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:31.2290824+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 7.9473 ms
+2023-12-23T18:01:31.4035012+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:31.4084499+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 8.1667 ms
+2023-12-23T18:01:32.0591305+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:32.0633242+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 8.9523 ms
+2023-12-23T18:01:40.9327425+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:40.9386091+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/0" responded 400 in 11.4698 ms
+2023-12-23T18:01:41.0498016+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:41.0549001+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/03" responded 400 in 10.5868 ms
+2023-12-23T18:01:41.3083635+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:41.3117418+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 7.1809 ms
+2023-12-23T18:01:42.6141599+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:42.6206548+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 12.7114 ms
+2023-12-23T18:01:42.8414316+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:42.8435248+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 13.2577 ms
+2023-12-23T18:01:43.1069817+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:43.1108071+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 8.1499 ms
+2023-12-23T18:01:43.3991428+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:43.4056402+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 12.1964 ms
+2023-12-23T18:01:43.6864853+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:43.6906433+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 7.4264 ms
+2023-12-23T18:01:43.9391495+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:01:43.9503477+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 15.1995 ms
+2023-12-23T18:03:29.5335565+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("1"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:03:29.5359003+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/012" responded 400 in 10.3461 ms
+2023-12-23T18:03:34.9751623+07:00 [INF] (Microsoft.EntityFrameworkCore.Database.Command) Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (Size = 450)"], CommandType='Text', CommandTimeout='1200']"
+""SELECT TOP(1) [s].[DauSo], [s].[TrangThai]
+FROM [SoDienThoai] AS [s]
+WHERE [s].[DauSo] = @__id_0 AND ([s].[TrangThai] <> N'Da xoa' OR ([s].[TrangThai] IS NULL))"
+2023-12-23T18:03:34.9797836+07:00 [INF] (Serilog.AspNetCore.RequestLoggingMiddleware) HTTP "GET" "/api/dau-so/get-single/037" responded 200 in 9.5598 ms

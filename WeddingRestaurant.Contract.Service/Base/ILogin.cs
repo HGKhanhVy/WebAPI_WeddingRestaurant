@@ -8,6 +8,6 @@ namespace WeddingRestaurant.Contract.Service.Base
 {
     public interface ILogin<T, in TKey, in T2Key> where T : class, new()
     {
-        T KhachHangLogin(TKey sdt, T2Key mk);
+        T NhanVienLogin(TKey sdt, T2Key mk);
     }
 }

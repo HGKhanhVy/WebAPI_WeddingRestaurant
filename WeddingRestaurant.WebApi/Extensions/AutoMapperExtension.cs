@@ -33,6 +33,7 @@ namespace WeddingRestaurant.WebApi.Extensions
                 cfg.AddProfile(new NhanVienTrongTiecProfile());
                 cfg.AddProfile(new PhuThuProfile());
                 cfg.AddProfile(new SanhProfile());
+                cfg.AddProfile(new SoDienThoaiProfile());
                 cfg.AddProfile(new NguoiDungProfile());
                 cfg.AddProfile(new LoginProfile());
                 cfg.AddProfile(new TokenProfile());

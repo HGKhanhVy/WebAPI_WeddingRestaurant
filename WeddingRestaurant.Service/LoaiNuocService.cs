@@ -37,7 +37,7 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(LoaiNuocModel model, CancellationToken cancellationToken = default)
         {
-            if (_loaiNuocRepository.Get(_ => _.MaLoaiNuoc.Equals(model.MaLoaiNuoc) && _.TrangThai == null).Any())
+            if (_loaiNuocRepository.Get(_ => _.MaLoaiNuoc.Equals(model.MaLoaiNuoc) && !_.TrangThai.Equals("Da xoa")).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaLoaiNuoc);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsLoaiNuoc.LOAINUOC_EXISTED, statusCode: StatusCodes.Status400BadRequest);
@@ -51,7 +51,7 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _loaiNuocRepository.GetTracking(x => x.MaLoaiNuoc.Equals(id) && x.TrangThai == null).FirstOrDefault();
+            var entity = _loaiNuocRepository.GetTracking(x => x.MaLoaiNuoc.Equals(id) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id);
@@ -65,19 +65,19 @@ namespace WeddingRestaurant.Service
 
         public ICollection<LoaiNuocEntity> GetAllAsync()
         {
-            var entities = _loaiNuocRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _loaiNuocRepository.Get(_ => !_.TrangThai.Equals("Da xoa")).ToList();
             return (ICollection<LoaiNuocEntity>)entities;
         }
 
         public LoaiNuocEntity GetByKeyIdAsync(string id)
         {
-            var entity = _loaiNuocRepository.GetSingle(_ => _.MaLoaiNuoc.Equals(id) && _.TrangThai == null);
+            var entity = _loaiNuocRepository.GetSingle(_ => _.MaLoaiNuoc.Equals(id) && !_.TrangThai.Equals("Da xoa"));
             return entity;
         }
 
         public Task UpdateAsync(string Id, LoaiNuocModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _loaiNuocRepository.GetTracking(x => x.MaLoaiNuoc.Equals(Id) && x.TrangThai == null).FirstOrDefault();
+            var entity = _loaiNuocRepository.GetTracking(x => x.MaLoaiNuoc.Equals(Id) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id);
@@ -85,7 +85,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaLoaiNuoc != Id)
             {
-                var isDuplicate = _loaiNuocRepository.Get(x => x.MaLoaiNuoc == model.MaLoaiNuoc && x.TrangThai == null).FirstOrDefault();
+                var isDuplicate = _loaiNuocRepository.Get(x => x.MaLoaiNuoc == model.MaLoaiNuoc && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);
@@ -102,7 +102,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _loaiNuocRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _loaiNuocRepository.Get(_ => !_.TrangThai.Equals("Da xoa")).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;

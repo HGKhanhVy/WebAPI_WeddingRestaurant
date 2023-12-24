@@ -37,7 +37,7 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(DatTiecModel model, CancellationToken cancellationToken = default)
         {
-            if (_datTiecRepository.Get(_ => _.MaTiec.Equals(model.MaTiec) && _.TrangThai == null).Any())
+            if (_datTiecRepository.Get(_ => _.MaTiec.Equals(model.MaTiec) && !_.TrangThai.Equals("Da huy")).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaTiec);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsLoaiDichVu.LOAIDICHVU_EXISTED, statusCode: StatusCodes.Status400BadRequest);
@@ -52,33 +52,47 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _datTiecRepository.GetTracking(x => x.MaTiec.Equals(id) && !x.TrangThai.Equals("Đã hủy")).FirstOrDefault();
+            var entity = _datTiecRepository.GetTracking(x => x.MaTiec.Equals(id) && !x.TrangThai.Equals("Da huy")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id);
                 throw new CoreException(code: ResponseCodeConstants.NOT_FOUND, message: ReponseMessageConstantsDatTiec.TIEC_NOT_FOUND, statusCode: StatusCodes.Status404NotFound);
             }
             _datTiecRepository.Delete(entity, isPhysicalDelete: isPhysical);
-            entity.TrangThai = "Đã hủy";
+            entity.TrangThai = "Da huy";
+            UnitOfWork.SaveChange();
+            return Task.CompletedTask;
+        }
+
+        public Task DeleteByAnotherIDAsync(string idKH, bool isPhysical, CancellationToken cancellationToken = default)
+        {
+            var entity = _datTiecRepository.GetTracking(x => x.MaKhachHang.Equals(idKH) && !x.TrangThai.Equals("Da huy")).FirstOrDefault();
+            if (entity == null)
+            {
+                _logger.Information(ErrorCode.NotFound, idKH);
+                throw new CoreException(code: ResponseCodeConstants.NOT_FOUND, message: ReponseMessageConstantsDatTiec.TIEC_NOT_FOUND, statusCode: StatusCodes.Status404NotFound);
+            }
+            _datTiecRepository.Delete(entity, isPhysicalDelete: isPhysical);
+            entity.TrangThai = "Da huy";
             UnitOfWork.SaveChange();
             return Task.CompletedTask;
         }
 
         public ICollection<DatTiecEntity> GetAllAsync()
         {
-            var entities = _datTiecRepository.Get(_ => !_.TrangThai.Equals("Đã hủy")).ToList();
+            var entities = _datTiecRepository.Get(_ => !_.TrangThai.Equals("Da huy")).ToList();
             return (ICollection<DatTiecEntity>)entities;
         }
 
         public DatTiecEntity GetByKeyIdAsync(string id)
         {
-            var entity = _datTiecRepository.GetSingle(_ => _.MaTiec.Equals(id) && !_.TrangThai.Equals("Đã hủy"));
+            var entity = _datTiecRepository.GetSingle(_ => _.MaTiec.Equals(id) && !_.TrangThai.Equals("Da huy"));
             return entity;
         }
 
         public Task UpdateAsync(string Id, DatTiecModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _datTiecRepository.GetTracking(x => x.MaTiec.Equals(Id) && !x.TrangThai.Equals("Đã hủy")).FirstOrDefault();
+            var entity = _datTiecRepository.GetTracking(x => x.MaTiec.Equals(Id) && !x.TrangThai.Equals("Da huy")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id);
@@ -86,7 +100,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaTiec != Id)
             {
-                var isDuplicate = _datTiecRepository.GetTracking(x => x.MaTiec.Equals(model.MaTiec) && !x.TrangThai.Equals("Đã hủy")).FirstOrDefault();
+                var isDuplicate = _datTiecRepository.GetTracking(x => x.MaTiec.Equals(model.MaTiec) && !x.TrangThai.Equals("Da huy")).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);
@@ -103,7 +117,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _datTiecRepository.Get(_ => !_.TrangThai.Equals("Đã hủy")).ToList();
+            var entities = _datTiecRepository.Get(_ => !_.TrangThai.Equals("Da huy")).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;
@@ -111,7 +125,7 @@ namespace WeddingRestaurant.Service
         }
         public List<DatTiecEntity> SortOrderByAsyn()
         {
-            var entities = _datTiecRepository.Get(_ => !_.TrangThai.Equals("Đã hủy"))
+            var entities = _datTiecRepository.Get(_ => !_.TrangThai.Equals("Da huy"))
                                           .OrderBy(entity => entity.NgayToChuc)
                                           .ToList();
 
@@ -119,7 +133,7 @@ namespace WeddingRestaurant.Service
         }
         public List<DatTiecEntity> SortOrderByDescendingAsyn()
         {
-            var entities = _datTiecRepository.Get(_ => !_.TrangThai.Equals("Đã hủy"))
+            var entities = _datTiecRepository.Get(_ => !_.TrangThai.Equals("Da huy"))
                                           .OrderByDescending(entity => entity.NgayToChuc)
                                           .ToList();
 

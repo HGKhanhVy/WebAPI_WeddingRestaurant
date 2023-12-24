@@ -143,6 +143,37 @@ namespace WeddingRestaurant.WebApi.Controllers
             }
         }
 
+        [HttpDelete]
+        [Route(WebApiEndpoint.DatTiec.DeleteDatTiecByMaKH)]
+        public async Task<IActionResult> DeleteDatTiecByMaKH([FromRoute] string MaKhachHang)
+        {
+            try
+            {
+                await _iDatTiecService.DeleteByAnotherIDAsync(MaKhachHang, false);
+                return Ok(new BaseResponseModel<string>(
+                    statusCode: StatusCodes.Status200OK,
+                    code: ResponseCodeConstants.SUCCESS,
+                    data: ReponseMessageConstantsDatTiec.DELETE_TIEC_SUCCESS));
+            }
+            catch (Exception e)
+            {
+                dynamic result;
+                if (e is CoreException error)
+                {
+                    result = new BaseResponseModel<string>(
+                        statusCode: error.StatusCode,
+                        code: error.Code,
+                        message: error.Message);
+                    return BadRequest(result);
+                }
+                result = new BaseResponseModel<string>(
+                    statusCode: StatusCodes.Status500InternalServerError,
+                    code: ResponseCodeConstants.FAILED,
+                    message: e.Message);
+                return BadRequest(result);
+            }
+        }
+
         [HttpGet]
         [Route(WebApiEndpoint.DatTiec.CountDatTiec)]
         public async Task<IActionResult> CountTiec()

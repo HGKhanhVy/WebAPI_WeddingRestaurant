@@ -36,7 +36,7 @@ namespace WeddingRestaurant.Service
 
         public Task<string> CreateAsync(HoaDonModel model, CancellationToken cancellationToken = default)
         {
-            if (_hdRepository.Get(_ => _.MaHoaDon.Equals(model.MaHoaDon) && _.TrangThai == null).Any())
+            if (_hdRepository.Get(_ => _.MaHoaDon.Equals(model.MaHoaDon) && !_.TrangThai.Equals("Da xoa")).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaHoaDon);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsHoaDon.HOADON_EXISTED, statusCode: StatusCodes.Status400BadRequest);
@@ -50,7 +50,7 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _hdRepository.GetTracking(x => x.MaHoaDon.Equals(id) && x.TrangThai == null).FirstOrDefault();
+            var entity = _hdRepository.GetTracking(x => x.MaHoaDon.Equals(id) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id);
@@ -64,19 +64,19 @@ namespace WeddingRestaurant.Service
 
         public ICollection<HoaDonEntity> GetAllAsync()
         {
-            var entities = _hdRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _hdRepository.Get(_ => !_.TrangThai.Equals("Da xoa")).ToList();
             return (ICollection<HoaDonEntity>)entities;
         }
 
         public HoaDonEntity GetByKeyIdAsync(string id)
         {
-            var entity = _hdRepository.GetSingle(_ => _.MaHoaDon.Equals(id) && _.TrangThai == null);
+            var entity = _hdRepository.GetSingle(_ => _.MaHoaDon.Equals(id) && !_.TrangThai.Equals("Da xoa"));
             return entity;
         }
 
         public Task UpdateAsync(string Id, HoaDonModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _hdRepository.GetTracking(x => x.MaHoaDon.Equals(Id) && x.TrangThai == null).FirstOrDefault();
+            var entity = _hdRepository.GetTracking(x => x.MaHoaDon.Equals(Id) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id);
@@ -84,7 +84,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaHoaDon != Id)
             {
-                var isDuplicate = _hdRepository.GetTracking(x => x.MaHoaDon.Equals(model.MaHoaDon) && x.TrangThai == null).FirstOrDefault();
+                var isDuplicate = _hdRepository.GetTracking(x => x.MaHoaDon.Equals(model.MaHoaDon) && !x.TrangThai.Equals("Da xoa")).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);
@@ -101,7 +101,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _hdRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _hdRepository.Get(_ => !_.TrangThai.Equals("Da xoa")).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;

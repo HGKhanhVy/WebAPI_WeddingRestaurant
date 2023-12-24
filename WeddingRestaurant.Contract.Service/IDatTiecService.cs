@@ -12,6 +12,7 @@ namespace WeddingRestaurant.Contract.Service
        Base.ICreateable<DatTiecModel, string>,
        Base.IUpdateable<DatTiecModel, string>,
        Base.IDeleteable<string, bool>,
+       Base.IDeleteableByAnotherID<string, bool>,
        Base.IGetable<DatTiecEntity, string>,
        Base.ICounteable<DatTiecModel, int>,
        Base.ISortable<DatTiecEntity>,

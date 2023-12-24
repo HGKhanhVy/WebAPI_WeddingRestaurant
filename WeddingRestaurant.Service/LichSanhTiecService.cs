@@ -36,7 +36,7 @@ namespace WeddingRestaurant.Service
 
         public async Task<string> CreateAsync(LichSanhTiecModel model, CancellationToken cancellationToken = default)
         {
-            if (_lichRepository.Get(_ => _.MaTiec.Equals(model.MaTiec) && _.MaSanh.Equals(model.MaSanh) && _.TrangThai == null).Any())
+            if (_lichRepository.Get(_ => _.MaTiec.Equals(model.MaTiec) && _.MaSanh.Equals(model.MaSanh) && !_.TrangThai.Equals("Da huy")).Any())
             {
                 _logger.Information(ErrorCode.NotUnique, model.MaTiec + " - " + model.MaSanh);
                 throw new CoreException(code: ResponseCodeConstants.EXISTED, message: ReponseMessageConstantsLichSanhTiec.LICHSANHTIEC_EXISTED, statusCode: StatusCodes.Status400BadRequest);
@@ -51,7 +51,7 @@ namespace WeddingRestaurant.Service
 
         public Task DeleteAsync(string id, string id_Tiec, bool isPhysical, CancellationToken cancellationToken = default)
         {
-            var entity = _lichRepository.GetTracking(x => x.MaSanh.Equals(id) && x.MaTiec.Equals(id_Tiec) && x.TrangThai == null).FirstOrDefault();
+            var entity = _lichRepository.GetTracking(x => x.MaSanh.Equals(id) && x.MaTiec.Equals(id_Tiec) && !x.TrangThai.Equals("Da huy")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, id + " - " + id_Tiec);
@@ -65,19 +65,19 @@ namespace WeddingRestaurant.Service
 
         public ICollection<LichSanhTiecEntity> GetAllAsync()
         {
-            var entities = _lichRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _lichRepository.Get(_ => !_.TrangThai.Equals("Da huy")).ToList();
             return (ICollection<LichSanhTiecEntity>)entities;
         }
 
         public LichSanhTiecEntity GetByKeyIdAsync(string id, string id_Tiec)
         {
-            var entity = _lichRepository.GetSingle(_ => _.MaSanh.Equals(id) && _.MaTiec.Equals(id_Tiec) && _.TrangThai == null);
+            var entity = _lichRepository.GetSingle(_ => _.MaSanh.Equals(id) && _.MaTiec.Equals(id_Tiec) && !_.TrangThai.Equals("Da huy"));
             return entity;
         }
 
         public Task UpdateAsync(string Id, string id_Tiec, LichSanhTiecModel model, CancellationToken cancellationToken = default)
         {
-            var entity = _lichRepository.GetTracking(x => x.MaSanh.Equals(Id) && x.MaTiec.Equals(id_Tiec) && x.TrangThai == null).FirstOrDefault();
+            var entity = _lichRepository.GetTracking(x => x.MaSanh.Equals(Id) && x.MaTiec.Equals(id_Tiec) && !x.TrangThai.Equals("Da huy")).FirstOrDefault();
             if (entity == null)
             {
                 _logger.Information(ErrorCode.NotFound, Id + " - " + id_Tiec);
@@ -85,7 +85,7 @@ namespace WeddingRestaurant.Service
             }
             if (model.MaSanh != Id && model.MaTiec != id_Tiec)
             {
-                var isDuplicate = _lichRepository.GetTracking(x => x.MaSanh.Equals(model.MaSanh) && x.MaTiec.Equals(model.MaTiec) && x.TrangThai == null).FirstOrDefault();
+                var isDuplicate = _lichRepository.GetTracking(x => x.MaSanh.Equals(model.MaSanh) && x.MaTiec.Equals(model.MaTiec) && !x.TrangThai.Equals("Da huy")).FirstOrDefault();
                 if (isDuplicate != null)
                 {
                     _logger.Information(ErrorCode.NotUnique, Id);
@@ -102,7 +102,7 @@ namespace WeddingRestaurant.Service
 
         public Task<int> CountAsync()
         {
-            var entities = _lichRepository.Get(_ => _.TrangThai == null).ToList();
+            var entities = _lichRepository.Get(_ => !_.TrangThai.Equals("Da huy")).ToList();
             int count = 0;
             foreach (var entity in entities)
                 count++;
@@ -110,21 +110,21 @@ namespace WeddingRestaurant.Service
         }
         public ICollection<LichSanhTiecEntity> GetAllLichSanhByIDAsync(string id)
         {
-            var entities = _lichRepository.Get(_ => _.MaSanh.Equals(id) && _.TrangThai == null).ToList();
+            var entities = _lichRepository.Get(_ => _.MaSanh.Equals(id) && !_.TrangThai.Equals("Da huy")).ToList();
             return (ICollection<LichSanhTiecEntity>)entities;
         }
         public ICollection<LichSanhTiecEntity> GetAllLichSanhByNTCAsync(string ntc)
         {
             if (DateTime.TryParse(ntc, out DateTime dateTime))
             {
-                var entities = _lichRepository.Get(_ => _.NgayDienRa.Day == dateTime.Day && _.TrangThai == null).ToList();
+                var entities = _lichRepository.Get(_ => _.NgayDienRa.Day == dateTime.Day && !_.TrangThai.Equals("Da huy")).ToList();
                 return (ICollection<LichSanhTiecEntity>)entities;
             }
             return new List<LichSanhTiecEntity>();
         }
         public List<LichSanhTiecEntity> SortOrderByAsyn()
         {
-            var entities = _lichRepository.Get(_ => _.TrangThai == null)
+            var entities = _lichRepository.Get(_ => !_.TrangThai.Equals("Da huy"))
                                           .OrderBy(entity => entity.NgayDienRa) 
                                           .ToList();
             
@@ -132,7 +132,7 @@ namespace WeddingRestaurant.Service
         }
         public List<LichSanhTiecEntity> SortOrderByDescendingAsyn()
         {
-            var entities = _lichRepository.Get(_ => _.TrangThai == null)
+            var entities = _lichRepository.Get(_ => !_.TrangThai.Equals("Da huy"))
                                           .OrderByDescending(entity => entity.NgayDienRa)
                                           .ToList();
 

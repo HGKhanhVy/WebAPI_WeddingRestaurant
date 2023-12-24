@@ -14,7 +14,8 @@ namespace WeddingRestaurant.Contract.Service
        Base.IUpdateable<NhanVienModel, string>,
        Base.IDeleteable<string, bool>,
        Base.IGetable<NhanVienEntity, string>,
-       Base.ICounteable<NhanVienModel, int>
+       Base.ICounteable<NhanVienModel, int>,
+       Base.ILogin<NhanVienEntity, string, string>
     {
     }
 }

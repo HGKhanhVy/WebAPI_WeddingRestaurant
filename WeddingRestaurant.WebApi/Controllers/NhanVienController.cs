@@ -173,5 +173,24 @@ namespace WeddingRestaurant.WebApi.Controllers
                 return BadRequest(result);
             }
         }
+        
+        [HttpGet]
+        [Route(WebApiEndpoint.NhanVien.NhanVienLogin)]
+        public IActionResult NhanVienLogin([FromRoute] string Gmail, [FromRoute] string MatKhau)
+        {
+            var data = _iNhanVienService.NhanVienLogin(Gmail, MatKhau);
+            if (data == null)
+            {
+                var result = new BaseResponseModel<string>(
+                    statusCode: StatusCodes.Status400BadRequest,
+                    code: ResponseCodeConstants.NOT_FOUND,
+                    message: ReponseMessageConstantsNhanVien.NHANVIEN_NOT_FOUND);
+                return BadRequest(result);
+            }
+
+            return Ok(new BaseResponseModel<NhanVienEntity?>
+                    (statusCode: StatusCodes.Status200OK,
+                    code: ResponseCodeConstants.SUCCESS, data: data));
+        }
     }
 }
